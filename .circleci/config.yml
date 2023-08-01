@@ -55,9 +55,9 @@ jobs:
           command: |
             export DOCKER_BUILDKIT=1
             docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
-            docker build . --target pokedex-web -t zthun/pokedex-web:latest -t zthun/pokedex-web:$(npm show @zthun/pokedex-web version) --progress=plain
-            docker push zthun/pokedex-web:latest
-            docker push zthun/pokedex-web:$(npm show @zthun/pokedex-web version)
+            docker build . --target dalmart-web -t zthun/dalmart-web:latest -t zthun/dalmart-web:$(npm show @zthun/dalmart-web version) --progress=plain
+            docker push zthun/dalmart-web:latest
+            docker push zthun/dalmart-web:$(npm show @zthun/dalmart-web version)
 
 workflows:
   make:

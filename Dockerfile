@@ -17,7 +17,7 @@ USER root
 RUN git config --global credential.helper store && \
     git config --global user.name "Circle CI" && \
     git config --global user.email "circle-ci@zthunworks.com" && \
-    git remote set-url origin https://github.com/zthun/pokedexii && \
+    git remote set-url origin https://github.com/zthun/dalmart && \
     git remote -v && \
     git checkout latest
 RUN --mount=type=secret,id=GIT_CREDENTIALS,dst=/root/.git-credentials npx lerna version --conventional-commits --yes --no-push -m "chore: version [skip ci]" && \
@@ -28,8 +28,8 @@ RUN --mount=type=secret,id=GIT_CREDENTIALS,dst=/root/.git-credentials npx lerna 
     git push --tags
 RUN --mount=type=secret,id=NPM_CREDENTIALS,dst=/root/.npmrc npx lerna publish from-package --yes
 
-FROM node:17.3.0-alpine as pokedex-web-install
-RUN npm install -g @zthun/pokedex-web
+FROM node:lts-alpine as dalmart-web-install
+RUN npm install -g @zthun/dalmart-web
 
-FROM nginx:1.23.3-alpine as pokedex-web
-COPY --from=pokedex-web-install /usr/local/lib/node_modules/@zthun/pokedex-web/dist/. /usr/share/nginx/html/
+FROM nginx:1.23.3-alpine as dalmart-web
+COPY --from=dalmart-web-install /usr/local/lib/node_modules/@zthun/dalmart-web/dist/. /usr/share/nginx/html/
