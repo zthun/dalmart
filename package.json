@@ -1,0 +1,45 @@
+{
+  "name": "@zthun/dalmart",
+  "description": "Access databases through a single common interfaces.",
+  "author": "Anthony Bonta",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zthun/pokedexii"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "clean": "rimraf --glob 'dist' 'reports' '*.tgz' '*.log' 'packages/**/dist' 'packages/**/docs' 'packages/**/*.tgz' 'packages/**/*.log'",
+    "test": "vitest --run --coverage",
+    "lint": "lint-janitor",
+    "build": "lerna run build",
+    "make": "yarn clean && yarn lint && yarn test && yarn build",
+    "postinstall": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@types/jsdom": "^21.1.1",
+    "@types/lodash": "^4.14.196",
+    "@types/node": "^20.4.5",
+    "@vitest/coverage-istanbul": "^0.33.0",
+    "@zthun/lint-janitor": "^14.2.0",
+    "@zthun/lint-janitor-config": "^14.2.0",
+    "husky": "^8.0.3",
+    "jsdom": "^22.1.0",
+    "lerna": "^7.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7",
+    "vitest": "^0.33.0",
+    "vitest-tsconfig-paths": "^3.4.1"
+  },
+  "packageManager": "yarn@3.3.1"
+}

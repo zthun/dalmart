@@ -1,0 +1,7 @@
+{
+  "version": "0.2",
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/master/cspell.schema.json",
+  "language": "en",
+  "words": ["Bonta", "commitlint", "dalmart", "microbundle", "zthun"],
+  "dictionaries": ["typescript", "node", "npm", "en_US"]
+}

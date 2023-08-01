@@ -1,0 +1,35 @@
+{
+  "name": "@zthun/dalmart-local-storage",
+  "version": "0.0.1",
+  "description": "A database interface to local storage.",
+  "author": "Anthony Bonta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zthun/dalmart",
+    "directory": "packages/dalmart-local-storage"
+  },
+  "main": "./dist/lib/index.js",
+  "module": "./dist/lib/index.esm.js",
+  "types": "./dist/types/index.d.ts",
+  "scripts": {
+    "build": "microbundle --format esm,cjs --tsconfig tsconfig.prod.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@zthun/helpful-fn": "^0.20.1",
+    "@zthun/helpful-query": "^0.20.1"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0",
+    "vitest-mock-extended": "^1.1.4"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false
+}
