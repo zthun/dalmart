@@ -11,6 +11,7 @@
     "strictNullChecks": true,
     "strictBindCallApply": true,
     "skipLibCheck": true,
+    "sourceMap": true,
     "jsx": "react",
     "target": "es5",
     "module": "commonjs"

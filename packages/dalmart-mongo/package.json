@@ -13,14 +13,13 @@
   "module": "./dist/lib/index.esm.js",
   "types": "./dist/types/index.d.ts",
   "scripts": {
-    "build": "microbundle --format esm,cjs --tsconfig tsconfig.prod.json"
+    "build": "microbundle --format esm,cjs --tsconfig tsconfig.lib.json"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@zthun/helpful-fn": "^0.20.1",
-    "@zthun/helpful-query": "^0.20.1"
+    "@zthun/dalmart-db": "^0.0.1"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",

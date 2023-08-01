@@ -3415,7 +3415,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/dalmart-db@workspace:packages/dalmart-db":
+"@zthun/dalmart-db@^0.0.1, @zthun/dalmart-db@workspace:packages/dalmart-db":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-db@workspace:packages/dalmart-db"
   dependencies:
@@ -3428,12 +3428,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-local-storage@workspace:packages/dalmart-local-storage":
+"@zthun/dalmart-local-storage@^0.0.1, @zthun/dalmart-local-storage@workspace:packages/dalmart-local-storage":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-local-storage@workspace:packages/dalmart-local-storage"
   dependencies:
-    "@zthun/helpful-fn": ^0.20.1
-    "@zthun/helpful-query": ^0.20.1
+    "@zthun/dalmart-db": ^0.0.1
     microbundle: ^0.15.1
     typescript: ^5.1.6
     vitest: ^0.33.0
@@ -3441,12 +3440,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-mongo@workspace:packages/dalmart-mongo":
+"@zthun/dalmart-mongo@^0.0.1, @zthun/dalmart-mongo@workspace:packages/dalmart-mongo":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-mongo@workspace:packages/dalmart-mongo"
   dependencies:
-    "@zthun/helpful-fn": ^0.20.1
-    "@zthun/helpful-query": ^0.20.1
+    "@zthun/dalmart-db": ^0.0.1
     microbundle: ^0.15.1
     typescript: ^5.1.6
     vitest: ^0.33.0
@@ -3454,12 +3452,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-redis@workspace:packages/dalmart-redis":
+"@zthun/dalmart-redis@^0.0.1, @zthun/dalmart-redis@workspace:packages/dalmart-redis":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-redis@workspace:packages/dalmart-redis"
   dependencies:
-    "@zthun/helpful-fn": ^0.20.1
-    "@zthun/helpful-query": ^0.20.1
+    "@zthun/dalmart-db": ^0.0.1
     microbundle: ^0.15.1
     typescript: ^5.1.6
     vitest: ^0.33.0
@@ -3471,10 +3468,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-web@workspace:packages/dalmart-web"
   dependencies:
-    "@zthun/helpful-fn": ^0.20.1
-    "@zthun/helpful-query": ^0.20.1
+    "@zthun/dalmart-db": ^0.0.1
+    "@zthun/dalmart-local-storage": ^0.0.1
+    "@zthun/dalmart-mongo": ^0.0.1
+    "@zthun/dalmart-redis": ^0.0.1
     microbundle: ^0.15.1
     typescript: ^5.1.6
+    vite: ^4.4.7
+    vite-tsconfig-paths: ^4.2.0
     vitest: ^0.33.0
     vitest-mock-extended: ^1.1.4
   languageName: unknown
@@ -12230,6 +12231,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tsconfck@npm:^2.1.0":
+  version: 2.1.2
+  resolution: "tsconfck@npm:2.1.2"
+  peerDependencies:
+    typescript: ^4.3.5 || ^5.0.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  bin:
+    tsconfck: bin/tsconfck.js
+  checksum: 6fd2f7de012a724f6b4bf48ae76cc7dae2b59dd5cad2dc50bac58d224d4ed7d5c43c6b26e55d3e00636f426f8b5373c996523d73b7830d05f8479a9b83282192
+  languageName: node
+  linkType: hard
+
 "tsconfig-paths@npm:^3.14.2, tsconfig-paths@npm:^3.9.0":
   version: 3.14.2
   resolution: "tsconfig-paths@npm:3.14.2"
@@ -12682,6 +12697,22 @@ __metadata:
   bin:
     vite-node: vite-node.mjs
   checksum: 7c37911251d3e318fe4ad6b4093207498336ce190a58afb43a9ae701eee7f110ef80920b79061710cf6abcc6335ce58f6ca412ee6b268f25fe10f278c94cc264
+  languageName: node
+  linkType: hard
+
+"vite-tsconfig-paths@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "vite-tsconfig-paths@npm:4.2.0"
+  dependencies:
+    debug: ^4.1.1
+    globrex: ^0.1.2
+    tsconfck: ^2.1.0
+  peerDependencies:
+    vite: "*"
+  peerDependenciesMeta:
+    vite:
+      optional: true
+  checksum: 73a8467de72d7ac502328454fd00c19571cd4bad2dd5982643b24718bb95e449a3f4153cfc2d58a358bfc8f37e592fb442fc10884b59ae82138c1329160cd952
   languageName: node
   linkType: hard
 

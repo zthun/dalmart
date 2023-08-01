@@ -13,7 +13,7 @@
   "module": "./dist/lib/index.esm.js",
   "types": "./dist/types/index.d.ts",
   "scripts": {
-    "build": "microbundle --format esm,cjs --tsconfig tsconfig.prod.json"
+    "build": "microbundle --format esm,cjs --tsconfig tsconfig.lib.json"
   },
   "publishConfig": {
     "access": "public"

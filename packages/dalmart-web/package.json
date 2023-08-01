@@ -13,18 +13,21 @@
   "module": "./dist/lib/index.esm.js",
   "types": "./dist/types/index.d.ts",
   "scripts": {
-    "build": "microbundle --format esm,cjs --tsconfig tsconfig.prod.json"
+    "build": "vite build",
+    "start": "vite"
   },
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "@zthun/helpful-fn": "^0.20.1",
-    "@zthun/helpful-query": "^0.20.1"
-  },
   "devDependencies": {
+    "@zthun/dalmart-db": "^0.0.1",
+    "@zthun/dalmart-local-storage": "^0.0.1",
+    "@zthun/dalmart-mongo": "^0.0.1",
+    "@zthun/dalmart-redis": "^0.0.1",
     "microbundle": "^0.15.1",
     "typescript": "^5.1.6",
+    "vite": "^4.4.7",
+    "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.33.0",
     "vitest-mock-extended": "^1.1.4"
   },
