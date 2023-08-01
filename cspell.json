@@ -2,6 +2,6 @@
   "version": "0.2",
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/master/cspell.schema.json",
   "language": "en",
-  "words": ["Bonta", "BUILDKIT", "commitlint", "dalmart", "DOCKERHUB", "microbundle", "zthun"],
+  "words": ["Bonta", "BUILDKIT", "commitlint", "dalmart", "DOCKERHUB", "microbundle", "portfinder", "zthun"],
   "dictionaries": ["typescript", "node", "npm", "en_US"]
 }

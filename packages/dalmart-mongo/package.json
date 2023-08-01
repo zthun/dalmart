@@ -19,10 +19,15 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/dalmart-db": "^0.0.1"
+    "@zthun/dalmart-db": "^0.0.1",
+    "@zthun/helpful-fn": "^0.20.1",
+    "@zthun/helpful-query": "^0.20.1",
+    "mongodb": "^5.7.0"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",
+    "mongodb-memory-server": "^8.13.0",
+    "portfinder": "^1.0.32",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0",
     "vitest-mock-extended": "^1.1.4"
