@@ -1,7 +1,7 @@
 {
-  "name": "@zthun/dalmart-local-storage",
+  "name": "@zthun/dalmart-storage",
   "version": "0.0.1",
-  "description": "A database interface to local storage.",
+  "description": "A database interface to local and session storage.",
   "author": "Anthony Bonta",
   "license": "MIT",
   "repository": {
