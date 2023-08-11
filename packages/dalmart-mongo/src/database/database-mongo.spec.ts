@@ -1,8 +1,11 @@
 import { createGuid } from '@zthun/helpful-fn';
 import {
+  IZFilter,
   ZDataRequestBuilder,
   ZFilterBinaryBuilder,
   ZFilterCollectionBuilder,
+  ZFilterLogicBuilder,
+  ZFilterUnaryBuilder,
   ZSortBuilder
 } from '@zthun/helpful-query';
 import { MongoMemoryServer } from 'mongodb-memory-server';
@@ -117,19 +120,25 @@ describe('ZDatabaseMongo', () => {
     beforeEach(async () => {
       fred = {
         _id: createGuid(),
-        name: 'Fred'
+        name: 'Fred',
+        rating: 5,
+        flintstone: true
       };
       barney = {
         _id: createGuid(),
-        name: 'Barney'
+        name: 'Barney',
+        rating: 4.2
       };
       wilma = {
         _id: createGuid(),
-        name: 'Wilma'
+        name: 'Wilma',
+        rating: 3.7,
+        flintstone: true
       };
       betty = {
         _id: createGuid(),
-        name: 'Betty'
+        name: 'Betty',
+        rating: 2.8
       };
 
       bamBam = {
@@ -209,16 +218,6 @@ describe('ZDatabaseMongo', () => {
         expect(actual).toEqual(parents);
       });
 
-      it('reads filtered data.', async () => {
-        // Arrange
-        const target = await createPopulatedTarget();
-        const filter = new ZFilterBinaryBuilder().subject('name').equal().value(fred.name).build();
-        // Act
-        const actual = await target.read(parentsSource, new ZDataRequestBuilder().filter(filter).build());
-        // Assert
-        expect(actual).toEqual([fred]);
-      });
-
       it('sorts the data in ascending order.', async () => {
         // Arrange
         const target = await createPopulatedTarget();
@@ -284,6 +283,130 @@ describe('ZDatabaseMongo', () => {
         const query = target.read(parentsSource);
         // Assert
         await expect(query).rejects.toBeTruthy();
+      });
+
+      describe('Filter', () => {
+        const shouldReturnExpectedData = async (expected: any[], filter: IZFilter) => {
+          // Arrange
+          const target = await createPopulatedTarget();
+          // Act
+          const actual = await target.read(parentsSource, new ZDataRequestBuilder().filter(filter).build());
+          // Assert
+          expect(actual).toEqual(expected);
+        };
+
+        describe('Logic', () => {
+          describe('And', () => {
+            it('returns expected data', async () => {
+              const a = new ZFilterBinaryBuilder().subject('rating').greaterThan().value(3).build();
+              const b = new ZFilterBinaryBuilder().subject('rating').lessThan().value(5).build();
+              const filter = new ZFilterLogicBuilder().and().clause(a).clause(b).build();
+              await shouldReturnExpectedData([barney, wilma], filter);
+            });
+          });
+
+          describe('Or', () => {
+            it('returns expected data', async () => {
+              const a = new ZFilterBinaryBuilder().subject('name').equal().value('Fred').build();
+              const b = new ZFilterBinaryBuilder().subject('name').equal().value('Wilma').build();
+              const filter = new ZFilterLogicBuilder().or().clause(a).clause(b).build();
+              await shouldReturnExpectedData([fred, wilma], filter);
+            });
+          });
+        });
+
+        describe('Binary', () => {
+          describe('Equals', () => {
+            it('returns expected data', async () => {
+              const filter = new ZFilterBinaryBuilder().subject('name').equal().value(fred.name).build();
+              await shouldReturnExpectedData([fred], filter);
+            });
+          });
+
+          describe('Not Equals', () => {
+            it('returns expected data', async () => {
+              const filter = new ZFilterBinaryBuilder().subject('name').notEqual().value(fred.name).build();
+              await shouldReturnExpectedData([barney, wilma, betty], filter);
+            });
+          });
+
+          describe('Less Than', () => {
+            it('returns expected data', async () => {
+              const filter = new ZFilterBinaryBuilder().subject('rating').lessThan().value(4.2).build();
+              await shouldReturnExpectedData([wilma, betty], filter);
+            });
+          });
+
+          describe('Less Than Equal To', () => {
+            it('returns expected data', async () => {
+              const filter = new ZFilterBinaryBuilder().subject('rating').lessThanEqualTo().value(4.2).build();
+              await shouldReturnExpectedData([barney, wilma, betty], filter);
+            });
+          });
+
+          describe('Greater Than', () => {
+            it('returns expected data', async () => {
+              const filter = new ZFilterBinaryBuilder().subject('rating').greaterThan().value(3.7).build();
+              await shouldReturnExpectedData([fred, barney], filter);
+            });
+          });
+
+          describe('Greater Than Equal To', () => {
+            it('returns expected data', async () => {
+              const filter = new ZFilterBinaryBuilder().subject('rating').greaterThanEqualTo().value(3.7).build();
+              await shouldReturnExpectedData([fred, barney, wilma], filter);
+            });
+          });
+
+          describe('Like', () => {
+            it('returns expected data', async () => {
+              const filter = new ZFilterBinaryBuilder().subject('name').like().value('bar.').build();
+              await shouldReturnExpectedData([barney], filter);
+            });
+          });
+        });
+
+        describe('Collection', () => {
+          describe('In', () => {
+            it('returns expected data', async () => {
+              const filter = new ZFilterCollectionBuilder()
+                .subject('name')
+                .in()
+                .value(fred.name)
+                .value(betty.name)
+                .build();
+              await shouldReturnExpectedData([fred, betty], filter);
+            });
+          });
+
+          describe('Not In', () => {
+            it('returns expected data', async () => {
+              const filter = new ZFilterCollectionBuilder()
+                .subject('name')
+                .notIn()
+                .value(wilma.name)
+                .value(barney.name)
+                .build();
+              await shouldReturnExpectedData([fred, betty], filter);
+            });
+          });
+        });
+
+        describe('Unary', () => {
+          describe('Not Null', () => {
+            it('returns expected data', async () => {
+              const filter = new ZFilterUnaryBuilder().subject('flintstone').isNotNull().build();
+              await shouldReturnExpectedData([fred, wilma], filter);
+            });
+          });
+
+          describe('Null', () => {
+            it('returns expected data', async () => {
+              const filter = new ZFilterUnaryBuilder().subject('flintstone').isNull().build();
+              await shouldReturnExpectedData([barney, betty], filter);
+            });
+          });
+        });
       });
     });
 

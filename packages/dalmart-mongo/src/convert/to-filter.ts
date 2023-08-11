@@ -16,19 +16,19 @@ const LogicMap: Record<ZOperatorLogic, string> = {
   [ZOperatorLogic.Or]: '$or'
 };
 
-const BinaryMap: Record<ZOperatorBinary, string> = {
-  [ZOperatorBinary.Equal]: '$eq',
-  [ZOperatorBinary.NotEqual]: '$neq',
-  [ZOperatorBinary.GreaterThan]: '$gt',
-  [ZOperatorBinary.GreaterThanEqualTo]: '$gte',
-  [ZOperatorBinary.LessThan]: '$lt',
-  [ZOperatorBinary.LessThanEqualTo]: '$lte',
-  [ZOperatorBinary.Like]: '$cn'
+const BinaryMap: Record<ZOperatorBinary, (v: any) => object> = {
+  [ZOperatorBinary.Equal]: (v: any) => ({ $eq: v }),
+  [ZOperatorBinary.NotEqual]: (v: any) => ({ $ne: v }),
+  [ZOperatorBinary.GreaterThan]: (v: any) => ({ $gt: v }),
+  [ZOperatorBinary.GreaterThanEqualTo]: (v: any) => ({ $gte: v }),
+  [ZOperatorBinary.LessThan]: (v: any) => ({ $lt: v }),
+  [ZOperatorBinary.LessThanEqualTo]: (v: any) => ({ $lte: v }),
+  [ZOperatorBinary.Like]: (v: any) => ({ $regex: v, $options: 'i' })
 };
 
-const CollectionMap: Record<ZOperatorCollection, string> = {
-  [ZOperatorCollection.In]: '$in',
-  [ZOperatorCollection.NotIn]: '$nin'
+const CollectionMap: Record<ZOperatorCollection, (v: any[]) => object> = {
+  [ZOperatorCollection.In]: (v: any[]) => ({ $in: v }),
+  [ZOperatorCollection.NotIn]: (v: any[]) => ({ $nin: v })
 };
 
 const UnaryMap: Record<ZOperatorUnary, boolean> = {
@@ -48,11 +48,11 @@ export function toFilter(filter?: IZFilter): Filter<any> {
   }
 
   if (isBinaryFilter(filter)) {
-    _filter[filter.subject] = { [BinaryMap[filter.operator]]: filter.value };
+    _filter[filter.subject] = BinaryMap[filter.operator](filter.value);
   }
 
   if (isCollectionFilter(filter)) {
-    _filter[filter.subject] = { [CollectionMap[filter.operator]]: filter.values };
+    _filter[filter.subject] = CollectionMap[filter.operator](filter.values);
   }
 
   if (isUnaryFilter(filter)) {

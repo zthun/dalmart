@@ -21,9 +21,9 @@
   },
   "devDependencies": {
     "@zthun/dalmart-db": "^0.0.1",
-    "@zthun/dalmart-local-storage": "^0.0.1",
     "@zthun/dalmart-mongo": "^0.0.1",
     "@zthun/dalmart-redis": "^0.0.1",
+    "@zthun/dalmart-storage": "^0.0.1",
     "microbundle": "^0.15.1",
     "typescript": "^5.1.6",
     "vite": "^4.4.7",

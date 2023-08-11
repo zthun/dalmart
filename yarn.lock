@@ -4380,18 +4380,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-local-storage@^0.0.1, @zthun/dalmart-local-storage@workspace:packages/dalmart-local-storage":
-  version: 0.0.0-use.local
-  resolution: "@zthun/dalmart-local-storage@workspace:packages/dalmart-local-storage"
-  dependencies:
-    "@zthun/dalmart-db": ^0.0.1
-    microbundle: ^0.15.1
-    typescript: ^5.1.6
-    vitest: ^0.33.0
-    vitest-mock-extended: ^1.1.4
-  languageName: unknown
-  linkType: soft
-
 "@zthun/dalmart-mongo@^0.0.1, @zthun/dalmart-mongo@workspace:packages/dalmart-mongo":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-mongo@workspace:packages/dalmart-mongo"
@@ -4421,14 +4409,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zthun/dalmart-storage@^0.0.1, @zthun/dalmart-storage@workspace:packages/dalmart-storage":
+  version: 0.0.0-use.local
+  resolution: "@zthun/dalmart-storage@workspace:packages/dalmart-storage"
+  dependencies:
+    "@zthun/dalmart-db": ^0.0.1
+    microbundle: ^0.15.1
+    typescript: ^5.1.6
+    vitest: ^0.33.0
+    vitest-mock-extended: ^1.1.4
+  languageName: unknown
+  linkType: soft
+
 "@zthun/dalmart-web@workspace:packages/dalmart-web":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-web@workspace:packages/dalmart-web"
   dependencies:
     "@zthun/dalmart-db": ^0.0.1
-    "@zthun/dalmart-local-storage": ^0.0.1
     "@zthun/dalmart-mongo": ^0.0.1
     "@zthun/dalmart-redis": ^0.0.1
+    "@zthun/dalmart-storage": ^0.0.1
     microbundle: ^0.15.1
     typescript: ^5.1.6
     vite: ^4.4.7
