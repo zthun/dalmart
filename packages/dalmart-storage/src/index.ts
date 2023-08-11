@@ -1,1 +1,1 @@
-export const Placeholder = 0;
+export * from './storage/storage';
