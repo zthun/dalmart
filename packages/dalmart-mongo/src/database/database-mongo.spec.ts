@@ -161,6 +161,29 @@ describe('ZDatabaseMongo', () => {
       kids = [bamBam, pebbles];
     });
 
+    describe('Aggregate', () => {
+      describe('Count', async () => {
+        it('returns the total number of items in the collection', async () => {
+          // Arrange.
+          const target = await createPopulatedTarget();
+          // Act.
+          const actual = await target.count(parentsSource);
+          // Assert.
+          expect(actual).toEqual(parents.length);
+        });
+
+        it('returns the total number of items restricted with a filter', async () => {
+          // Arrange.
+          const target = await createPopulatedTarget();
+          const filter = new ZFilterBinaryBuilder().subject('name').like().value('Fred').build();
+          // Act.
+          const actual = await target.count(parentsSource, filter);
+          // Assert.
+          expect(actual).toEqual(1);
+        });
+      });
+    });
+
     describe('Create', () => {
       it('adds one item to the database.', async () => {
         // Arrange
