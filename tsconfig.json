@@ -5,9 +5,10 @@
     "target": "esnext",
     "paths": {
       "@zthun/dalmart-db": ["dalmart-db/src/index"],
-      "@zthun/dalmart-storage": ["dalmart-storage/src/index"],
+      "@zthun/dalmart-memory": ["dalmart-memory/src/index"],
       "@zthun/dalmart-mongo": ["dalmart-mongo/src/index"],
-      "@zthun/dalmart-redis": ["dalmart-redis/src/index"]
+      "@zthun/dalmart-redis": ["dalmart-redis/src/index"],
+      "@zthun/dalmart-storage": ["dalmart-storage/src/index"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],
