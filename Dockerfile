@@ -27,9 +27,3 @@ RUN --mount=type=secret,id=GIT_CREDENTIALS,dst=/root/.git-credentials npx lerna 
     git push && \
     git push --tags
 RUN --mount=type=secret,id=NPM_CREDENTIALS,dst=/root/.npmrc npx lerna publish from-package --yes
-
-FROM node:lts-alpine as dalmart-web-install
-RUN npm install -g @zthun/dalmart-web
-
-FROM nginx:1.23.3-alpine as dalmart-web
-COPY --from=dalmart-web-install /usr/local/lib/node_modules/@zthun/dalmart-web/dist/. /usr/share/nginx/html/
