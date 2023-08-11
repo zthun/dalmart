@@ -1,5 +1,3 @@
-import { IZFilter } from '@zthun/helpful-query';
-
 /**
  * Represents a set of database operations for an in-memory database.
  *
@@ -52,5 +50,5 @@ export interface IZMemoryDatabase {
    *        The key to delete.  If this is undefined, then all
    *        keys should be deleted.
    */
-  delete(source: string, scope?: IZFilter): Promise<void>;
+  delete(key?: string): Promise<void>;
 }
