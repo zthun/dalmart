@@ -47,18 +47,6 @@ jobs:
       - run_docker_target:
           target: release
 
-  dockerize:
-    executor: system
-    steps:
-      - checkout
-      - run:
-          command: |
-            export DOCKER_BUILDKIT=1
-            docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
-            docker build . --target dalmart-web -t zthun/dalmart-web:latest -t zthun/dalmart-web:$(npm show @zthun/dalmart-web version) --progress=plain
-            docker push zthun/dalmart-web:latest
-            docker push zthun/dalmart-web:$(npm show @zthun/dalmart-web version)
-
 workflows:
   make:
     jobs:
@@ -79,8 +67,3 @@ workflows:
             branches:
               only:
                 - latest
-      - dockerize:
-          context:
-            - credentials
-          requires:
-            - release
