@@ -4414,6 +4414,7 @@ __metadata:
   resolution: "@zthun/dalmart-storage@workspace:packages/dalmart-storage"
   dependencies:
     "@zthun/dalmart-db": ^0.0.1
+    "@zthun/helpful-fn": ^0.20.1
     microbundle: ^0.15.1
     typescript: ^5.1.6
     vitest: ^0.33.0
