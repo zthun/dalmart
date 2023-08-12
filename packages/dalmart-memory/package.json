@@ -1,6 +1,6 @@
 {
   "name": "@zthun/dalmart-memory",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A set of mock database implementations that use in memory databases for testing.",
   "author": "Anthony Bonta",
   "license": "MIT",
