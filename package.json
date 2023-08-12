@@ -12,7 +12,7 @@
     "packages/*"
   ],
   "scripts": {
-    "clean": "rimraf --glob 'dist' 'reports' '*.tgz' '*.log' 'packages/**/dist' 'packages/**/docs' 'packages/**/*.tgz' 'packages/**/*.log'",
+    "clean": "rimraf --glob 'dist' 'reports' 'coverage' '*.tgz' '*.log' 'packages/**/dist' 'packages/**/docs' 'packages/**/*.tgz' 'packages/**/*.log'",
     "test": "vitest --run --coverage",
     "lint": "lint-janitor",
     "build": "lerna run build",

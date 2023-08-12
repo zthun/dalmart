@@ -4385,16 +4385,19 @@ __metadata:
   resolution: "@zthun/dalmart-memory@workspace:packages/dalmart-memory"
   dependencies:
     "@zthun/dalmart-db": ^0.0.1
+    "@zthun/dalmart-mongo": ^0.0.1
+    "@zthun/dalmart-storage": ^0.0.1
     "@zthun/helpful-fn": ^0.20.1
     lodash: ^4.17.21
     microbundle: ^0.15.1
+    mongodb-memory-server: ^8.14.0
     typescript: ^5.1.6
     vitest: ^0.33.0
     vitest-mock-extended: ^1.1.4
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-mongo@workspace:packages/dalmart-mongo":
+"@zthun/dalmart-mongo@^0.0.1, @zthun/dalmart-mongo@workspace:packages/dalmart-mongo":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-mongo@workspace:packages/dalmart-mongo"
   dependencies:
@@ -4423,7 +4426,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-storage@workspace:packages/dalmart-storage":
+"@zthun/dalmart-storage@^0.0.1, @zthun/dalmart-storage@workspace:packages/dalmart-storage":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-storage@workspace:packages/dalmart-storage"
   dependencies:
@@ -7334,7 +7337,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.15.0":
+"follow-redirects@npm:^1.15.0, follow-redirects@npm:^1.15.2":
   version: 1.15.2
   resolution: "follow-redirects@npm:1.15.2"
   peerDependenciesMeta:
@@ -9982,6 +9985,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mongodb-memory-server-core@npm:8.14.0":
+  version: 8.14.0
+  resolution: "mongodb-memory-server-core@npm:8.14.0"
+  dependencies:
+    async-mutex: ^0.3.2
+    camelcase: ^6.3.0
+    debug: ^4.3.4
+    find-cache-dir: ^3.3.2
+    follow-redirects: ^1.15.2
+    get-port: ^5.1.1
+    https-proxy-agent: ^5.0.1
+    md5-file: ^5.0.0
+    mongodb: ^4.16.0
+    new-find-package-json: ^2.0.0
+    semver: ^7.5.4
+    tar-stream: ^2.1.4
+    tslib: ^2.6.1
+    uuid: ^9.0.0
+    yauzl: ^2.10.0
+  checksum: 63a41e7ce0f49b40b65f48d12fdb9166617f8c7fdbe8b1978f8ca9023dd5e0879395cf72afb3e27993a42808fd92af5d99e56b9944043d8ee72e322dfafdf3f7
+  languageName: node
+  linkType: hard
+
 "mongodb-memory-server@npm:^8.13.0":
   version: 8.13.0
   resolution: "mongodb-memory-server@npm:8.13.0"
@@ -9989,6 +10015,16 @@ __metadata:
     mongodb-memory-server-core: 8.13.0
     tslib: ^2.5.3
   checksum: 93bc1f40dbf7330a009fb9a6ffab84b151a1f5ced3614f22028139447249cb821c638b61d085eb7c4a68d00f4de836bb444e52fcd32e426a890cfe685d3d8211
+  languageName: node
+  linkType: hard
+
+"mongodb-memory-server@npm:^8.14.0":
+  version: 8.14.0
+  resolution: "mongodb-memory-server@npm:8.14.0"
+  dependencies:
+    mongodb-memory-server-core: 8.14.0
+    tslib: ^2.6.1
+  checksum: a9fe3fb77523d988b12a418596fe2218ce1377dc34e1f6ca804903106ca3434be36db17e0e4a9320225b4f9f1542cc0fd885b5cd0c636138b0d9a5b73048abdb
   languageName: node
   linkType: hard
 
@@ -12430,7 +12466,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.1, semver@npm:^7.5.3":
+"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.1, semver@npm:^7.5.3, semver@npm:^7.5.4":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
@@ -13464,7 +13500,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.5.3":
+"tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.5.3, tslib@npm:^2.6.1":
   version: 2.6.1
   resolution: "tslib@npm:2.6.1"
   checksum: b0d176d176487905b66ae4d5856647df50e37beea7571c53b8d10ba9222c074b81f1410fb91da13debaf2cbc970663609068bdebafa844ea9d69b146527c38fe
