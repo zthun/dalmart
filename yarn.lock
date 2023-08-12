@@ -4497,7 +4497,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/dalmart-db@^0.0.1, @zthun/dalmart-db@workspace:packages/dalmart-db":
+"@zthun/dalmart-db@^0.1.0, @zthun/dalmart-db@workspace:packages/dalmart-db":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-db@workspace:packages/dalmart-db"
   dependencies:
@@ -4514,7 +4514,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-forage@workspace:packages/dalmart-forage"
   dependencies:
-    "@zthun/dalmart-db": ^0.0.1
+    "@zthun/dalmart-db": ^0.1.0
     "@zthun/helpful-fn": ^0.20.1
     localforage: ^1.10.0
     microbundle: ^0.15.1
@@ -4528,9 +4528,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-memory@workspace:packages/dalmart-memory"
   dependencies:
-    "@zthun/dalmart-db": ^0.0.1
-    "@zthun/dalmart-mongo": ^0.0.1
-    "@zthun/dalmart-storage": ^0.0.1
+    "@zthun/dalmart-db": ^0.1.0
+    "@zthun/dalmart-mongo": ^0.1.0
+    "@zthun/dalmart-storage": ^0.1.0
     "@zthun/helpful-fn": ^0.20.1
     lodash: ^4.17.21
     microbundle: ^0.15.1
@@ -4541,11 +4541,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-mongo@^0.0.1, @zthun/dalmart-mongo@workspace:packages/dalmart-mongo":
+"@zthun/dalmart-mongo@^0.1.0, @zthun/dalmart-mongo@workspace:packages/dalmart-mongo":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-mongo@workspace:packages/dalmart-mongo"
   dependencies:
-    "@zthun/dalmart-db": ^0.0.1
+    "@zthun/dalmart-db": ^0.1.0
     "@zthun/helpful-fn": ^0.20.1
     "@zthun/helpful-query": ^0.20.1
     microbundle: ^0.15.1
@@ -4561,7 +4561,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-redis@workspace:packages/dalmart-redis"
   dependencies:
-    "@zthun/dalmart-db": ^0.0.1
+    "@zthun/dalmart-db": ^0.1.0
     "@zthun/helpful-fn": ^0.20.1
     microbundle: ^0.15.1
     redis: ^4.6.7
@@ -4572,11 +4572,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-storage@^0.0.1, @zthun/dalmart-storage@workspace:packages/dalmart-storage":
+"@zthun/dalmart-storage@^0.1.0, @zthun/dalmart-storage@workspace:packages/dalmart-storage":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-storage@workspace:packages/dalmart-storage"
   dependencies:
-    "@zthun/dalmart-db": ^0.0.1
+    "@zthun/dalmart-db": ^0.1.0
     "@zthun/helpful-fn": ^0.20.1
     microbundle: ^0.15.1
     typescript: ^5.1.6
