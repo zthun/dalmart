@@ -2,7 +2,10 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "declarationDir": "dist/types"
+    "declarationDir": "dist/types",
+    "paths": {
+      "@zthun/dalmart-db": ["../dalmart-db/src/index"]
+    }
   },
   "include": ["src/**/*.ts"]
 }

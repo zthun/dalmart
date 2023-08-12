@@ -19,10 +19,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/dalmart-db": "^0.0.1"
+    "@zthun/dalmart-db": "^0.0.1",
+    "redis": "^4.6.7"
   },
   "devDependencies": {
+    "@zthun/helpful-fn": "^0.20.1",
     "microbundle": "^0.15.1",
+    "redis-memory-server": "^0.7.0",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0",
     "vitest-mock-extended": "^1.1.4"
