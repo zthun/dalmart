@@ -9,16 +9,14 @@ const generated = [
 ];
 const partialGenerated = ['cspell.json', 'lerna.json'];
 
-const esFiles = ['*.js', '*.ts', 'packages/**/src/**/*.ts', 'packages/**/src/**/*.tsx'];
-const htmlFiles = ['packages/**/*.html'];
+const esFiles = ['*.js', '*.ts', 'packages/**/src/**/*.ts'];
 const markdownFiles = ['*.md', 'packages/**/*.md'];
 const jsonFiles = ['*.json', 'packages/**/*.json'];
 const yamlFiles = ['.circleci/config.yml'];
-const prettyFiles = [].concat(esFiles).concat(htmlFiles).concat(markdownFiles).concat(jsonFiles).concat(yamlFiles);
-const spellingFiles = [].concat(esFiles).concat(htmlFiles).concat(markdownFiles).concat(jsonFiles).concat(yamlFiles);
+const prettyFiles = [].concat(esFiles).concat(markdownFiles).concat(jsonFiles).concat(yamlFiles);
+const spellingFiles = [].concat(esFiles).concat(markdownFiles).concat(jsonFiles).concat(yamlFiles);
 
 const esFilesExclude = generated;
-const htmlFilesExclude = generated;
 const markdownFilesExclude = generated;
 const jsonFilesExclude = generated;
 const yamlFilesExclude = generated;
@@ -28,8 +26,6 @@ const spellingFilesExclude = generated.concat(partialGenerated);
 module.exports = {
   esFiles,
   esFilesExclude,
-  htmlFiles,
-  htmlFilesExclude,
   markdownFiles,
   markdownFilesExclude,
   jsonFiles,
