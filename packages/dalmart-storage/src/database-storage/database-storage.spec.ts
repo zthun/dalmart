@@ -1,7 +1,7 @@
 import { IZDatabaseMemory } from '@zthun/dalmart-db';
 import { createGuid } from '@zthun/helpful-fn';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
-import { ZDatabaseStorage } from './storage';
+import { ZDatabaseStorage } from './database-storage';
 
 describe('Storage', () => {
   afterAll(async () => {

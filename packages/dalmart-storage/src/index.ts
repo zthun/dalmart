@@ -1,1 +1,1 @@
-export * from './storage/storage';
+export * from './database-storage/database-storage';
