@@ -1,4 +1,4 @@
-FROM node:lts as setup
+FROM node:18-bullseye as setup
 WORKDIR /usr/dev
 RUN apt-get update && \
     apt-get install openssl
