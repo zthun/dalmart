@@ -5,7 +5,7 @@ export interface IZDatabaseOptions {
   /**
    * The name of the database to connect to and modify.
    */
-  database: string;
+  database?: string;
   /**
    * The database connection string.
    */
@@ -26,9 +26,7 @@ export class ZDatabaseOptionsBuilder {
    * Initializes a new instance of this object.
    */
   public constructor() {
-    this._options = {
-      database: ''
-    };
+    this._options = {};
   }
 
   /**
