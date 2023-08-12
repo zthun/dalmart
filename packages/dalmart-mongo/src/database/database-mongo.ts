@@ -1,4 +1,4 @@
-import { IZDatabaseOptions, IZDocumentDatabase, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
+import { IZDatabaseDocument, IZDatabaseOptions, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
 import { createGuid } from '@zthun/helpful-fn';
 import { IZDataRequest, IZFilter } from '@zthun/helpful-query';
 import { Collection, MongoClient, MongoClientOptions } from 'mongodb';
@@ -8,22 +8,18 @@ import { toSort } from '../convert/to-sort';
 /**
  * Represents an IZDatabase object that connects to mongodb.
  */
-export class ZDatabaseMongo implements IZDocumentDatabase {
+export class ZDatabaseMongo implements IZDatabaseDocument {
+  private _options = new ZDatabaseOptionsBuilder().build();
+
   /**
-   * Establishes connection parameters to a database.
+   * Initializes a new instance of this object.
    *
    * @param options -
-   *        The database options.  All options are used here.
-   *
-   * @returns A new database can can be used to connect and query a mongodb database instance.
+   *        The initialize options for the database.
    */
-  public static connect(options: IZDatabaseOptions): ZDatabaseMongo {
-    const db = new ZDatabaseMongo();
-    db._options = new ZDatabaseOptionsBuilder().copy(options).build();
-    return db;
+  public constructor(options: IZDatabaseOptions) {
+    this._options = new ZDatabaseOptionsBuilder().copy(options).build();
   }
-
-  private _options = new ZDatabaseOptionsBuilder().build();
 
   /**
    * Gets the connection options.
@@ -52,14 +48,6 @@ export class ZDatabaseMongo implements IZDocumentDatabase {
     return this._options.database;
   }
 
-  /**
-   * Returns a query that gives the document count for a filter.
-   *
-   * @param source -
-   *        The source to count.
-   *
-   * @returns The count query.
-   */
   public count(source: string, scope?: IZFilter): Promise<number> {
     return this._do(source, async (docs: Collection<any>) => {
       const result = await docs.countDocuments(toFilter(scope));
@@ -67,16 +55,6 @@ export class ZDatabaseMongo implements IZDocumentDatabase {
     });
   }
 
-  /**
-   * Adds all documents in template to the database.
-   *
-   * @param source -
-   *        The source to modify.
-   * @param template -
-   *        The list of documents to add.
-   *
-   * @returns The create query.
-   */
   public create<T>(source: string, template: T[]): Promise<T[]> {
     return this._do(source, async (docs: Collection<any>) => {
       const withIds = template.map((t: any) => ({ ...t, _id: t._id || createGuid() }));
@@ -87,16 +65,6 @@ export class ZDatabaseMongo implements IZDocumentDatabase {
     });
   }
 
-  /**
-   * Updates all documents that match the query filter with template.
-   *
-   * @param source -
-   *        The source to update.
-   * @param template -
-   *        The template to update with.
-   *
-   * @returns The update query.
-   */
   public update<T>(source: string, template: Partial<T>, scope?: IZFilter): Promise<number> {
     return this._do(source, async (docs: Collection<any>) => {
       const result = await docs.updateMany(toFilter(scope), { $set: template as any });
@@ -104,16 +72,6 @@ export class ZDatabaseMongo implements IZDocumentDatabase {
     });
   }
 
-  /**
-   * Reads document from the database that match a query.
-   *
-   * @param source -
-   *        The source to query.
-   * @param request -
-   *        The data request.
-   *
-   * @returns The read query.
-   */
   public read<T>(source: string, request?: IZDataRequest): Promise<T[]> {
     return this._do(source, async (docs: Collection<any>) => {
       const aggregate: any[] = [];
@@ -147,17 +105,6 @@ export class ZDatabaseMongo implements IZDocumentDatabase {
     });
   }
 
-  /**
-   * Deletes documents from the database that match a query.
-   *
-   * WARNING:  If you do not specify a filter object for the delete,
-   * then the collection is completely emptied.
-   *
-   * @param source -
-   *        The source to delete from.
-   *
-   * @returns The delete query.
-   */
   public delete(source: string, scope?: IZFilter): Promise<number> {
     return this._do(source, async (docs: Collection<any>) => {
       const result = await docs.deleteMany(toFilter(scope));

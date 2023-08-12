@@ -1,30 +1,16 @@
-import { IZMemoryDatabase } from '@zthun/dalmart-db';
+import { IZDatabaseMemory } from '@zthun/dalmart-db';
 
 /**
  * Represents an implements of an IZMemoryDatabase that references session and local storage.
  */
-export class ZDatabaseStorage implements IZMemoryDatabase {
+export class ZDatabaseStorage implements IZDatabaseMemory {
   /**
-   * Constructs the connection to local storage.
+   * Initializes a new instance of this object.
    *
-   * @returns
-   *        The memory database that connects to local storage.
+   * @param _storage -
+   *        The storage mechanism to use to read from.
    */
-  public static local(): IZMemoryDatabase {
-    return new ZDatabaseStorage(localStorage);
-  }
-
-  /**
-   * Constructs the connection to session storage.
-   *
-   * @returns
-   *        The memory database that connects to session storage.
-   */
-  public static session(): IZMemoryDatabase {
-    return new ZDatabaseStorage(sessionStorage);
-  }
-
-  private constructor(private _storage: Storage) {}
+  public constructor(private _storage: Storage) {}
 
   public async read<T>(key: string, fallback?: T): Promise<T | null> {
     const data = this._storage.getItem(key);

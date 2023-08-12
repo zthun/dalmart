@@ -1,3 +1,3 @@
-export * from './document/document-database';
-export * from './memory/memory-database';
+export * from './database/database-document';
+export * from './database/database-memory';
 export * from './options/database-options';

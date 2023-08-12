@@ -20,7 +20,10 @@
   },
   "dependencies": {
     "@zthun/dalmart-db": "^0.0.1",
-    "lodash": "^4.17.21"
+    "@zthun/dalmart-mongo": "^0.0.1",
+    "@zthun/dalmart-storage": "^0.0.1",
+    "lodash": "^4.17.21",
+    "mongodb-memory-server": "^8.14.0"
   },
   "devDependencies": {
     "@zthun/helpful-fn": "^0.20.1",

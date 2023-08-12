@@ -1,15 +1,15 @@
-import { IZMemoryDatabase } from '@zthun/dalmart-db';
+import { IZDatabaseMemory } from '@zthun/dalmart-db';
 import { createGuid } from '@zthun/helpful-fn';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
 import { ZDatabaseStorage } from './storage';
 
 describe('Storage', () => {
   afterAll(async () => {
-    await ZDatabaseStorage.local().delete();
-    await ZDatabaseStorage.session().delete();
+    await new ZDatabaseStorage(localStorage).delete();
+    await new ZDatabaseStorage(sessionStorage).delete();
   });
 
-  const shouldReturnTheFallbackIfTheKeyIsNotSet = async (createTestTarget: () => IZMemoryDatabase) => {
+  const shouldReturnTheFallbackIfTheKeyIsNotSet = async (createTestTarget: () => IZDatabaseMemory) => {
     // Arrange.
     const key = createGuid();
     const expected = 'Fallback';
@@ -21,7 +21,7 @@ describe('Storage', () => {
   };
 
   const shouldInsertTheKeyIfTheKeyDoesNotExistAndTheFallbackIsSet = async (
-    createTestTarget: () => IZMemoryDatabase
+    createTestTarget: () => IZDatabaseMemory
   ) => {
     // Arrange.
     const key = createGuid();
@@ -35,7 +35,7 @@ describe('Storage', () => {
   };
 
   const shouldReturnNullIfTheKeyDoesNotExistAndTheFallbackIsNotSet = async (
-    createTestTarget: () => IZMemoryDatabase
+    createTestTarget: () => IZDatabaseMemory
   ) => {
     // Arrange.
     const key = createGuid();
@@ -46,7 +46,7 @@ describe('Storage', () => {
     expect(actual).toBeNull();
   };
 
-  const shouldInsertTheDataIfItDoesNotExist = async (createTestTarget: () => IZMemoryDatabase) => {
+  const shouldInsertTheDataIfItDoesNotExist = async (createTestTarget: () => IZDatabaseMemory) => {
     // Arrange.
     const key = createGuid();
     const expected = { data: 'My-Data' };
@@ -58,7 +58,7 @@ describe('Storage', () => {
     expect(actual).toEqual(expected);
   };
 
-  const shouldReturnTheDataThatWasJustUpdated = async (createTestTarget: () => IZMemoryDatabase) => {
+  const shouldReturnTheDataThatWasJustUpdated = async (createTestTarget: () => IZDatabaseMemory) => {
     // Arrange.
     const key = createGuid();
     const expected = { data: 'My-Data' };
@@ -70,7 +70,7 @@ describe('Storage', () => {
     expect(actual).toEqual(expected);
   };
 
-  const shouldUpdateTheDataInPlace = async (createTestTarget: () => IZMemoryDatabase) => {
+  const shouldUpdateTheDataInPlace = async (createTestTarget: () => IZDatabaseMemory) => {
     // Arrange.
     const expected = 55;
     const key = createGuid();
@@ -83,7 +83,7 @@ describe('Storage', () => {
     expect(actual).toEqual(expected);
   };
 
-  const shouldDeleteKey = async (createTestTarget: () => IZMemoryDatabase) => {
+  const shouldDeleteKey = async (createTestTarget: () => IZDatabaseMemory) => {
     // Arrange.
     const key = createGuid();
     const target = createTestTarget();
@@ -95,7 +95,7 @@ describe('Storage', () => {
     expect(actual).toBeNull();
   };
 
-  const shouldDeleteAllKeys = async (createTestTarget: () => IZMemoryDatabase) => {
+  const shouldDeleteAllKeys = async (createTestTarget: () => IZDatabaseMemory) => {
     // Arrange.
     const keyA = createGuid();
     const keyB = createGuid();
@@ -112,10 +112,10 @@ describe('Storage', () => {
   };
 
   describe('Local', () => {
-    const createTestTarget = () => ZDatabaseStorage.local();
+    const createTestTarget = () => new ZDatabaseStorage(localStorage);
 
     beforeEach(async () => {
-      await ZDatabaseStorage.local().delete();
+      await new ZDatabaseStorage(localStorage).delete();
     });
 
     describe('Read', () => {
@@ -158,10 +158,10 @@ describe('Storage', () => {
   });
 
   describe('Session', () => {
-    const createTestTarget = () => ZDatabaseStorage.session();
+    const createTestTarget = () => new ZDatabaseStorage(sessionStorage);
 
     beforeEach(async () => {
-      await ZDatabaseStorage.session().delete();
+      await new ZDatabaseStorage(sessionStorage).delete();
     });
 
     describe('Read', () => {

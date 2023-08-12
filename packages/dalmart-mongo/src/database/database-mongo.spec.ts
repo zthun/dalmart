@@ -36,13 +36,12 @@ describe('ZDatabaseMongo', () => {
   });
 
   function createTestTarget(): ZDatabaseMongo {
-    return ZDatabaseMongo.connect(options);
+    return new ZDatabaseMongo(options);
   }
 
   function createBadHostTestTarget(): ZDatabaseMongo {
-    return ZDatabaseMongo.connect(
-      new ZDatabaseOptionsBuilder().copy(options).url('mongodb://bad-host:1111').timeout(100).build()
-    );
+    const _options = new ZDatabaseOptionsBuilder().copy(options).url('mongodb://bad-host:1111').timeout(100).build();
+    return new ZDatabaseMongo(_options);
   }
 
   describe('Connection', () => {
@@ -90,7 +89,7 @@ describe('ZDatabaseMongo', () => {
 
     it('defaults the url.', () => {
       assertDefault(
-        () => ZDatabaseMongo.connect(new ZDatabaseOptionsBuilder().build()),
+        () => new ZDatabaseMongo(new ZDatabaseOptionsBuilder().build()),
         (t) => t.$url
       );
     });
