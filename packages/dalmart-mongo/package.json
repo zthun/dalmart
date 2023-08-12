@@ -26,11 +26,11 @@
   },
   "devDependencies": {
     "microbundle": "^0.15.1",
-    "mongodb-memory-server": "^8.13.0",
+    "mongodb-memory-server": "^8.14.0",
     "portfinder": "^1.0.32",
     "typescript": "^5.1.6",
-    "vitest": "^0.33.0",
-    "vitest-mock-extended": "^1.1.4"
+    "vitest": "^0.34.1",
+    "vitest-mock-extended": "^1.2.0"
   },
   "files": [
     "dist"

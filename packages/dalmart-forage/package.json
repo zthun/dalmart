@@ -26,8 +26,8 @@
     "@zthun/helpful-fn": "^0.20.1",
     "microbundle": "^0.15.1",
     "typescript": "^5.1.6",
-    "vitest": "^0.33.0",
-    "vitest-mock-extended": "^1.1.4"
+    "vitest": "^0.34.1",
+    "vitest-mock-extended": "^1.2.0"
   },
   "files": [
     "dist"
