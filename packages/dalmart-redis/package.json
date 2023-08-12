@@ -1,6 +1,6 @@
 {
   "name": "@zthun/dalmart-redis",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A database interface to redis",
   "author": "Anthony Bonta",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/dalmart-db": "^0.0.1",
+    "@zthun/dalmart-db": "^0.1.0",
     "redis": "^4.6.7"
   },
   "devDependencies": {
