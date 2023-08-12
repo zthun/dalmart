@@ -9,26 +9,24 @@ import {
   ZSortBuilder
 } from '@zthun/helpful-query';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { getPortPromise } from 'portfinder';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { IZDatabaseOptions, ZDatabaseOptionsBuilder } from '../../../dalmart-db/src/options/database-options';
 import { ZDatabaseMongo } from './database-mongo';
 
 describe('ZDatabaseMongo', () => {
+  const database = 'test-db';
+
   let server: MongoMemoryServer;
   let options: IZDatabaseOptions;
   let url: string;
-  const database = 'test-db';
 
   beforeAll(async () => {
-    const ip = '127.0.0.1';
-    const port = await getPortPromise({ host: ip, port: 37989 });
-    const instance = { ip, port };
+    server = new MongoMemoryServer();
+    await server.start();
 
+    const { ip, port } = server.instanceInfo!;
     url = `mongodb://${ip}:${port}`;
     options = new ZDatabaseOptionsBuilder().url(url).database(database).build();
-    server = new MongoMemoryServer({ instance });
-    await server.start();
   });
 
   afterAll(async () => {
@@ -91,6 +89,13 @@ describe('ZDatabaseMongo', () => {
       assertDefault(
         () => new ZDatabaseMongo(new ZDatabaseOptionsBuilder().build()),
         (t) => t.$url
+      );
+    });
+
+    it('defaults the database.', () => {
+      assertDefault(
+        () => new ZDatabaseMongo(new ZDatabaseOptionsBuilder().build()),
+        (t) => t.$database
       );
     });
   });

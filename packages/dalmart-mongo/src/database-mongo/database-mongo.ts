@@ -45,7 +45,7 @@ export class ZDatabaseMongo implements IZDatabaseDocument {
    * @returns The connection database.
    */
   public get $database(): string {
-    return this._options.database;
+    return this._options.database || 'default-collection';
   }
 
   public count(source: string, scope?: IZFilter): Promise<number> {
