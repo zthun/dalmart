@@ -1,7 +1,5 @@
 FROM node:lts-bullseye as setup
 WORKDIR /usr/dev
-RUN apt-get update && \
-    apt-get install openssl
 COPY . .
 RUN yarn install
 
