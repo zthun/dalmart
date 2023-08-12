@@ -3,7 +3,7 @@ import { IZDataRequest, IZFilter } from '@zthun/helpful-query';
 /**
  * Represents a set of database operations for a document database.
  */
-export interface IZDocumentDatabase {
+export interface IZDatabaseDocument {
   /**
    * Retrieves the count of documents from the source.
    *

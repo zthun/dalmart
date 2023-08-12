@@ -2,9 +2,9 @@
  * Represents a set of database operations for an in-memory database.
  *
  * These kinds of databases are key value pairs similar to redis,
- * local storage, sessions storage, and index-db storage.
+ * local storage, sessions storage, etc.
  */
-export interface IZMemoryDatabase {
+export interface IZDatabaseMemory {
   /**
    * Gets the value of a specific key in the database.
    *
