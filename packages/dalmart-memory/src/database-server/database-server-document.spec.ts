@@ -1,4 +1,4 @@
-import { IZDatabaseDocument } from '@zthun/dalmart-db';
+import { IZDatabaseDocument, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
 import { identity, range } from 'lodash';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { IZDatabaseServer } from './database-server';
@@ -26,7 +26,7 @@ describe('ZDocumentServer', () => {
       // Arrange.
       const target = createTestTarget();
       // Act.
-      await target.start();
+      await target.start(new ZDatabaseOptionsBuilder().timeout(100).build());
       const actual = await target.running();
       // Assert.
       expect(actual).toBeTruthy();

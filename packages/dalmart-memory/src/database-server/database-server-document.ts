@@ -28,12 +28,16 @@ export class ZDatabaseServerDocument implements IZDatabaseServer<IZDatabaseDocum
    * This will attempt to find a port that can be connected on.  If the connection
    * fails, then a new port will be allocated.
    *
+   * @param options -
+   *        Optional options to use as a template when constructing the database.
+   *        The url is ignored.
+   *
    * @returns
    *        A promise that when resolved, has started the server.  If the server
    *        has already been started, then a new client to the existing server
    *        will be returned.
    */
-  public async start(): Promise<IZDatabaseDocument> {
+  public async start(options = new ZDatabaseOptionsBuilder().build()): Promise<IZDatabaseDocument> {
     if (this._client) {
       return this._client;
     }
@@ -41,8 +45,8 @@ export class ZDatabaseServerDocument implements IZDatabaseServer<IZDatabaseDocum
     this._server = new MongoMemoryServer();
     await this._server.start(false);
     const { ip, port } = this._server.instanceInfo!;
-    const options = new ZDatabaseOptionsBuilder().url(`mongodb://${ip}:${port}`).build();
-    this._client = new ZDatabaseMongo(options);
+    const _options = new ZDatabaseOptionsBuilder().copy(options).url(`mongodb://${ip}:${port}`).build();
+    this._client = new ZDatabaseMongo(_options);
     return this._client;
   }
 
