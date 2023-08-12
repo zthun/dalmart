@@ -1,0 +1,36 @@
+{
+  "name": "@zthun/dalmart-forage",
+  "version": "0.0.1",
+  "description": "A database interface to web sql and indexed db.",
+  "author": "Anthony Bonta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zthun/dalmart",
+    "directory": "packages/dalmart-forage"
+  },
+  "main": "./dist/lib/index.js",
+  "module": "./dist/lib/index.esm.js",
+  "types": "./dist/types/index.d.ts",
+  "scripts": {
+    "build": "microbundle --format esm,cjs --tsconfig tsconfig.lib.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@zthun/dalmart-db": "^0.0.1",
+    "localforage": "^1.10.0"
+  },
+  "devDependencies": {
+    "@zthun/helpful-fn": "^0.20.1",
+    "microbundle": "^0.15.1",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0",
+    "vitest-mock-extended": "^1.1.4"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false
+}
