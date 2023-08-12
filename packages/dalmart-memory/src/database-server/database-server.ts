@@ -1,3 +1,5 @@
+import { IZDatabaseOptions } from '@zthun/dalmart-db';
+
 /**
  * Represents a server that runs an in-memory database.
  *
@@ -15,11 +17,14 @@ export interface IZDatabaseServer<TDatabase> {
   /**
    * Starts the server.
    *
+   * @param options -
+   *        Optional options to use when starting the database.
+   *
    * @returns
    *        The client that is connected or can connect to the
    *        server.
    */
-  start(): Promise<TDatabase>;
+  start(options?: IZDatabaseOptions): Promise<TDatabase>;
   /**
    * Stops the server.
    *
