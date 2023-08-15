@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+
 import { ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
 import { createGuid } from '@zthun/helpful-fn';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
