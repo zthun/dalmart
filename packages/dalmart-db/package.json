@@ -19,8 +19,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/helpful-fn": "^0.20.1",
-    "@zthun/helpful-query": "^0.20.1"
+    "@zthun/helpful-fn": "^2.0.0",
+    "@zthun/helpful-query": "^2.0.0"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",

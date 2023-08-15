@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "@zthun/dalmart-db": "^0.1.0",
+    "@zthun/helpful-fn": "^2.0.0",
     "localforage": "^1.10.0"
   },
   "devDependencies": {
-    "@zthun/helpful-fn": "^0.20.1",
     "microbundle": "^0.15.1",
     "typescript": "^5.1.6",
     "vitest": "^0.34.1",

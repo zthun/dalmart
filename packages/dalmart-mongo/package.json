@@ -20,13 +20,13 @@
   },
   "dependencies": {
     "@zthun/dalmart-db": "^0.1.0",
-    "@zthun/helpful-fn": "^0.20.1",
-    "@zthun/helpful-query": "^0.20.1",
+    "@zthun/helpful-fn": "^2.0.0",
+    "@zthun/helpful-query": "^2.0.0",
     "mongodb": "^5.7.0"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",
-    "mongodb-memory-server": "^8.14.0",
+    "mongodb-memory-server": "^8.15.0",
     "typescript": "^5.1.6",
     "vitest": "^0.34.1",
     "vitest-mock-extended": "^1.2.0"

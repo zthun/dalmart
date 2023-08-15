@@ -22,10 +22,10 @@
     "@zthun/dalmart-db": "^0.1.0",
     "@zthun/dalmart-mongo": "^0.1.0",
     "@zthun/dalmart-storage": "^0.1.0",
-    "mongodb-memory-server": "^8.14.0"
+    "@zthun/helpful-fn": "^2.0.0",
+    "mongodb-memory-server": "^8.15.0"
   },
   "devDependencies": {
-    "@zthun/helpful-fn": "^0.20.1",
     "lodash": "^4.17.21",
     "microbundle": "^0.15.1",
     "typescript": "^5.1.6",
