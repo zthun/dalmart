@@ -56,6 +56,10 @@ export class ZDatabaseMongo implements IZDatabaseDocument {
   }
 
   public create<T>(source: string, template: T[]): Promise<T[]> {
+    if (template.length === 0) {
+      return Promise.resolve([]);
+    }
+
     return this._do(source, async (docs: Collection<any>) => {
       const withIds = template.map((t: any) => ({ ...t, _id: t._id || createGuid() }));
       const result = await docs.insertMany(withIds);

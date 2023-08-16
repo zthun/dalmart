@@ -189,6 +189,15 @@ describe('ZDatabaseMongo', () => {
     });
 
     describe('Create', () => {
+      it('returns empty if the empty list is passed', async () => {
+        // Arrange.
+        const target = createTestTarget();
+        // Act.
+        const actual = await target.create(parentsSource, []);
+        // Assert.
+        expect(actual).toEqual([]);
+      });
+
       it('adds one item to the database.', async () => {
         // Arrange
         const target = createTestTarget();
