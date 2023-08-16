@@ -1,6 +1,6 @@
 {
   "name": "@zthun/dalmart-forage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A database interface to web sql and indexed db.",
   "author": "Anthony Bonta",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/dalmart-db": "^1.0.1",
+    "@zthun/dalmart-db": "^1.0.2",
     "@zthun/helpful-fn": "^2.0.0",
     "localforage": "^1.10.0"
   },

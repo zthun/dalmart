@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/zthun/dalmart/compare/v1.0.1...v1.0.2) (2023-08-16)
+
+
+### Bug Fixes
+
+* create returns empty for an empty list ([918bee0](https://github.com/zthun/dalmart/commit/918bee052c4314c62ba8a657f6136e16a54158de))
+
+
+
 ## [1.0.1](https://github.com/zthun/dalmart/compare/v0.1.2...v1.0.1) (2023-08-15)
 
 
