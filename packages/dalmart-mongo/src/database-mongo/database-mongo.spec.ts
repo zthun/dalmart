@@ -168,6 +168,15 @@ describe('ZDatabaseMongo', () => {
 
     describe('Aggregate', () => {
       describe('Count', async () => {
+        it('returns 0 if the collection does not exist', async () => {
+          // Arrange.
+          const target = createTestTarget();
+          // Act.
+          const actual = await target.count('lol-wut');
+          // Assert.
+          expect(actual).toEqual(0);
+        });
+
         it('returns the total number of items in the collection', async () => {
           // Arrange.
           const target = await createPopulatedTarget();

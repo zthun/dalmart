@@ -59,7 +59,7 @@ export class ZDatabaseMongo implements IZDatabaseDocument {
       const aggregate: Document[] = this._createCullAggregate(source, scope);
       aggregate.push({ $group: { _id: null, n: { $sum: 1 } } });
       const [result] = await docs.aggregate(aggregate).toArray();
-      return result.n;
+      return result?.n ?? 0;
     });
   }
 
