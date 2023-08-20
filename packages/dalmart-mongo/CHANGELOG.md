@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/zthun/dalmart/compare/v1.1.0...v1.1.1) (2023-08-20)
+
+
+### Bug Fixes
+
+* count returns 0 if the collection does not exist ([596557c](https://github.com/zthun/dalmart/commit/596557ce85c55b4091f0fd1cd3fff1325241ad02))
+
+
+
 ## [1.1.0](https://github.com/zthun/dalmart/compare/v1.0.3...v1.1.0) (2023-08-20)
 
 

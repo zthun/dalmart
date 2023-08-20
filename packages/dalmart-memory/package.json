@@ -1,6 +1,6 @@
 {
   "name": "@zthun/dalmart-memory",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A set of mock database implementations that use in memory databases for testing.",
   "author": "Anthony Bonta",
   "license": "MIT",
@@ -19,9 +19,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/dalmart-db": "^1.1.0",
-    "@zthun/dalmart-mongo": "^1.1.0",
-    "@zthun/dalmart-storage": "^1.1.0",
+    "@zthun/dalmart-db": "^1.1.1",
+    "@zthun/dalmart-mongo": "^1.1.1",
+    "@zthun/dalmart-storage": "^1.1.1",
     "@zthun/helpful-fn": "^2.1.0",
     "mongodb-memory-server": "^8.15.0"
   },
