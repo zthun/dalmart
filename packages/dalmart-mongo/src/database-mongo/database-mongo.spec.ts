@@ -1,3 +1,4 @@
+import { ZDatabaseDocumentCollectionBuilder } from '@zthun/dalmart-db';
 import { createGuid } from '@zthun/helpful-fn';
 import {
   IZFilter,
@@ -319,6 +320,27 @@ describe('ZDatabaseMongo', () => {
         const query = target.read(parentsSource);
         // Assert
         await expect(query).rejects.toBeTruthy();
+      });
+
+      describe('Join', () => {
+        it('should join the appropriate data', async () => {
+          // Arrange.
+          const target = await createPopulatedTarget();
+          const collection = new ZDatabaseDocumentCollectionBuilder(kidsSource)
+            .join(parentsSource, 'motherId', '_id', 'mother')
+            .join(parentsSource, 'fatherId', '_id', 'father')
+            .build();
+          const request = new ZDataRequestBuilder()
+            .filter(new ZFilterBinaryBuilder().subject('_id').equal().value(bamBam._id).build())
+            .build();
+          // Act.
+          const [_bamBam] = await target.read<any>(collection, request);
+          const [mother] = _bamBam.mother;
+          const [father] = _bamBam.father;
+          // Assert.
+          expect(mother).toEqual(betty);
+          expect(father).toEqual(barney);
+        });
       });
 
       describe('Filter', () => {

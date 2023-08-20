@@ -1,7 +1,13 @@
-import { IZDatabaseDocument, IZDatabaseOptions, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
+import {
+  IZDatabaseDocument,
+  IZDatabaseDocumentCollection,
+  IZDatabaseOptions,
+  ZDatabaseDocumentCollectionBuilder,
+  ZDatabaseOptionsBuilder
+} from '@zthun/dalmart-db';
 import { createGuid } from '@zthun/helpful-fn';
 import { IZDataRequest, IZFilter } from '@zthun/helpful-query';
-import { Collection, MongoClient, MongoClientOptions } from 'mongodb';
+import { Collection, Document, MongoClient, MongoClientOptions } from 'mongodb';
 import { toFilter } from '../convert/to-filter';
 import { toSort } from '../convert/to-sort';
 
@@ -48,10 +54,12 @@ export class ZDatabaseMongo implements IZDatabaseDocument {
     return this._options.database || 'default-collection';
   }
 
-  public count(source: string, scope?: IZFilter): Promise<number> {
+  public count(source: string | IZDatabaseDocumentCollection, scope?: IZFilter): Promise<number> {
     return this._do(source, async (docs: Collection<any>) => {
-      const result = await docs.countDocuments(toFilter(scope));
-      return result;
+      const aggregate: Document[] = this._createCullAggregate(source, scope);
+      aggregate.push({ $group: { _id: null, n: { $sum: 1 } } });
+      const [result] = await docs.aggregate(aggregate).toArray();
+      return result.n;
     });
   }
 
@@ -76,22 +84,9 @@ export class ZDatabaseMongo implements IZDatabaseDocument {
     });
   }
 
-  public read<T>(source: string, request?: IZDataRequest): Promise<T[]> {
+  public read<T>(source: string | IZDatabaseDocumentCollection, request?: IZDataRequest): Promise<T[]> {
     return this._do(source, async (docs: Collection<any>) => {
-      const aggregate: any[] = [];
-
-      if (request?.filter) {
-        aggregate.push({ $match: toFilter(request.filter) });
-      }
-
-      // TODO:  How to do joins properly.
-      /*
-      if (query.$join.length > 0) {
-        query.$join.forEach((j) =>
-          aggregate.push({ $lookup: { from: j.from, localField: j.local, foreignField: j.foreign, as: j.as } })
-        );
-      }
-      */
+      const aggregate: any[] = this._createCullAggregate(source, request?.filter);
 
       if (request?.sort?.length) {
         aggregate.push({ $sort: toSort(request.sort) });
@@ -116,7 +111,23 @@ export class ZDatabaseMongo implements IZDatabaseDocument {
     });
   }
 
-  private async _do<T>(collection: string, fn: (col: Collection) => Promise<T>) {
+  private _createCullAggregate(source: string | IZDatabaseDocumentCollection, filter?: IZFilter): Document[] {
+    const aggregate: Document[] = [];
+
+    const _source = typeof source === 'string' ? new ZDatabaseDocumentCollectionBuilder(source).build() : source;
+
+    _source.join.forEach((j) =>
+      aggregate.push({ $lookup: { from: j.target, localField: j.local, foreignField: j.foreign, as: j.as } })
+    );
+
+    if (filter) {
+      aggregate.push({ $match: toFilter(filter) });
+    }
+
+    return aggregate;
+  }
+
+  private async _do<T>(collection: string | IZDatabaseDocumentCollection, fn: (col: Collection) => Promise<T>) {
     const options: MongoClientOptions = {};
 
     if (this._options.timeout) {
@@ -126,10 +137,11 @@ export class ZDatabaseMongo implements IZDatabaseDocument {
     const client = new MongoClient(this.$url, options);
 
     try {
+      const name = typeof collection === 'string' ? collection : collection.name;
       const connection = client.connect();
       const conn = await connection;
       const db = conn.db(this.$database);
-      const col = db.collection(collection);
+      const col = db.collection(name);
       const res: T = await fn(col);
       return res;
     } finally {
