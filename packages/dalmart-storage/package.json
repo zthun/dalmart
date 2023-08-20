@@ -1,6 +1,6 @@
 {
   "name": "@zthun/dalmart-storage",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A database interface to local and session storage.",
   "author": "Anthony Bonta",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/dalmart-db": "^1.0.3",
+    "@zthun/dalmart-db": "^1.1.0",
     "@zthun/helpful-fn": "^2.1.0"
   },
   "devDependencies": {
