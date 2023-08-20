@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0](https://github.com/zthun/dalmart/compare/v1.0.3...v1.1.0) (2023-08-20)
+
+
+### Features
+
+* document databases now support left outer joins ([68341d5](https://github.com/zthun/dalmart/commit/68341d57c709ad7b341d6ad5157785775915a6f9))
+
+
+
 ## [1.0.3](https://github.com/zthun/dalmart/compare/v1.0.2...v1.0.3) (2023-08-17)
 
 **Note:** Version bump only for package @zthun/dalmart-db
