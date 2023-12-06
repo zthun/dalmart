@@ -4758,8 +4758,8 @@ __metadata:
     "@zthun/dalmart-db": "npm:^1.1.1"
     "@zthun/helpful-fn": "npm:^3.0.0"
     microbundle: "npm:^0.15.1"
-    redis: "npm:^4.6.7"
-    redis-memory-server: "npm:^0.7.0"
+    redis: "npm:^4.6.11"
+    redis-memory-server: "npm:^0.10.0"
     typescript: "npm:^5.3.2"
     vitest: "npm:^1.0.1"
     vitest-mock-extended: "npm:^1.3.1"
@@ -12826,9 +12826,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"redis-memory-server@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "redis-memory-server@npm:0.7.0"
+"redis-memory-server@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "redis-memory-server@npm:0.10.0"
   dependencies:
     camelcase: "npm:^6.3.0"
     cross-spawn: "npm:^7.0.3"
@@ -12846,11 +12846,13 @@ __metadata:
     tar: "npm:^6.1.15"
     tmp: "npm:^0.2.1"
     uuid: "npm:^8.3.2"
-  checksum: 43a072bebebe8b4c8534833dcdec90943de2c34855103666d6fc0c280f2cf7053f7aaaae326d57eb8d2e172f0c1ffd9e0d4911b1c100eb4dffdd5f8719fc253c
+  bin:
+    redis-memory-server: bin/index.js
+  checksum: d6842774d711abe00dc8cf2686fee0f66baf37d3e9081753f26d14b3e9120f2d6f928beefade48e769882a58710b206a43cd70bc3a491a7b371856bf913570fa
   languageName: node
   linkType: hard
 
-"redis@npm:^4.6.7":
+"redis@npm:^4.6.11":
   version: 4.6.11
   resolution: "redis@npm:4.6.11"
   dependencies:
