@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0](https://github.com/zthun/dalmart/compare/v1.1.1...v1.2.0) (2023-12-06)
+
+
+### Features
+
+* redis to 4.6.11 ([9a04463](https://github.com/zthun/dalmart/commit/9a044630d0c6855b28457ef44e733223bf53e2ba))
+
+
+
 ## [1.1.1](https://github.com/zthun/dalmart/compare/v1.1.0...v1.1.1) (2023-08-20)
 
 **Note:** Version bump only for package @zthun/dalmart-redis

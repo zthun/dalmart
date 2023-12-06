@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0](https://github.com/zthun/dalmart/compare/v1.1.1...v1.2.0) (2023-12-06)
+
+
+### Features
+
+* upgrade mongo driver to 6.x ([954d28d](https://github.com/zthun/dalmart/commit/954d28d62989f5e428eb68ebd5058799835a7743))
+
+
+
 ## [1.1.1](https://github.com/zthun/dalmart/compare/v1.1.0...v1.1.1) (2023-08-20)
 
 
