@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "./.config/.tsconfig.json",
   "compilerOptions": {
     "baseUrl": "packages",
     "target": "esnext",
@@ -12,6 +12,5 @@
       "@zthun/dalmart-storage": ["dalmart-storage/src/index"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules/**"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
