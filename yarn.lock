@@ -4695,8 +4695,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-db@workspace:packages/dalmart-db"
   dependencies:
-    "@zthun/helpful-fn": "npm:^2.1.0"
-    "@zthun/helpful-query": "npm:^2.1.0"
+    "@zthun/helpful-fn": "npm:^3.0.0"
+    "@zthun/helpful-query": "npm:^3.0.0"
     microbundle: "npm:^0.15.1"
     typescript: "npm:^5.3.2"
     vitest: "npm:^1.0.1"
@@ -4709,7 +4709,7 @@ __metadata:
   resolution: "@zthun/dalmart-forage@workspace:packages/dalmart-forage"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.1.1"
-    "@zthun/helpful-fn": "npm:^2.1.0"
+    "@zthun/helpful-fn": "npm:^3.0.0"
     localforage: "npm:^1.10.0"
     microbundle: "npm:^0.15.1"
     typescript: "npm:^5.3.2"
@@ -4725,7 +4725,7 @@ __metadata:
     "@zthun/dalmart-db": "npm:^1.1.1"
     "@zthun/dalmart-mongo": "npm:^1.1.1"
     "@zthun/dalmart-storage": "npm:^1.1.1"
-    "@zthun/helpful-fn": "npm:^2.1.0"
+    "@zthun/helpful-fn": "npm:^3.0.0"
     lodash: "npm:^4.17.21"
     microbundle: "npm:^0.15.1"
     mongodb-memory-server: "npm:^8.15.0"
@@ -4740,8 +4740,8 @@ __metadata:
   resolution: "@zthun/dalmart-mongo@workspace:packages/dalmart-mongo"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.1.1"
-    "@zthun/helpful-fn": "npm:^2.1.0"
-    "@zthun/helpful-query": "npm:^2.1.0"
+    "@zthun/helpful-fn": "npm:^3.0.0"
+    "@zthun/helpful-query": "npm:^3.0.0"
     microbundle: "npm:^0.15.1"
     mongodb: "npm:^5.7.0"
     mongodb-memory-server: "npm:^8.15.0"
@@ -4756,7 +4756,7 @@ __metadata:
   resolution: "@zthun/dalmart-redis@workspace:packages/dalmart-redis"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.1.1"
-    "@zthun/helpful-fn": "npm:^2.1.0"
+    "@zthun/helpful-fn": "npm:^3.0.0"
     microbundle: "npm:^0.15.1"
     redis: "npm:^4.6.7"
     redis-memory-server: "npm:^0.7.0"
@@ -4771,7 +4771,7 @@ __metadata:
   resolution: "@zthun/dalmart-storage@workspace:packages/dalmart-storage"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.1.1"
-    "@zthun/helpful-fn": "npm:^2.1.0"
+    "@zthun/helpful-fn": "npm:^3.0.0"
     microbundle: "npm:^0.15.1"
     typescript: "npm:^5.3.2"
     vitest: "npm:^1.0.1"
@@ -4847,22 +4847,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/helpful-fn@npm:^2.1.0, @zthun/helpful-fn@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "@zthun/helpful-fn@npm:2.4.0"
+"@zthun/helpful-fn@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@zthun/helpful-fn@npm:3.0.0"
   dependencies:
     uuid: "npm:^9.0.1"
-  checksum: 63ab88c01e6b6e9e9452aad842d32d4955ba00e20fda3e01ecd4dbde2933694b8cfbb35bdee4da94f181526d68c42d77577e5dfc4a1ac67256bf8857bc9222ca
+  checksum: 7ad3a30f57c1a97188d4822f82d3ef8e296bdba72cd6fd62cee547d7e04404891e38a2541e12cc17947a4ca592b40442d4ae0c2129ec36b4c6966bb0fb167f70
   languageName: node
   linkType: hard
 
-"@zthun/helpful-query@npm:^2.1.0":
-  version: 2.4.0
-  resolution: "@zthun/helpful-query@npm:2.4.0"
+"@zthun/helpful-query@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@zthun/helpful-query@npm:3.0.0"
   dependencies:
-    "@zthun/helpful-fn": "npm:^2.4.0"
+    "@zthun/helpful-fn": "npm:^3.0.0"
     lodash: "npm:^4.17.21"
-  checksum: d78888625f55d34f6a013570e96e74fd5d9995b7df5c336d9cf2582b0483b8e00e38bff1217b2f0f24a279f804b97634a41b69a9bf046cec63fed3a2ff5775c0
+  checksum: 4ff3c6b6ab754a061092771fc84515a0c9fc993629f03e91c46496d2ddbf8ad956f7ce8d90d63c0932e2d0e7b288188b83b74d11486686c8fb106d9e78940325
   languageName: node
   linkType: hard
 

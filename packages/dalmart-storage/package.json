@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@zthun/dalmart-db": "^1.1.1",
-    "@zthun/helpful-fn": "^2.1.0"
+    "@zthun/helpful-fn": "^3.0.0"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",
