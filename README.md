@@ -10,4 +10,4 @@ restricted to what my overall data model was.
 
 Dalmart attempts to solve these issues while still giving one the power to query a database without having to define a
 giant model schema that introduces you to the pitfalls of ORMs, while at the same time does not lock you into a database
-vendor of your choice.
+vendor.
