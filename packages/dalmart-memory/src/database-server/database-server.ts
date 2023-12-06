@@ -5,6 +5,10 @@ import { IZDatabaseOptions } from '@zthun/dalmart-db';
  *
  * The implementation of the server acts as a factory to
  * construct the client connections to the in memory database.
+ *
+ * @param TDatabase -
+ *        The type of database that will be returned when the
+ *        server is started.
  */
 export interface IZDatabaseServer<TDatabase> {
   /**
