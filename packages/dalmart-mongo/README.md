@@ -1,6 +1,7 @@
 # Dalmart Mongo
 
-This package supplies the implementation for a dalmart layer that connects to a mongo driver database.
+This package supplies the implementation for a dalmart layer that connects to a [mongo](https://www.mongodb.com/)
+database.
 
 ## Installation
 
