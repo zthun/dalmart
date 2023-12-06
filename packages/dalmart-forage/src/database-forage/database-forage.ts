@@ -2,7 +2,8 @@ import { IZDatabaseMemory, IZDatabaseOptions } from '@zthun/dalmart-db';
 import localforage from 'localforage';
 
 /**
- * Represents an implements of an IZMemoryDatabase that references session and local storage.
+ * Represents an implementation of an IZMemoryDatabase that references
+ * the indexed db feature of browsers.
  */
 export class ZDatabaseForage implements IZDatabaseMemory {
   /**
