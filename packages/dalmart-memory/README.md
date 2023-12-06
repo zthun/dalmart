@@ -5,14 +5,14 @@ This package contains in memory database server objects that are meant for mock 
 The difference between this and other dalmart packages is that this package only includes server implementations instead
 of database implementations. The server implementations act as a factory for the actual database implementation.
 
-## Usage
+## Installation
 
 ```sh
 npm install @zthun/dalmart-memory
 yarn add @zthun/dalmart-memory
 ```
 
-## Example
+## Usage
 
 ```ts
 import { IZDatabaseMemory, IZDatabaseDocument } from '@zthun/dalmart-db';
