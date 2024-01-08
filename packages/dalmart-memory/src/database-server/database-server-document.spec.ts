@@ -1,5 +1,5 @@
 import { IZDatabaseDocument, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
-import { identity, range } from 'lodash';
+import { identity, range } from 'lodash-es';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { IZDatabaseServer } from './database-server';
 import { ZDatabaseServerDocument } from './database-server-document';
