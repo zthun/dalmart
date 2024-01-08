@@ -21,7 +21,7 @@
   "dependencies": {
     "@zthun/dalmart-db": "^1.2.0",
     "@zthun/helpful-fn": "^3.0.0",
-    "redis": "^4.6.11"
+    "redis": "^4.6.12"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",
