@@ -40,6 +40,9 @@ export interface IZDatabaseMemory {
    *        The key to update.
    * @param value -
    *        The value to set.
+   *
+   * @returns
+   *        The value that was written.
    */
   upsert<T>(key: string, value: T): Promise<T>;
 
