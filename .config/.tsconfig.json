@@ -13,7 +13,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "jsx": "react",
-    "target": "es5",
-    "module": "commonjs"
+    "target": "ESNext",
+    "module": "ESNext"
   }
 }
