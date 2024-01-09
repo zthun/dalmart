@@ -33,7 +33,7 @@ export class ZDatabaseJsonFile implements IZDatabaseMemory {
   public async upsert<T>(key: string, value: T): Promise<T> {
     const content = await this._read();
     content[key] = value;
-    await this._write(content);
+    this._write(content);
     return value;
   }
 
@@ -49,18 +49,29 @@ export class ZDatabaseJsonFile implements IZDatabaseMemory {
     this._write(content);
   }
 
+  private _url(): string {
+    const { url } = this._options;
+
+    if (url == null) {
+      throw new Error('Options url is required');
+    }
+
+    return url;
+  }
+
   private _read(): Promise<any> {
     if (this._content != null) {
       return this._content;
     }
 
-    const { url = '' } = this._options;
+    const url = this._url();
     this._content = Promise.resolve(tryReadJson(url));
     return this._content;
   }
 
   private _write(content: unknown): void {
-    const { url = '' } = this._options;
+    const url = this._url();
+
     const dir = dirname(url);
     mkdirSync(dir, { recursive: true });
     const data = JSON.stringify(content, undefined, 2);

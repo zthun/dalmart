@@ -33,6 +33,37 @@ describe('ZDatabaseJsonContent', () => {
       // Assert.
       expect(actual).toEqual(expected.name);
     });
+
+    it('should return a fallback for a key that does not exist', async () => {
+      // Arrange.
+      const target = createTestTarget();
+      const expected = 'i-am-the-fallback';
+      // Act.
+      const actual = await target.read('i-do-not-exist', expected);
+      // Assert.
+      expect(actual).toEqual(expected);
+    });
+
+    it('should return a fallback for a file that does not exist', async () => {
+      // Arrange.
+      options = new ZDatabaseOptionsBuilder().url('/path/to/nothing.json').build();
+      const expected = 'i-am-the-fallback';
+      const target = createTestTarget();
+      // Act.
+      const actual = await target.read('name', expected);
+      // Assert.
+      expect(actual).toEqual(expected);
+    });
+
+    it('should reject if the url is not set in the options', async () => {
+      // Arrange.
+      options = new ZDatabaseOptionsBuilder().build();
+      const target = createTestTarget();
+      // Act.
+      const actual = target.read('id');
+      // Assert.
+      expect(actual).rejects.toBeTruthy();
+    });
   });
 
   describe('Write', () => {
