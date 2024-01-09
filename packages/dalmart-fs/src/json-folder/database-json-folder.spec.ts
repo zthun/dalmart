@@ -195,6 +195,16 @@ describe('ZDatabaseJsonFolder', () => {
         expect(youtube.name).toEqual(expected.name);
       });
 
+      it('should set the fields for all documents', async () => {
+        // Arrange.
+        const target = createTestTarget();
+        await target.create(databaseCompanies, [youtube, airbnb]);
+        // Act.
+        const actual = await target.update<IZBrand>(databaseCompanies, { name: '' });
+        // Assert.
+        expect(actual).toEqual(2);
+      });
+
       it('should reject if an attempt is made to change the _id', async () => {
         // Arrange.
         const target = createTestTarget();
