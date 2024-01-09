@@ -1,6 +1,7 @@
 import { IZDatabaseMemory, IZDatabaseOptions } from '@zthun/dalmart-db';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
+import { tryReadJson } from '../json-util/json-read';
 
 /**
  * Represents a memory database where the data is housed in a single json file.
@@ -54,14 +55,7 @@ export class ZDatabaseJsonFile implements IZDatabaseMemory {
     }
 
     const { url = '' } = this._options;
-
-    try {
-      const buffer = readFileSync(url);
-      this._content = Promise.resolve(JSON.parse(buffer.toString()));
-    } catch (_) {
-      this._content = Promise.resolve({});
-    }
-
+    this._content = Promise.resolve(tryReadJson(url));
     return this._content;
   }
 
