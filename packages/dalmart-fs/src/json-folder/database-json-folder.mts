@@ -15,9 +15,8 @@ import { sync } from 'glob';
 import { groupBy, toPairs } from 'lodash-es';
 import { accessSync, rmSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { ZDocumentWithDecoration } from 'src/json-util/document-with-decoration.mjs';
 import { tryReadJson, writeJson } from '../json-util/json-io.mjs';
-
-type TWithDecoration<T> = T & { _id: string };
 
 export class ZDatabaseJsonFolder implements IZDatabaseDocument {
   private readonly _staticOptions = new ZDataSourceStaticOptionsBuilder()
@@ -29,7 +28,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
   public constructor(private readonly _options: IZDatabaseOptions) {}
 
   public async count(source: string | IZDatabaseDocumentCollection, scope?: IZFilter | undefined): Promise<number> {
-    const dataSource = this._read(typeof source === 'string' ? source : source.name);
+    const dataSource = this._read(source);
     const request = new ZDataRequestBuilder().filter(scope).build();
     return dataSource.count(request);
   }
@@ -37,7 +36,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
   public async create<T>(source: string, template: T[]): Promise<T[]> {
     const folder = this._folder(source);
 
-    const withIds: Array<TWithDecoration<T>> = template.map((t: any) => {
+    const withIds: Array<ZDocumentWithDecoration<T>> = template.map((t: any) => {
       const _id = this._findDocId(t) || createGuid();
       return { ...t, _id };
     });
@@ -88,7 +87,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     source: string | IZDatabaseDocumentCollection,
     request?: IZDataRequest | undefined
   ): Promise<T[]> {
-    const dataSource = this._read<T>(typeof source === 'string' ? source : source.name);
+    const dataSource = this._read<T>(source);
     const _request = request || new ZDataRequestBuilder().build();
     return dataSource.retrieve(_request);
   }
@@ -122,15 +121,17 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     return resolve(folder, `${id}.json`);
   }
 
-  private _read<T>(source: string): IZDataSource<T> {
-    if (Object.prototype.hasOwnProperty.call(this._sources, source)) {
-      return this._sources[source];
+  private _read<T>(source: string | IZDatabaseDocumentCollection): IZDataSource<T> {
+    const _source = typeof source === 'string' ? source : source.name;
+
+    if (Object.prototype.hasOwnProperty.call(this._sources, _source)) {
+      return this._sources[_source];
     }
 
-    const path = this._folder(source);
+    const path = this._folder(_source);
     const files = sync(`${path}/*.json`);
     const contents = files.map((f) => tryReadJson<T>(f));
-    this._sources[source] = new ZDataSourceStatic<T>(contents, this._staticOptions);
-    return this._sources[source];
+    this._sources[_source] = new ZDataSourceStatic<T>(contents, this._staticOptions);
+    return this._sources[_source];
   }
 }
