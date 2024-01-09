@@ -1,1 +1,1 @@
-export * from './database-redis/database-redis';
+export * from './database-redis/database-redis.mjs';

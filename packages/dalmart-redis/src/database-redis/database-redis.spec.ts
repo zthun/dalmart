@@ -2,7 +2,7 @@ import { IZDatabaseOptions, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
 import { createGuid } from '@zthun/helpful-fn';
 import { RedisMemoryServer } from 'redis-memory-server';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { ZDatabaseRedis } from './database-redis';
+import { ZDatabaseRedis } from './database-redis.mjs';
 
 describe('ZDatabaseRedis', () => {
   let server: RedisMemoryServer;
