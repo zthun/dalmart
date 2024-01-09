@@ -8,8 +8,8 @@ import {
 import { createGuid } from '@zthun/helpful-fn';
 import { IZDataRequest, IZFilter } from '@zthun/helpful-query';
 import { Collection, Document, MongoClient, MongoClientOptions } from 'mongodb';
-import { toFilter } from '../convert/to-filter';
-import { toSort } from '../convert/to-sort';
+import { toFilter } from '../convert/to-filter.mjs';
+import { toSort } from '../convert/to-sort.mjs';
 
 /**
  * Represents an IZDatabase object that connects to mongodb.

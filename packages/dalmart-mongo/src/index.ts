@@ -1,1 +1,1 @@
-export * from './database-mongo/database-mongo';
+export * from './database-mongo/database-mongo.mjs';
