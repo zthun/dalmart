@@ -41,8 +41,8 @@ describe('ZDatabaseJsonFolder', () => {
       const tiktok = new ZBrandBuilder().tiktok().build().id;
       const x = new ZBrandBuilder().x().build().id;
       // Act.
-      const brands = await target.read<IZBrand>(databaseBrands);
-      const actual = brands.map((b) => b.id);
+      const brands = await target.read<IZDocumentWithId>(databaseBrands);
+      const actual = brands.map((b) => b._id);
       // Actual.
       expect(actual).toContain(facebook);
       expect(actual).toContain(instagram);
@@ -86,7 +86,7 @@ describe('ZDatabaseJsonFolder', () => {
     it('should return the count given the filter', async () => {
       // Arrange.
       const target = createTestTarget();
-      const filter = new ZFilterCollectionBuilder().subject('id').in().values(['facebook', 'tiktok']).build();
+      const filter = new ZFilterCollectionBuilder().subject('_id').in().values(['facebook', 'tiktok']).build();
       // Act.
       const actual = await target.count(databaseBrands, filter);
       // Assert
@@ -149,8 +149,8 @@ describe('ZDatabaseJsonFolder', () => {
       it('should return a rejected promise if there are documents that already exist with the given id', async () => {
         // Arrange.
         const target = createTestTarget();
-        const facebook = new ZBrandBuilder().facebook().build();
-        await target.create(databaseCompanies, [facebook]);
+        let facebook = new ZBrandBuilder().facebook().build();
+        [facebook] = await target.create(databaseCompanies, [facebook]);
         // Act.
         const actual = target.create(databaseCompanies, [facebook]);
         // Assert
@@ -160,10 +160,8 @@ describe('ZDatabaseJsonFolder', () => {
       it('should return a rejected promise if there are duplicate ids in the given template set', async () => {
         // Arrange.
         const target = createTestTarget();
-        const facebook = new ZBrandBuilder().facebook().build();
-        const x = new ZBrandBuilder().x().build();
         // Act.
-        const actual = target.create(databaseCompanies, [facebook, x, facebook]);
+        const actual = target.create(databaseCompanies, [youtube, airbnb, youtube]);
         // Assert
         await expect(actual).rejects.toBeTruthy();
       });

@@ -34,10 +34,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
   }
 
   public async create<T>(source: string, template: T[]): Promise<T[]> {
-    const withIds: Array<ZDocumentWithDecoration<T>> = template.map((t: any) => {
-      const _id = this._findDocId(t) || createGuid();
-      return { ...t, _id };
-    });
+    const withIds: Array<ZDocumentWithDecoration<T>> = template.map((t: any) => ({ ...t, _id: t._id || createGuid() }));
 
     let duplicates = withIds
       .filter((t) => {
@@ -113,10 +110,6 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     return targets.length;
   }
 
-  private _findDocId(doc: any): string | null {
-    return doc._id || doc.id;
-  }
-
   private _folder(source: string): string {
     const { url } = this._options;
 
@@ -129,8 +122,8 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
 
   private _file(source: string, doc: any): string {
     const folder = this._folder(source);
-    const id = this._findDocId(doc);
-    return resolve(folder, `${id}.json`);
+    const { _id } = doc;
+    return resolve(folder, `${_id}.json`);
   }
 
   private _read<T>(source: string | IZDatabaseDocumentCollection): IZDataSource<T> {
