@@ -1,6 +1,6 @@
 import { IZDatabaseMemory, IZDatabaseOptions } from '@zthun/dalmart-db';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { dirname } from 'path';
+import { dirname } from 'node:path';
 
 /**
  * Represents a memory database where the data is housed in a single json file.
