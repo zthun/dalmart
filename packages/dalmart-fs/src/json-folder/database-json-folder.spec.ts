@@ -10,7 +10,7 @@ import {
 import { rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { afterAll, afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { ZDocumentWithDecoration } from '../json-util/document-with-decoration.mjs';
+import { IZDocumentWithId, ZDocumentWithDecoration } from '../json-util/document-with-decoration.mjs';
 import * as utils from '../json-util/json-io.mjs';
 import { ZDatabaseJsonFolder } from './database-json-folder.mjs';
 
@@ -176,6 +176,34 @@ describe('ZDatabaseJsonFolder', () => {
         const [actual] = await target.create<ZDocumentWithDecoration<IZBrand>>('companies', [facebook]);
         // Assert.
         expect(actual._id).toBeTruthy();
+      });
+    });
+
+    describe('Update', () => {
+      it('should set the fields that matches the filter', async () => {
+        // Arrange.
+        const target = createTestTarget();
+        const expected = { name: 'YouTube (Google)' };
+        [youtube, airbnb] = await target.create(databaseCompanies, [youtube, airbnb]);
+        const filter = new ZFilterBinaryBuilder().subject('_id').equal().value(youtube._id).build();
+        const request = new ZDataRequestBuilder().filter(filter).build();
+        // Act.
+        const actual = await target.update<IZBrand>(databaseCompanies, expected, filter);
+        [youtube] = await target.read(databaseCompanies, request);
+        // Assert.
+        expect(actual).toEqual(1);
+        expect(youtube.name).toEqual(expected.name);
+      });
+
+      it('should reject if an attempt is made to change the _id', async () => {
+        // Arrange.
+        const target = createTestTarget();
+        [youtube, airbnb] = await target.create(databaseCompanies, [youtube, airbnb]);
+        const filter = new ZFilterBinaryBuilder().subject('_id').equal().value(youtube._id).build();
+        // Act.
+        const actual = target.update<IZDocumentWithId>(databaseCompanies, { _id: 'not-allowed' }, filter);
+        // Assert.
+        await expect(actual).rejects.toBeTruthy();
       });
     });
 

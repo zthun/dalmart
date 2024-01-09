@@ -34,23 +34,21 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
   }
 
   public async create<T>(source: string, template: T[]): Promise<T[]> {
-    const folder = this._folder(source);
-
     const withIds: Array<ZDocumentWithDecoration<T>> = template.map((t: any) => {
       const _id = this._findDocId(t) || createGuid();
       return { ...t, _id };
     });
 
     let duplicates = withIds
-      .map((t) => t._id)
-      .filter((id) => {
+      .filter((t) => {
         try {
-          accessSync(resolve(folder, `${id}.json`));
+          accessSync(this._file(source, t));
           return true;
         } catch (_) {
           return false;
         }
-      });
+      })
+      .map((t) => t._id);
 
     if (duplicates.length > 0) {
       const err = new Error(`Duplicate ids detected, [${duplicates.join(', ')}].  Use update instead`);
@@ -69,8 +67,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     }
 
     const written = withIds.map((t: any) => {
-      const { _id } = t;
-      const path = resolve(folder, `${_id}.json`);
+      const path = this._file(source, t);
       writeJson(t, path);
       return t as T;
     });
@@ -79,8 +76,23 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     return Promise.resolve(written);
   }
 
-  public update<T>(source: string, template: Partial<T>, scope?: IZFilter | undefined): Promise<number> {
-    throw new Error('Method not implemented.');
+  public async update<T>(source: string, template: Partial<T>, scope?: IZFilter | undefined): Promise<number> {
+    const dataSource = this._read(source);
+    const request = new ZDataRequestBuilder().filter(scope).build();
+    const values = await dataSource.retrieve(request);
+
+    if (Object.prototype.hasOwnProperty.call(template, '_id')) {
+      return Promise.reject(new Error('You are not allowed to change the _id property on a document.'));
+    }
+
+    values.forEach((t) => {
+      const path = this._file(source, t);
+      const n = Object.assign({}, t, template);
+      writeJson(n, path);
+    });
+
+    delete this._sources[source];
+    return Promise.resolve(values.length);
   }
 
   public async read<T>(
