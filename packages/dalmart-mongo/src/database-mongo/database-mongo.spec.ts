@@ -1,4 +1,4 @@
-import { ZDatabaseDocumentCollectionBuilder } from '@zthun/dalmart-db';
+import { IZDatabaseOptions, ZDatabaseDocumentCollectionBuilder, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
 import { createGuid } from '@zthun/helpful-fn';
 import {
   IZFilter,
@@ -11,7 +11,6 @@ import {
 } from '@zthun/helpful-query';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { IZDatabaseOptions, ZDatabaseOptionsBuilder } from '../../../dalmart-db/src/options/database-options';
 import { ZDatabaseMongo } from './database-mongo';
 
 describe('ZDatabaseMongo', () => {
