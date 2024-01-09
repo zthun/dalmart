@@ -1,4 +1,5 @@
 import { IZDatabaseOptions, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
+import { IZBrand, ZBrandBuilder } from '@zthun/helpful-brands';
 import { createGuid } from '@zthun/helpful-fn';
 import { rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -19,56 +20,48 @@ describe('ZDatabaseJsonContent', () => {
 
   describe('Read', () => {
     beforeEach(() => {
-      const path = resolve(__dirname, '../../.test/marvel/spider-man.json');
+      const path = resolve(__dirname, '../../.test/brands/facebook.json');
       options = new ZDatabaseOptionsBuilder().url(path).build();
     });
 
     it('should read a json content as a single object with the key as a key into the document', async () => {
       // Arrange.
       const target = createTestTarget();
+      const expected = new ZBrandBuilder().facebook().build();
       // Act.
       const actual = await target.read('name');
       // Assert.
-      expect(actual).toEqual('Peter Parker');
+      expect(actual).toEqual(expected.name);
     });
   });
 
   describe('Write', () => {
-    let venom: any;
+    let linkedin: IZBrand;
 
     beforeEach(() => {
-      venom = {
-        _id: 'venom',
-        name: 'Eddie Brock',
-        alias: 'Venom'
-      };
-
-      const path = resolve(tempDir, createGuid(), 'venom.json');
+      linkedin = new ZBrandBuilder().linkedin().build();
+      const path = resolve(tempDir, createGuid(), 'linkedin.json');
       options = new ZDatabaseOptionsBuilder().url(path).build();
     });
 
     it('should add the specific key to the file and save it.', async () => {
       // Arrange.
       const target = createTestTarget();
-      const actual = {
-        _id: '',
-        name: '',
-        alias: ''
-      };
       // Act.
-      const keys = Object.keys(venom);
-      await Promise.all(keys.map((k) => target.upsert(k, venom[k])));
-      actual._id = await target.read('_id', '');
+      const keys = Object.keys(linkedin);
+      await Promise.all(keys.map((k) => target.upsert(k, linkedin[k])));
+      const actual = new ZBrandBuilder().linkedin().build();
+      actual.id = await target.read('id', '');
       actual.name = await target.read('name', '');
-      actual.alias = await target.read('alias', '');
+      actual.founded = await target.read('founded', NaN);
       // Assert.
-      expect(actual).toEqual(venom);
+      expect(actual).toEqual(linkedin);
     });
 
     it('should delete the key from a file', async () => {
       // Arrange.
       const target = createTestTarget();
-      await target.upsert('name', venom.name);
+      await target.upsert('name', linkedin.name);
       // Act.
       await target.delete('name');
       const actual = await target.read('name');
@@ -79,9 +72,8 @@ describe('ZDatabaseJsonContent', () => {
     it('should delete all keys from a file', async () => {
       // Arrange.
       const target = createTestTarget();
-      await target.upsert('_id', venom._id);
-      await target.upsert('name', venom.name);
-      await target.upsert('alias', venom.alias);
+      await target.upsert('id', linkedin.id);
+      await target.upsert('name', linkedin.name);
       // Act.
       await target.delete();
       const values = await Promise.all([target.read('_id'), target.read('name'), target.read('alias')]);
