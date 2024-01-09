@@ -9,10 +9,5 @@
       "@zthun/dalmart-storage": ["../dalmart-storage/src/index"]
     }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/database-server/database-server-document.mts",
-    "src/database-server/database-server-memory.mts",
-    "src/database-server/database-server.mts"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.mts"]
 }

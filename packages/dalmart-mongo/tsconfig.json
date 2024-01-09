@@ -7,10 +7,5 @@
       "@zthun/dalmart-db": ["../dalmart-db/src/index"]
     }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/database-mongo/database-mongo.mts",
-    "src/convert/to-filter.mts",
-    "src/convert/to-sort.mts"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.mts"]
 }

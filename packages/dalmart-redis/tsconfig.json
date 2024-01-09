@@ -7,5 +7,5 @@
       "@zthun/dalmart-db": ["../dalmart-db/src/index"]
     }
   },
-  "include": ["src/**/*.ts", "src/database-redis/database-redis.mts"]
+  "include": ["src/**/*.ts", "src/**/*.mts"]
 }
