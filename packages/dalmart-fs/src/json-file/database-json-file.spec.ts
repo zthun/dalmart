@@ -62,7 +62,7 @@ describe('ZDatabaseJsonContent', () => {
       // Act.
       const actual = target.read('id');
       // Assert.
-      expect(actual).rejects.toBeTruthy();
+      await expect(actual).rejects.toBeTruthy();
     });
   });
 
