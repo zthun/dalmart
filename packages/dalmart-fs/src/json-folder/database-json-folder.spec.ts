@@ -72,10 +72,4 @@ describe('ZDatabaseJsonFolder', () => {
       expect(actual).toEqual(2);
     });
   });
-
-  describe('Create', () => {});
-
-  describe('Update', () => {});
-
-  describe('Delete', () => {});
 });
