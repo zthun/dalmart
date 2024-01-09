@@ -1,9 +1,10 @@
 import { IZDatabaseOptions, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
 import { IZBrand, ZBrandBuilder } from '@zthun/helpful-brands';
+import { createGuid } from '@zthun/helpful-fn';
 import { ZDataRequestBuilder, ZFilterCollectionBuilder, ZSortBuilder } from '@zthun/helpful-query';
 import { rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { afterAll, beforeEach, describe, expect, it } from 'vitest';
+import { afterAll, afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { ZDatabaseJsonFolder } from './database-json-folder.mjs';
 
 describe('ZDatabaseJsonFolder', () => {
@@ -13,7 +14,7 @@ describe('ZDatabaseJsonFolder', () => {
   let options: IZDatabaseOptions;
 
   afterAll(async () => {
-    await rm(temp, { recursive: true, force: true }).catch(() => true);
+    await rm(temp, { recursive: true, force: true });
   });
 
   const createTestTarget = () => new ZDatabaseJsonFolder(options);
@@ -70,6 +71,85 @@ describe('ZDatabaseJsonFolder', () => {
       const actual = await target.count('brands', filter);
       // Assert
       expect(actual).toEqual(2);
+    });
+
+    it('should reject if the options url is undefined', async () => {
+      // Arrange.
+      options = new ZDatabaseOptionsBuilder().build();
+      const target = createTestTarget();
+      // Act.
+      const actual = target.read('any');
+      // Assert.
+      await expect(actual).rejects.toBeTruthy();
+    });
+  });
+
+  describe('Write', () => {
+    let tempDatabase: string;
+
+    beforeEach(() => {
+      tempDatabase = resolve(temp, createGuid());
+      options = new ZDatabaseOptionsBuilder().url(tempDatabase).build();
+    });
+
+    afterEach(async () => {
+      await rm(tempDatabase, { recursive: true, force: true });
+    });
+
+    describe('Create', () => {
+      let youtube: IZBrand & { _id?: string };
+      let airbnb: IZBrand & { _id?: string };
+
+      beforeEach(() => {
+        airbnb = new ZBrandBuilder().airbnb().build();
+        airbnb = { ...airbnb, _id: airbnb.id };
+        youtube = new ZBrandBuilder().youtube().build();
+        youtube = { ...youtube, _id: youtube.id };
+      });
+
+      it('should create the collection and document if it does not exist', async () => {
+        // Arrange.
+        const target = createTestTarget();
+        // Act.
+        const [$airbnb, $youtube] = await target.create('companies', [airbnb, youtube]);
+        // Assert.
+        expect($airbnb).toEqual(airbnb);
+        expect($youtube).toEqual(youtube);
+      });
+
+      it('should persist the data', async () => {
+        // Arrange.
+        const target = createTestTarget();
+        // Act.
+        await target.create('companies', [airbnb, youtube]);
+        const brands = await target.read<IZBrand>('companies');
+        const actual = brands.map((brand) => brand.id);
+        // Assert.
+        expect(actual).toContain(airbnb.id);
+        expect(actual).toContain(youtube.id);
+      });
+
+      it('should return a rejected promise if there are documents that already exist with the given id', async () => {
+        // Arrange.
+        const target = createTestTarget();
+        const facebook = new ZBrandBuilder().facebook().build();
+        await target.create('companies', [facebook]);
+        // Act.
+        const actual = target.create('companies', [facebook]);
+        // Assert
+        await expect(actual).rejects.toBeTruthy();
+      });
+
+      it('should return a rejected promise if there are duplicate ids in the given template set', async () => {
+        // Arrange.
+        const target = createTestTarget();
+        const facebook = new ZBrandBuilder().facebook().build();
+        const x = new ZBrandBuilder().x().build();
+        // Act.
+        const actual = target.create('companies', [facebook, x, facebook]);
+        // Assert
+        await expect(actual).rejects.toBeTruthy();
+      });
     });
   });
 });
