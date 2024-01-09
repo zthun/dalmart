@@ -1,4 +1,4 @@
-import { IZDatabaseOptions, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
+import { IZDatabaseOptions, ZDatabaseDocumentCollectionBuilder, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
 import { IZBrand, ZBrandBuilder } from '@zthun/helpful-brands';
 import { createGuid } from '@zthun/helpful-fn';
 import {
@@ -99,6 +99,30 @@ describe('ZDatabaseJsonFolder', () => {
       const target = createTestTarget();
       // Act.
       const actual = target.read('any');
+      // Assert.
+      await expect(actual).rejects.toBeTruthy();
+    });
+
+    it('should reject with not support for a join set while reading', async () => {
+      // Arrange.
+      const collection = new ZDatabaseDocumentCollectionBuilder(databaseBrands)
+        .join(databaseBrands, 'owner', '_id', 'owners')
+        .build();
+      const target = createTestTarget();
+      // Act.
+      const actual = target.read(collection);
+      // Assert.
+      await expect(actual).rejects.toBeTruthy();
+    });
+
+    it('should reject with not support for a join set while counting', async () => {
+      // Arrange.
+      const collection = new ZDatabaseDocumentCollectionBuilder(databaseBrands)
+        .join(databaseBrands, 'owner', '_id', 'owners')
+        .build();
+      const target = createTestTarget();
+      // Act.
+      const actual = target.count(collection);
       // Assert.
       await expect(actual).rejects.toBeTruthy();
     });

@@ -129,6 +129,10 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
   private _read<T>(source: string | IZDatabaseDocumentCollection): IZDataSource<T> {
     const _source = typeof source === 'string' ? source : source.name;
 
+    if (typeof source === 'object' && source.join != null) {
+      throw new Error('Joins with a file system document database are currently not supported');
+    }
+
     if (Object.prototype.hasOwnProperty.call(this._sources, _source)) {
       return this._sources[_source];
     }
