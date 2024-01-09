@@ -60,7 +60,7 @@ web_modules/
 # Optional stylelint cache
 .stylelintcache
 
-# Microbundle cache
+# Rp2 cache
 .rpt2_cache/
 .rts2_cache_cjs/
 .rts2_cache_es/

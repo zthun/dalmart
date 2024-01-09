@@ -13,5 +13,16 @@
       "@zthun/dalmart-storage": ["dalmart-storage/src/index"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "packages/dalmart-memory/src/database-server/database-server-document.mts",
+    "packages/dalmart-memory/src/database-server/database-server-memory.mts",
+    "packages/dalmart-memory/src/database-server/database-server.mts",
+    "packages/dalmart-mongo/src/database-mongo/database-mongo.mts",
+    "packages/dalmart-mongo/src/convert/to-filter.mts",
+    "packages/dalmart-mongo/src/convert/to-sort.mts",
+    "packages/dalmart-redis/src/database-redis/database-redis.mts",
+    "packages/dalmart-storage/src/database-storage/database-storage.mts"
+  ]
 }
