@@ -1,12 +1,12 @@
 import { IZDatabaseMemory, IZDatabaseOptions } from '@zthun/dalmart-db';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname } from 'path';
 
 /**
  * Represents a memory database where the data is housed in a single json file.
  */
 export class ZDatabaseJsonFile implements IZDatabaseMemory {
-  private _content: any;
+  private _content: Promise<unknown>;
 
   /**
    * Initializes a new instance of this object.
@@ -45,32 +45,32 @@ export class ZDatabaseJsonFile implements IZDatabaseMemory {
       content = {};
     }
 
-    await this._write(content);
+    this._write(content);
   }
 
-  private async _read(): Promise<any> {
+  private _read(): Promise<any> {
     if (this._content != null) {
-      return Promise.resolve(this._content);
+      return this._content;
     }
 
     const { url = '' } = this._options;
 
     try {
-      const buffer = await readFile(url);
-      return JSON.parse(buffer.toString());
+      const buffer = readFileSync(url);
+      this._content = Promise.resolve(JSON.parse(buffer.toString()));
     } catch (_) {
-      this._content = {};
+      this._content = Promise.resolve({});
     }
 
-    return Promise.resolve(this._content);
+    return this._content;
   }
 
-  private async _write(content: any): Promise<void> {
+  private _write(content: unknown): void {
     const { url = '' } = this._options;
     const dir = dirname(url);
-    await mkdir(dir, { recursive: true });
+    mkdirSync(dir, { recursive: true });
     const data = JSON.stringify(content, undefined, 2);
-    await writeFile(url, data, { flag: 'w+' });
-    this._content = null;
+    writeFileSync(url, data, { flag: 'w+' });
+    this._content = Promise.resolve(content);
   }
 }
