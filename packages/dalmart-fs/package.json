@@ -9,11 +9,17 @@
     "url": "https://github.com/zthun/dalmart",
     "directory": "packages/dalmart-fs"
   },
-  "main": "./dist/lib/index.js",
-  "module": "./dist/lib/index.esm.js",
-  "types": "./dist/types/index.d.ts",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/lib/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
   "scripts": {
-    "build": "microbundle --format esm,cjs --tsconfig tsconfig.lib.json"
+    "build": "vite build"
   },
   "publishConfig": {
     "access": "public"
@@ -27,8 +33,8 @@
   },
   "devDependencies": {
     "@zthun/helpful-brands": "^3.0.0",
-    "microbundle": "^0.15.1",
     "typescript": "^5.3.3",
+    "vite": "^5.0.11",
     "vitest": "^1.1.3",
     "vitest-mock-extended": "^1.3.1"
   },
