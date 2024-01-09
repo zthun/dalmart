@@ -105,6 +105,7 @@ describe('ZDatabaseJsonFolder', () => {
   });
 
   describe('Write', () => {
+    const databaseCompanies = 'companies';
     let tempDatabase: string;
     let youtube: IZBrand & { _id?: string };
     let airbnb: IZBrand & { _id?: string };
@@ -127,7 +128,7 @@ describe('ZDatabaseJsonFolder', () => {
         // Arrange.
         const target = createTestTarget();
         // Act.
-        const [$airbnb, $youtube] = await target.create('companies', [airbnb, youtube]);
+        const [$airbnb, $youtube] = await target.create(databaseCompanies, [airbnb, youtube]);
         // Assert.
         expect($airbnb).toEqual(airbnb);
         expect($youtube).toEqual(youtube);
@@ -137,8 +138,8 @@ describe('ZDatabaseJsonFolder', () => {
         // Arrange.
         const target = createTestTarget();
         // Act.
-        await target.create('companies', [airbnb, youtube]);
-        const brands = await target.read<IZBrand>('companies');
+        await target.create(databaseCompanies, [airbnb, youtube]);
+        const brands = await target.read<IZBrand>(databaseCompanies);
         const actual = brands.map((brand) => brand.id);
         // Assert.
         expect(actual).toContain(airbnb.id);
@@ -149,9 +150,9 @@ describe('ZDatabaseJsonFolder', () => {
         // Arrange.
         const target = createTestTarget();
         const facebook = new ZBrandBuilder().facebook().build();
-        await target.create('companies', [facebook]);
+        await target.create(databaseCompanies, [facebook]);
         // Act.
-        const actual = target.create('companies', [facebook]);
+        const actual = target.create(databaseCompanies, [facebook]);
         // Assert
         await expect(actual).rejects.toBeTruthy();
       });
@@ -162,7 +163,7 @@ describe('ZDatabaseJsonFolder', () => {
         const facebook = new ZBrandBuilder().facebook().build();
         const x = new ZBrandBuilder().x().build();
         // Act.
-        const actual = target.create('companies', [facebook, x, facebook]);
+        const actual = target.create(databaseCompanies, [facebook, x, facebook]);
         // Assert
         await expect(actual).rejects.toBeTruthy();
       });
@@ -182,12 +183,11 @@ describe('ZDatabaseJsonFolder', () => {
       it('should delete the files that match the filters', async () => {
         // Arrange.
         const target = createTestTarget();
-        const source = 'companies';
-        await target.create(source, [youtube, airbnb]);
+        await target.create(databaseCompanies, [youtube, airbnb]);
         const filter = new ZFilterBinaryBuilder().subject('_id').equal().value(youtube._id).build();
         // Act.
-        const deleted = await target.delete(source, filter);
-        const actual = await target.count(source);
+        const deleted = await target.delete(databaseCompanies, filter);
+        const actual = await target.count(databaseCompanies);
         // Assert.
         expect(deleted).toEqual(1);
         expect(actual).toEqual(1);
@@ -196,11 +196,10 @@ describe('ZDatabaseJsonFolder', () => {
       it('should delete all documents', async () => {
         // Arrange.
         const target = createTestTarget();
-        const source = 'companies';
-        await target.create(source, [youtube, airbnb]);
+        await target.create(databaseCompanies, [youtube, airbnb]);
         // Act.
-        const deleted = await target.delete(source);
-        const actual = await target.count(source);
+        const deleted = await target.delete(databaseCompanies);
+        const actual = await target.count(databaseCompanies);
         // Assert.
         expect(deleted).toEqual(2);
         expect(actual).toEqual(0);
