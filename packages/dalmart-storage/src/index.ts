@@ -1,1 +1,1 @@
-export * from './database-storage/database-storage';
+export * from './database-storage/database-storage.mjs';
