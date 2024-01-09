@@ -3,7 +3,7 @@
 import { ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
 import { createGuid } from '@zthun/helpful-fn';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
-import { ZDatabaseForage } from './database-forage';
+import { ZDatabaseForage } from './database-forage.mjs';
 
 describe('Forage', () => {
   const options = new ZDatabaseOptionsBuilder().database('localforage-test').build();

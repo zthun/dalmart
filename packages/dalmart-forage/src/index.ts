@@ -1,1 +1,1 @@
-export * from './database-forage/database-forage';
+export * from './database-forage/database-forage.mjs';

@@ -7,5 +7,5 @@
       "@zthun/dalmart-db": ["../dalmart-db/src/index"]
     }
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "src/database-forage/database-forage.mts"]
 }
