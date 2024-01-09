@@ -3773,6 +3773,7 @@ __metadata:
   resolution: "@zthun/dalmart-fs@workspace:packages/dalmart-fs"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.2.0"
+    "@zthun/helpful-brands": "npm:^3.0.0"
     "@zthun/helpful-fn": "npm:^3.0.0"
     "@zthun/helpful-query": "npm:^3.0.0"
     microbundle: "npm:^0.15.1"
@@ -3908,6 +3909,15 @@ __metadata:
   peerDependencies:
     eslint: ^8.5.0
   checksum: 0b2816504c525762278b1f76d4cb023591d81be3d8b57b2088ac3210a0ee48c28979bde1cc37ec39fd978c8c17c7b901b6a1f982443bae86f1bb172240626c17
+  languageName: node
+  linkType: hard
+
+"@zthun/helpful-brands@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@zthun/helpful-brands@npm:3.0.0"
+  dependencies:
+    lodash: "npm:^4.17.21"
+  checksum: f5698065524c7e0db29e28d882d48b1af10f3e1d5a578f9d13c4cdd2c620b0caba3279be759b283b60cba2b4143fd521ad4810315c5438e9c62685deb3195943
   languageName: node
   linkType: hard
 
