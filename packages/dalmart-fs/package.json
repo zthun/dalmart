@@ -1,0 +1,36 @@
+{
+  "name": "@zthun/dalmart-fs",
+  "version": "1.2.0",
+  "description": "A database interface that just uses the file system",
+  "author": "Anthony Bonta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zthun/dalmart",
+    "directory": "packages/dalmart-fs"
+  },
+  "main": "./dist/lib/index.js",
+  "module": "./dist/lib/index.esm.js",
+  "types": "./dist/types/index.d.ts",
+  "scripts": {
+    "build": "microbundle --format esm,cjs --tsconfig tsconfig.lib.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@zthun/dalmart-db": "^1.2.0",
+    "@zthun/helpful-fn": "^3.0.0",
+    "@zthun/helpful-query": "^3.0.0"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.3",
+    "vitest-mock-extended": "^1.3.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false
+}
