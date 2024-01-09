@@ -14,11 +14,14 @@ yarn add @zthun/dalmart-fs
 ## Usage
 
 ```ts
-import { IZDatabaseDocument } from '@zthun/dalmart-db';
-import { ZDatabaseFileSystem } from '@zthun/dalmart-fs';
+import { IZDatabaseDocument, IZDatabaseMemory } from '@zthun/dalmart-db';
+import { ZDatabaseJsonFile, ZDatabaseJsonFolder } from '@zthun/dalmart-fs';
 
-const options = new ZDatabaseOptionsBuilder().url('file://path/to/json/file').build();
-const memory: IZDatabaseDocument = new ZDatabaseJsonFile(path);
+let options = new ZDatabaseOptionsBuilder().url('file://path/to/json/file').build();
+const memory: IZDatabaseMemory = new ZDatabaseJsonFile(options);
+
+options = new ZDatabaseOptionsBuilder().url('/path/to/folder/with/subfolders').build();
+const document: IZDatabaseDocument = new ZDatabaseJsonFolder(options);
 
 // Do things with document and memory.
 ```
