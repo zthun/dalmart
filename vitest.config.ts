@@ -1,4 +1,4 @@
-import tsConfigPaths from 'vitest-tsconfig-paths';
+import tsConfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
