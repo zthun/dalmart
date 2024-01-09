@@ -1,6 +1,6 @@
 import { createGuid } from '@zthun/helpful-fn';
 import { describe, expect, it } from 'vitest';
-import { ZDatabaseServerMemory } from './database-server-memory';
+import { ZDatabaseServerMemory } from './database-server-memory.mjs';
 
 describe('ZDatabaseServerMemory', () => {
   const createTestTarget = () => new ZDatabaseServerMemory();

@@ -1,7 +1,7 @@
 import { IZDatabaseDocument, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
 import { ZDatabaseMongo } from '@zthun/dalmart-mongo';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { IZDatabaseServer } from './database-server';
+import { IZDatabaseServer } from './database-server.mjs';
 
 /**
  * Represents an in memory database server for document databases.

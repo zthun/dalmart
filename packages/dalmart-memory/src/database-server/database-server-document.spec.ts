@@ -1,8 +1,8 @@
 import { IZDatabaseDocument, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
 import { identity, range } from 'lodash-es';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { IZDatabaseServer } from './database-server';
-import { ZDatabaseServerDocument } from './database-server-document';
+import { ZDatabaseServerDocument } from './database-server-document.mjs';
+import { IZDatabaseServer } from './database-server.mjs';
 
 describe('ZDocumentServer', () => {
   let _targets: IZDatabaseServer<IZDatabaseDocument>[];

@@ -1,6 +1,6 @@
 import { IZDatabaseMemory } from '@zthun/dalmart-db';
 import { ZDatabaseStorage } from '@zthun/dalmart-storage';
-import { IZDatabaseServer } from './database-server';
+import { IZDatabaseServer } from './database-server.mjs';
 
 /**
  * Represents a server for a memory database.
