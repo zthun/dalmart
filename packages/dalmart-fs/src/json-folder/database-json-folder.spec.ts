@@ -1,7 +1,12 @@
 import { IZDatabaseOptions, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
 import { IZBrand, ZBrandBuilder } from '@zthun/helpful-brands';
 import { createGuid } from '@zthun/helpful-fn';
-import { ZDataRequestBuilder, ZFilterCollectionBuilder, ZSortBuilder } from '@zthun/helpful-query';
+import {
+  ZDataRequestBuilder,
+  ZFilterBinaryBuilder,
+  ZFilterCollectionBuilder,
+  ZSortBuilder
+} from '@zthun/helpful-query';
 import { rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { afterAll, afterEach, beforeEach, describe, expect, it } from 'vitest';
@@ -86,9 +91,15 @@ describe('ZDatabaseJsonFolder', () => {
 
   describe('Write', () => {
     let tempDatabase: string;
+    let youtube: IZBrand & { _id?: string };
+    let airbnb: IZBrand & { _id?: string };
 
     beforeEach(() => {
       tempDatabase = resolve(temp, createGuid());
+      airbnb = new ZBrandBuilder().airbnb().build();
+      airbnb = { ...airbnb, _id: airbnb.id };
+      youtube = new ZBrandBuilder().youtube().build();
+      youtube = { ...youtube, _id: youtube.id };
       options = new ZDatabaseOptionsBuilder().url(tempDatabase).build();
     });
 
@@ -97,16 +108,6 @@ describe('ZDatabaseJsonFolder', () => {
     });
 
     describe('Create', () => {
-      let youtube: IZBrand & { _id?: string };
-      let airbnb: IZBrand & { _id?: string };
-
-      beforeEach(() => {
-        airbnb = new ZBrandBuilder().airbnb().build();
-        airbnb = { ...airbnb, _id: airbnb.id };
-        youtube = new ZBrandBuilder().youtube().build();
-        youtube = { ...youtube, _id: youtube.id };
-      });
-
       it('should create the collection and document if it does not exist', async () => {
         // Arrange.
         const target = createTestTarget();
@@ -149,6 +150,35 @@ describe('ZDatabaseJsonFolder', () => {
         const actual = target.create('companies', [facebook, x, facebook]);
         // Assert
         await expect(actual).rejects.toBeTruthy();
+      });
+    });
+
+    describe('Delete', () => {
+      it('should delete the files that match the filters', async () => {
+        // Arrange.
+        const target = createTestTarget();
+        const source = 'companies';
+        await target.create(source, [youtube, airbnb]);
+        const filter = new ZFilterBinaryBuilder().subject('_id').equal().value(youtube._id).build();
+        // Act.
+        const deleted = await target.delete(source, filter);
+        const actual = await target.count(source);
+        // Assert.
+        expect(deleted).toEqual(1);
+        expect(actual).toEqual(1);
+      });
+
+      it('should delete all documents', async () => {
+        // Arrange.
+        const target = createTestTarget();
+        const source = 'companies';
+        await target.create(source, [youtube, airbnb]);
+        // Act.
+        const deleted = await target.delete(source);
+        const actual = await target.count(source);
+        // Assert.
+        expect(deleted).toEqual(2);
+        expect(actual).toEqual(0);
       });
     });
   });

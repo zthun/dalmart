@@ -13,9 +13,11 @@ import {
 } from '@zthun/helpful-query';
 import { sync } from 'glob';
 import { groupBy, toPairs } from 'lodash-es';
-import { accessSync } from 'node:fs';
+import { accessSync, rmSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { tryReadJson, writeJson } from '../json-util/json-io.mjs';
+
+type TWithDecoration<T> = T & { _id: string };
 
 export class ZDatabaseJsonFolder implements IZDatabaseDocument {
   private readonly _staticOptions = new ZDataSourceStaticOptionsBuilder()
@@ -34,10 +36,9 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
 
   public async create<T>(source: string, template: T[]): Promise<T[]> {
     const folder = this._folder(source);
-    type TWithId = T & { _id: string };
 
-    const withIds: Array<TWithId> = template.map((t: any) => {
-      const _id = t._id || t.id || createGuid();
+    const withIds: Array<TWithDecoration<T>> = template.map((t: any) => {
+      const _id = this._findDocId(t) || createGuid();
       return { ...t, _id };
     });
 
@@ -92,8 +93,17 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     return dataSource.retrieve(_request);
   }
 
-  public delete(source: string, scope?: IZFilter | undefined): Promise<number> {
-    throw new Error('Method not implemented.');
+  public async delete(source: string, scope?: IZFilter | undefined): Promise<number> {
+    const request = new ZDataRequestBuilder().filter(scope).build();
+    const dataSource = this._read(source);
+    const targets = await dataSource.retrieve(request);
+    targets.forEach((t) => rmSync(this._file(source, t), { force: true }));
+    delete this._sources[source];
+    return targets.length;
+  }
+
+  private _findDocId(doc: any): string | null {
+    return doc._id || doc.id;
   }
 
   private _folder(source: string): string {
@@ -104,6 +114,12 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     }
 
     return resolve(url, source);
+  }
+
+  private _file(source: string, doc: any): string {
+    const folder = this._folder(source);
+    const id = this._findDocId(doc);
+    return resolve(folder, `${id}.json`);
   }
 
   private _read<T>(source: string): IZDataSource<T> {
