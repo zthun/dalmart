@@ -21,7 +21,8 @@
   "dependencies": {
     "@zthun/dalmart-db": "^1.2.0",
     "@zthun/helpful-fn": "^3.0.0",
-    "@zthun/helpful-query": "^3.0.0"
+    "@zthun/helpful-query": "^3.0.0",
+    "glob": "^10.3.10"
   },
   "devDependencies": {
     "@zthun/helpful-brands": "^3.0.0",

@@ -3776,6 +3776,7 @@ __metadata:
     "@zthun/helpful-brands": "npm:^3.0.0"
     "@zthun/helpful-fn": "npm:^3.0.0"
     "@zthun/helpful-query": "npm:^3.0.0"
+    glob: "npm:^10.3.10"
     microbundle: "npm:^0.15.1"
     typescript: "npm:^5.3.3"
     vitest: "npm:^1.1.3"
