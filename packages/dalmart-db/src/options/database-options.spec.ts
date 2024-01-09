@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ZDatabaseOptionsBuilder } from './database-options';
+import { ZDatabaseOptionsBuilder } from './database-options.mjs';
 
 describe('ZDatabaseOptionsBuilder', () => {
   function createTestTarget() {

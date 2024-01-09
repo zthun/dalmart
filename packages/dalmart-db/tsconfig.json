@@ -4,5 +4,11 @@
     "baseUrl": ".",
     "declarationDir": "dist/types"
   },
-  "include": ["src/**/*.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/database/database-document-collection.mts",
+    "src/database/database-document.mts",
+    "src/database/database-memory.mts",
+    "src/options/database-options.mts"
+  ]
 }
