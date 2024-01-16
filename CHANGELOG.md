@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0](https://github.com/zthun/dalmart/compare/v1.3.0...v1.4.0) (2024-01-16)
+
+
+### Features
+
+* fs folders now support json files in sub directories ([02a3550](https://github.com/zthun/dalmart/commit/02a3550dcdcfebc0d011ecdafcd1d3da79594b12))
+
+
+
 ## [1.3.0](https://github.com/zthun/dalmart/compare/v1.2.0...v1.3.0) (2024-01-09)
 
 
