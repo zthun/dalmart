@@ -138,7 +138,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     }
 
     const path = this._folder(_source);
-    const files = sync(`${path}/*.json`);
+    const files = sync(`${path}/**/*.json`);
     const contents = files.map((f) => tryReadJson<T>(f));
     this._sources[_source] = new ZDataSourceStatic<T>(contents, this._staticOptions);
     return this._sources[_source];
