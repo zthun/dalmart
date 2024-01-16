@@ -20,7 +20,7 @@ describe('ZDatabaseJsonContent', () => {
 
   describe('Read', () => {
     beforeEach(() => {
-      const path = resolve(__dirname, '../../.test/brands/facebook.json');
+      const path = resolve(__dirname, '../../.test/brands/meta/facebook.json');
       options = new ZDatabaseOptionsBuilder().url(path).build();
     });
 
