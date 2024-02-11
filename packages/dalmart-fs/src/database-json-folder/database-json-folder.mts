@@ -34,6 +34,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
   }
 
   public async create<T>(source: string, template: T[]): Promise<T[]> {
+    this._read(source);
     const withIds: Array<ZDocumentWithDecoration<T>> = template.map((t: any) => ({ ...t, _id: t._id || createGuid() }));
 
     let duplicates = withIds
@@ -69,7 +70,10 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
       return t as T;
     });
 
-    delete this._sources[source];
+    for (const v of written) {
+      this._sources[source] = await this._sources[source].insert(v);
+    }
+
     return Promise.resolve(written);
   }
 

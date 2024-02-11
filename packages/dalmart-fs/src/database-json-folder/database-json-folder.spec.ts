@@ -161,6 +161,7 @@ describe('ZDatabaseJsonFolder', () => {
       it('should persist the data', async () => {
         // Arrange.
         const target = createTestTarget();
+        await target.read(databaseCompanies);
         // Act.
         await target.create(databaseCompanies, [airbnb, youtube]);
         const brands = await target.read<IZBrand>(databaseCompanies);
