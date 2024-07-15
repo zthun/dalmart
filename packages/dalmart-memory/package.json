@@ -28,7 +28,7 @@
     "@zthun/dalmart-db": "^1.4.1",
     "@zthun/dalmart-mongo": "^1.4.1",
     "@zthun/dalmart-storage": "^1.4.1",
-    "@zthun/helpful-fn": "^3.3.0",
+    "@zthun/helpful-fn": "^5.0.3",
     "mongodb-memory-server": "^9.1.6"
   },
   "devDependencies": {
