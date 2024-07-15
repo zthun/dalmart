@@ -1,1 +1,1 @@
-module.exports = require('@zthun/lint-janitor-config/eslint-react');
+module.exports = require('@zthun/lint-janitor-config/eslint');
