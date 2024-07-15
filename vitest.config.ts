@@ -7,6 +7,7 @@ export default defineConfig({
     environment: 'node',
     testTimeout: 30000,
     coverage: {
+      all: false,
       provider: 'istanbul'
     }
   }
