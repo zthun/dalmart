@@ -1,5 +1,5 @@
-import { IZDataRequest, IZFilter } from '@zthun/helpful-query';
-import { IZDatabaseDocumentCollection } from './database-document-collection.mjs';
+import { IZDataRequest, IZFilter } from "@zthun/helpful-query";
+import { IZDatabaseDocumentCollection } from "./database-document-collection.mjs";
 
 /**
  * Represents a set of database operations for a document database.
@@ -18,7 +18,10 @@ export interface IZDatabaseDocument {
    * @returns
    *        The total source count.
    */
-  count(source: string | IZDatabaseDocumentCollection, scope?: IZFilter): Promise<number>;
+  count(
+    source: string | IZDatabaseDocumentCollection,
+    scope?: IZFilter,
+  ): Promise<number>;
 
   /**
    * Inserts many documents in the database.
@@ -47,7 +50,11 @@ export interface IZDatabaseDocument {
    * @returns
    *        The total number of documents updated.
    */
-  update<T>(source: string, template: Partial<T>, scope?: IZFilter): Promise<number>;
+  update<T>(
+    source: string,
+    template: Partial<T>,
+    scope?: IZFilter,
+  ): Promise<number>;
 
   /**
    * Reads documents from the database.
@@ -61,7 +68,10 @@ export interface IZDatabaseDocument {
    * @returns
    *        A page of documents that match the request scope.
    */
-  read<T>(source: string | IZDatabaseDocumentCollection, request?: IZDataRequest): Promise<T[]>;
+  read<T>(
+    source: string | IZDatabaseDocumentCollection,
+    request?: IZDataRequest,
+  ): Promise<T[]>;
 
   /**
    * Deletes documents from the database.

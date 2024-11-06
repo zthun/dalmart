@@ -1,35 +1,35 @@
-import { createGuid } from '@zthun/helpful-fn';
-import { describe, expect, it } from 'vitest';
-import { ZDatabaseServerMemory } from './database-server-memory.mjs';
+import { createGuid } from "@zthun/helpful-fn";
+import { describe, expect, it } from "vitest";
+import { ZDatabaseServerMemory } from "./database-server-memory.mjs";
 
-describe('ZDatabaseServerMemory', () => {
+describe("ZDatabaseServerMemory", () => {
   const createTestTarget = () => new ZDatabaseServerMemory();
 
-  describe('Storage', () => {
-    describe('Keys', () => {
-      it('should return the total number of keys', () => {
+  describe("Storage", () => {
+    describe("Keys", () => {
+      it("should return the total number of keys", () => {
         // Arrange.
         const target = createTestTarget();
-        target.setItem('a', '2');
-        target.setItem('b', '3');
+        target.setItem("a", "2");
+        target.setItem("b", "3");
         // Act.
         const actual = target.length;
         // Assert.
         expect(actual).toEqual(2);
       });
 
-      it('should return the key at a specific index', () => {
+      it("should return the key at a specific index", () => {
         // Arrange.
         const target = createTestTarget();
-        target.setItem('a', '2');
-        target.setItem('b', '3');
+        target.setItem("a", "2");
+        target.setItem("b", "3");
         // Act.
         const actual = target.key(1);
         // Assert.
-        expect(actual).toEqual('b');
+        expect(actual).toEqual("b");
       });
 
-      it('should return null if no key is at the index', () => {
+      it("should return null if no key is at the index", () => {
         // Arrange.
         const target = createTestTarget();
         // Act.
@@ -40,8 +40,8 @@ describe('ZDatabaseServerMemory', () => {
     });
   });
 
-  describe('Server', () => {
-    it('should set an item key', async () => {
+  describe("Server", () => {
+    it("should set an item key", async () => {
       // Arrange.
       const key = createGuid();
       const expected = 2;
@@ -53,11 +53,11 @@ describe('ZDatabaseServerMemory', () => {
       expect(actual).toEqual(expected);
     });
 
-    it('should remove an item key', async () => {
+    it("should remove an item key", async () => {
       // Arrange.
       const key = createGuid();
       const target = await createTestTarget().start();
-      await target.upsert(key, 'whatever');
+      await target.upsert(key, "whatever");
       // Act.
       await target.delete(key);
       const actual = await target.read(key);
@@ -65,12 +65,12 @@ describe('ZDatabaseServerMemory', () => {
       expect(actual).toBeNull();
     });
 
-    it('should remove all keys', async () => {
+    it("should remove all keys", async () => {
       // Arrange.
       const target = createTestTarget();
       const database = await target.start();
-      await database.upsert(createGuid(), 'whatever');
-      await database.upsert(createGuid(), 'again-whatever');
+      await database.upsert(createGuid(), "whatever");
+      await database.upsert(createGuid(), "again-whatever");
       // Act.
       await database.delete();
       const actual = target.length;
@@ -78,7 +78,7 @@ describe('ZDatabaseServerMemory', () => {
       expect(actual).toEqual(0);
     });
 
-    it('should always return true for running', async () => {
+    it("should always return true for running", async () => {
       // Arrange.
       const target = createTestTarget();
       // Act.
@@ -87,7 +87,7 @@ describe('ZDatabaseServerMemory', () => {
       expect(actual).toBeTruthy();
     });
 
-    it('should return false for stop as there is no actual server to run', async () => {
+    it("should return false for stop as there is no actual server to run", async () => {
       // Arrange.
       const target = createTestTarget();
       await target.start();

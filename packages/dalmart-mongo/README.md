@@ -1,7 +1,7 @@
 # Dalmart Mongo
 
-This package supplies the implementation for a dalmart layer that connects to a [mongo](https://www.mongodb.com/)
-database.
+This package supplies the implementation for a dalmart layer that connects to a
+[mongo](https://www.mongodb.com/) database.
 
 ## Installation
 
@@ -13,12 +13,12 @@ yarn add @zthun/dalmart-mongo
 ## Usage
 
 ```ts
-import { IZDatabaseDocument, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
-import { ZDatabaseMongo } from '@zthun/dalmart-mongo';
+import { IZDatabaseDocument, ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
+import { ZDatabaseMongo } from "@zthun/dalmart-mongo";
 
 const options = new ZDatabaseOptionsBuilder()
-  .url('mongodb://my-database.url:8899')
-  .database('blah-blahs')
+  .url("mongodb://my-database.url:8899")
+  .database("blah-blahs")
   .timeout(45000)
   .build();
 const database: IZDatabaseDocument = new ZDatabaseMongo(options);

@@ -1,5 +1,5 @@
-import { IZDatabaseMemory, IZDatabaseOptions } from '@zthun/dalmart-db';
-import { RedisClientType, createClient } from 'redis';
+import { IZDatabaseMemory, IZDatabaseOptions } from "@zthun/dalmart-db";
+import { RedisClientType, createClient } from "redis";
 
 /**
  * Represents a connection to a redis database.
@@ -15,7 +15,7 @@ export class ZDatabaseRedis implements IZDatabaseMemory {
    */
   public constructor(options: IZDatabaseOptions) {
     this._client = createClient({
-      url: options.url
+      url: options.url,
     });
   }
 
@@ -48,7 +48,7 @@ export class ZDatabaseRedis implements IZDatabaseMemory {
   public delete(key?: string | undefined): Promise<void> {
     return this._do(async () => {
       if (key == null) {
-        const keys = await this._client.keys('*');
+        const keys = await this._client.keys("*");
         await this._client.del(keys);
       } else {
         await this._client.del([key]);

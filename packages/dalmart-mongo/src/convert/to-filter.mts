@@ -7,13 +7,13 @@ import {
   isBinaryFilter,
   isCollectionFilter,
   isLogicFilter,
-  isUnaryFilter
-} from '@zthun/helpful-query';
-import { Filter } from 'mongodb';
+  isUnaryFilter,
+} from "@zthun/helpful-query";
+import { Filter } from "mongodb";
 
 const LogicMap: Record<ZOperatorLogic, string> = {
-  [ZOperatorLogic.And]: '$and',
-  [ZOperatorLogic.Or]: '$or'
+  [ZOperatorLogic.And]: "$and",
+  [ZOperatorLogic.Or]: "$or",
 };
 
 const BinaryMap: Record<ZOperatorBinary, (v: any) => object> = {
@@ -23,17 +23,17 @@ const BinaryMap: Record<ZOperatorBinary, (v: any) => object> = {
   [ZOperatorBinary.GreaterThanEqualTo]: (v: any) => ({ $gte: v }),
   [ZOperatorBinary.LessThan]: (v: any) => ({ $lt: v }),
   [ZOperatorBinary.LessThanEqualTo]: (v: any) => ({ $lte: v }),
-  [ZOperatorBinary.Like]: (v: any) => ({ $regex: v, $options: 'i' })
+  [ZOperatorBinary.Like]: (v: any) => ({ $regex: v, $options: "i" }),
 };
 
 const CollectionMap: Record<ZOperatorCollection, (v: any[]) => object> = {
   [ZOperatorCollection.In]: (v: any[]) => ({ $in: v }),
-  [ZOperatorCollection.NotIn]: (v: any[]) => ({ $nin: v })
+  [ZOperatorCollection.NotIn]: (v: any[]) => ({ $nin: v }),
 };
 
 const UnaryMap: Record<ZOperatorUnary, boolean> = {
   [ZOperatorUnary.IsNull]: false,
-  [ZOperatorUnary.IsNotNull]: true
+  [ZOperatorUnary.IsNotNull]: true,
 };
 
 export function toFilter(filter?: IZFilter): Filter<any> {

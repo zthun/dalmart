@@ -1,10 +1,10 @@
-import { IZDatabaseDocument, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
-import { identity, range } from 'lodash-es';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { ZDatabaseServerDocument } from './database-server-document.mjs';
-import { IZDatabaseServer } from './database-server.mjs';
+import { IZDatabaseDocument, ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
+import { identity, range } from "lodash-es";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { ZDatabaseServerDocument } from "./database-server-document.mjs";
+import { IZDatabaseServer } from "./database-server.mjs";
 
-describe('ZDocumentServer', () => {
+describe("ZDocumentServer", () => {
   let _targets: IZDatabaseServer<IZDatabaseDocument>[];
 
   const createTestTarget = () => {
@@ -21,8 +21,8 @@ describe('ZDocumentServer', () => {
     await Promise.all(_targets.map((t) => t.stop()));
   });
 
-  describe('Start', () => {
-    it('should start the server', async () => {
+  describe("Start", () => {
+    it("should start the server", async () => {
       // Arrange.
       const target = createTestTarget();
       // Act.
@@ -32,7 +32,7 @@ describe('ZDocumentServer', () => {
       expect(actual).toBeTruthy();
     });
 
-    it('should retain the same client if the server has already been started', async () => {
+    it("should retain the same client if the server has already been started", async () => {
       // Arrange.
       const target = createTestTarget();
       const expected = await target.start();
@@ -42,7 +42,7 @@ describe('ZDocumentServer', () => {
       expect(actual).toBe(expected);
     });
 
-    it('should try as many times as needed to start the server while ports get used', async () => {
+    it("should try as many times as needed to start the server while ports get used", async () => {
       // Arrange.
       const targets = range(0, 20).map(() => createTestTarget());
       await Promise.all(targets.map((t) => t.start()));
@@ -54,8 +54,8 @@ describe('ZDocumentServer', () => {
     });
   });
 
-  describe('Stop', () => {
-    it('should stop a server', async () => {
+  describe("Stop", () => {
+    it("should stop a server", async () => {
       // Arrange.
       const target = createTestTarget();
       await target.start();
@@ -66,7 +66,7 @@ describe('ZDocumentServer', () => {
       expect(actual).toBeFalsy();
     });
 
-    it('should return true if the server is already stopped', async () => {
+    it("should return true if the server is already stopped", async () => {
       // Arrange.
       const target = createTestTarget();
       await target.start();

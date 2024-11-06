@@ -1,14 +1,16 @@
-import { IZDatabaseDocument, ZDatabaseOptionsBuilder } from '@zthun/dalmart-db';
-import { ZDatabaseMongo } from '@zthun/dalmart-mongo';
-import { MongoMemoryServer } from 'mongodb-memory-server';
-import { IZDatabaseServer } from './database-server.mjs';
+import { IZDatabaseDocument, ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
+import { ZDatabaseMongo } from "@zthun/dalmart-mongo";
+import { MongoMemoryServer } from "mongodb-memory-server";
+import { IZDatabaseServer } from "./database-server.mjs";
 
 /**
  * Represents an in memory database server for document databases.
  *
  * This uses mongo under the hood.
  */
-export class ZDatabaseServerDocument implements IZDatabaseServer<IZDatabaseDocument> {
+export class ZDatabaseServerDocument
+  implements IZDatabaseServer<IZDatabaseDocument>
+{
   private _server: MongoMemoryServer | null;
   private _client: IZDatabaseDocument | null;
 
@@ -16,7 +18,9 @@ export class ZDatabaseServerDocument implements IZDatabaseServer<IZDatabaseDocum
     return Promise.resolve(this._server != null);
   }
 
-  public async start(options = new ZDatabaseOptionsBuilder().build()): Promise<IZDatabaseDocument> {
+  public async start(
+    options = new ZDatabaseOptionsBuilder().build(),
+  ): Promise<IZDatabaseDocument> {
     if (this._client) {
       return this._client;
     }
@@ -24,7 +28,10 @@ export class ZDatabaseServerDocument implements IZDatabaseServer<IZDatabaseDocum
     this._server = new MongoMemoryServer();
     await this._server.start(false);
     const { ip, port } = this._server.instanceInfo!;
-    const _options = new ZDatabaseOptionsBuilder().copy(options).url(`mongodb://${ip}:${port}`).build();
+    const _options = new ZDatabaseOptionsBuilder()
+      .copy(options)
+      .url(`mongodb://${ip}:${port}`)
+      .build();
     this._client = new ZDatabaseMongo(_options);
     return this._client;
   }

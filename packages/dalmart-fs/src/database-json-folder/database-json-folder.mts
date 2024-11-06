@@ -1,5 +1,9 @@
-import { IZDatabaseDocument, IZDatabaseDocumentCollection, IZDatabaseOptions } from '@zthun/dalmart-db';
-import { createGuid } from '@zthun/helpful-fn';
+import {
+  IZDatabaseDocument,
+  IZDatabaseDocumentCollection,
+  IZDatabaseOptions,
+} from "@zthun/dalmart-db";
+import { createGuid } from "@zthun/helpful-fn";
 import {
   IZDataRequest,
   IZDataSource,
@@ -9,14 +13,14 @@ import {
   ZDataMatchOptional,
   ZDataRequestBuilder,
   ZDataSourceStatic,
-  ZDataSourceStaticOptionsBuilder
-} from '@zthun/helpful-query';
-import { sync } from 'glob';
-import { groupBy, toPairs } from 'lodash-es';
-import { accessSync, rmSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { ZDocumentWithDecoration } from 'src/json-util/document-with-decoration.mjs';
-import { tryReadJson, writeJson } from '../json-util/json-io.mjs';
+  ZDataSourceStaticOptionsBuilder,
+} from "@zthun/helpful-query";
+import { sync } from "glob";
+import { groupBy, toPairs } from "lodash-es";
+import { accessSync, rmSync } from "node:fs";
+import { resolve } from "node:path";
+import { ZDocumentWithDecoration } from "src/json-util/document-with-decoration.mjs";
+import { tryReadJson, writeJson } from "../json-util/json-io.mjs";
 
 export class ZDatabaseJsonFolder implements IZDatabaseDocument {
   private readonly _staticOptions = new ZDataSourceStaticOptionsBuilder()
@@ -27,7 +31,10 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
 
   public constructor(private readonly _options: IZDatabaseOptions) {}
 
-  public async count(source: string | IZDatabaseDocumentCollection, scope?: IZFilter | undefined): Promise<number> {
+  public async count(
+    source: string | IZDatabaseDocumentCollection,
+    scope?: IZFilter | undefined,
+  ): Promise<number> {
     const dataSource = this._read(source);
     const request = new ZDataRequestBuilder().filter(scope).build();
     return dataSource.count(request);
@@ -35,7 +42,9 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
 
   public async create<T>(source: string, template: T[]): Promise<T[]> {
     this._read(source);
-    const withIds: Array<ZDocumentWithDecoration<T>> = template.map((t: any) => ({ ...t, _id: t._id || createGuid() }));
+    const withIds: Array<ZDocumentWithDecoration<T>> = template.map(
+      (t: any) => ({ ...t, _id: t._id || createGuid() }),
+    );
 
     let duplicates = withIds
       .filter((t) => {
@@ -49,7 +58,9 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
       .map((t) => t._id);
 
     if (duplicates.length > 0) {
-      const err = new Error(`Duplicate ids detected, [${duplicates.join(', ')}].  Use update instead`);
+      const err = new Error(
+        `Duplicate ids detected, [${duplicates.join(", ")}].  Use update instead`,
+      );
       return Promise.reject(err);
     }
 
@@ -58,7 +69,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
       .map(([k]) => k);
 
     if (duplicates.length > 0) {
-      const list = duplicates.join(', ');
+      const list = duplicates.join(", ");
       const msg = `Duplicate keys detected in template set, [${list}].  Make sure all id fields are unique.`;
       const err = new Error(msg);
       return Promise.reject(err);
@@ -77,13 +88,21 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     return Promise.resolve(written);
   }
 
-  public async update<T>(source: string, template: Partial<T>, scope?: IZFilter | undefined): Promise<number> {
+  public async update<T>(
+    source: string,
+    template: Partial<T>,
+    scope?: IZFilter | undefined,
+  ): Promise<number> {
     const dataSource = this._read(source);
     const request = new ZDataRequestBuilder().filter(scope).build();
     const values = await dataSource.retrieve(request);
 
-    if (Object.prototype.hasOwnProperty.call(template, '_id')) {
-      return Promise.reject(new Error('You are not allowed to change the _id property on a document.'));
+    if (Object.prototype.hasOwnProperty.call(template, "_id")) {
+      return Promise.reject(
+        new Error(
+          "You are not allowed to change the _id property on a document.",
+        ),
+      );
     }
 
     values.forEach((t) => {
@@ -98,14 +117,17 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
 
   public async read<T>(
     source: string | IZDatabaseDocumentCollection,
-    request?: IZDataRequest | undefined
+    request?: IZDataRequest | undefined,
   ): Promise<T[]> {
     const dataSource = this._read<T>(source);
     const _request = request || new ZDataRequestBuilder().build();
     return dataSource.retrieve(_request);
   }
 
-  public async delete(source: string, scope?: IZFilter | undefined): Promise<number> {
+  public async delete(
+    source: string,
+    scope?: IZFilter | undefined,
+  ): Promise<number> {
     const request = new ZDataRequestBuilder().filter(scope).build();
     const dataSource = this._read(source);
     const targets = await dataSource.retrieve(request);
@@ -118,7 +140,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     const { url } = this._options;
 
     if (url == null) {
-      throw new Error('Options url is required');
+      throw new Error("Options url is required");
     }
 
     return resolve(url, source);
@@ -130,11 +152,15 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     return resolve(folder, `${_id}.json`);
   }
 
-  private _read<T>(source: string | IZDatabaseDocumentCollection): IZDataSource<T> {
-    const _source = typeof source === 'string' ? source : source.name;
+  private _read<T>(
+    source: string | IZDatabaseDocumentCollection,
+  ): IZDataSource<T> {
+    const _source = typeof source === "string" ? source : source.name;
 
-    if (typeof source === 'object' && source.join != null) {
-      throw new Error('Joins with a file system document database are currently not supported');
+    if (typeof source === "object" && source.join != null) {
+      throw new Error(
+        "Joins with a file system document database are currently not supported",
+      );
     }
 
     if (Object.prototype.hasOwnProperty.call(this._sources, _source)) {
@@ -144,7 +170,10 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
     const path = this._folder(_source);
     const files = sync(`${path}/**/*.json`);
     const contents = files.map((f) => tryReadJson<T>(f));
-    this._sources[_source] = new ZDataSourceStatic<T>(contents, this._staticOptions);
+    this._sources[_source] = new ZDataSourceStatic<T>(
+      contents,
+      this._staticOptions,
+    );
     return this._sources[_source];
   }
 }

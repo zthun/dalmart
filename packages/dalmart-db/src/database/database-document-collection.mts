@@ -27,7 +27,7 @@ export class ZDatabaseDocumentCollectionBuilder {
   public constructor(name: string) {
     this._collection = {
       name,
-      join: []
+      join: [],
     };
   }
 
@@ -47,7 +47,12 @@ export class ZDatabaseDocumentCollectionBuilder {
    *        This object.
    */
   public join(target: string, local: string, foreign: string, as: string) {
-    this._collection.join = this._collection.join.concat({ target, local, foreign, as });
+    this._collection.join = this._collection.join.concat({
+      target,
+      local,
+      foreign,
+      as,
+    });
     return this;
   }
 

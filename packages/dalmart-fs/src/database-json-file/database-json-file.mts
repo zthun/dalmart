@@ -1,5 +1,5 @@
-import { IZDatabaseMemory, IZDatabaseOptions } from '@zthun/dalmart-db';
-import { tryReadJson, writeJson } from '../json-util/json-io.mjs';
+import { IZDatabaseMemory, IZDatabaseOptions } from "@zthun/dalmart-db";
+import { tryReadJson, writeJson } from "../json-util/json-io.mjs";
 
 /**
  * Represents a memory database where the data is housed in a single json file.
@@ -51,7 +51,7 @@ export class ZDatabaseJsonFile implements IZDatabaseMemory {
     const { url } = this._options;
 
     if (url == null) {
-      throw new Error('Options url is required');
+      throw new Error("Options url is required");
     }
 
     return url;

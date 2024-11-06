@@ -1,11 +1,13 @@
-import { IZDatabaseMemory } from '@zthun/dalmart-db';
-import { ZDatabaseStorage } from '@zthun/dalmart-storage';
-import { IZDatabaseServer } from './database-server.mjs';
+import { IZDatabaseMemory } from "@zthun/dalmart-db";
+import { ZDatabaseStorage } from "@zthun/dalmart-storage";
+import { IZDatabaseServer } from "./database-server.mjs";
 
 /**
  * Represents a server for a memory database.
  */
-export class ZDatabaseServerMemory implements Storage, IZDatabaseServer<IZDatabaseMemory> {
+export class ZDatabaseServerMemory
+  implements Storage, IZDatabaseServer<IZDatabaseMemory>
+{
   private _dictionary: Record<string, string> = {};
 
   public get length() {
@@ -17,7 +19,9 @@ export class ZDatabaseServerMemory implements Storage, IZDatabaseServer<IZDataba
   }
 
   public getItem(key: string): string | null {
-    return Object.prototype.hasOwnProperty.call(this._dictionary, key) ? this._dictionary[key] : null;
+    return Object.prototype.hasOwnProperty.call(this._dictionary, key)
+      ? this._dictionary[key]
+      : null;
   }
 
   public key(index: number): string | null {

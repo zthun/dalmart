@@ -1,4 +1,4 @@
-import { IZDatabaseOptions } from '@zthun/dalmart-db';
+import { IZDatabaseOptions } from "@zthun/dalmart-db";
 
 /**
  * Represents a server that runs an in-memory database.

@@ -1,4 +1,4 @@
-import { IZDatabaseMemory } from '@zthun/dalmart-db';
+import { IZDatabaseMemory } from "@zthun/dalmart-db";
 
 /**
  * Represents an implements of an IZMemoryDatabase that references session and local storage.

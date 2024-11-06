@@ -1,5 +1,5 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { dirname } from 'node:path';
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
 
 export function tryReadJson<T = unknown>(url: string): T {
   try {
@@ -16,5 +16,5 @@ export function writeJson<T = unknown>(content: T, url: string): void {
   const dir = dirname(url);
   mkdirSync(dir, { recursive: true });
   const data = JSON.stringify(content, undefined, 2);
-  writeFileSync(url, data, { flag: 'w+' });
+  writeFileSync(url, data, { flag: "w+" });
 }

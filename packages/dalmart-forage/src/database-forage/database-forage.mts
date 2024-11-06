@@ -1,5 +1,5 @@
-import { IZDatabaseMemory, IZDatabaseOptions } from '@zthun/dalmart-db';
-import localforage from 'localforage';
+import { IZDatabaseMemory, IZDatabaseOptions } from "@zthun/dalmart-db";
+import localforage from "localforage";
 
 /**
  * Represents an implementation of an IZMemoryDatabase that references
@@ -14,7 +14,7 @@ export class ZDatabaseForage implements IZDatabaseMemory {
    */
   public constructor(options: IZDatabaseOptions) {
     localforage.config({
-      name: options.database
+      name: options.database,
     });
   }
 
