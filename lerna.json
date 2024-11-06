@@ -1,6 +1,6 @@
 {
   "stream": true,
-  "version": "1.4.2",
+  "version": "1.4.3",
   "nx": true,
   "command": {
     "publish": {
@@ -9,9 +9,7 @@
   },
   "changelogPreset": {
     "name": "conventionalcommits",
-    "issuePrefixes": [
-      "#"
-    ],
+    "issuePrefixes": ["#"],
     "types": [
       {
         "type": "feat",
