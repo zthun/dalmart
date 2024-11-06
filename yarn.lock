@@ -2872,8 +2872,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-db@workspace:packages/dalmart-db"
   dependencies:
-    "@zthun/helpful-fn": "npm:^5.0.3"
-    "@zthun/helpful-query": "npm:^5.0.3"
+    "@zthun/helpful-fn": "npm:^6.5.2"
+    "@zthun/helpful-query": "npm:^6.5.2"
     typescript: "npm:^5.6.3"
     vite: "npm:^5.4.10"
     vitest: "npm:^2.1.4"
@@ -2886,7 +2886,7 @@ __metadata:
   resolution: "@zthun/dalmart-forage@workspace:packages/dalmart-forage"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.4.2"
-    "@zthun/helpful-fn": "npm:^5.0.3"
+    "@zthun/helpful-fn": "npm:^6.5.2"
     localforage: "npm:^1.10.0"
     typescript: "npm:^5.6.3"
     vite: "npm:^5.4.10"
@@ -2900,9 +2900,9 @@ __metadata:
   resolution: "@zthun/dalmart-fs@workspace:packages/dalmart-fs"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.4.2"
-    "@zthun/helpful-brands": "npm:^5.0.3"
-    "@zthun/helpful-fn": "npm:^5.0.3"
-    "@zthun/helpful-query": "npm:^5.0.3"
+    "@zthun/helpful-brands": "npm:^6.5.2"
+    "@zthun/helpful-fn": "npm:^6.5.2"
+    "@zthun/helpful-query": "npm:^6.5.2"
     glob: "npm:^11.0.0"
     lodash-es: "npm:^4.17.21"
     typescript: "npm:^5.6.3"
@@ -2919,7 +2919,7 @@ __metadata:
     "@zthun/dalmart-db": "npm:^1.4.2"
     "@zthun/dalmart-mongo": "npm:^1.4.2"
     "@zthun/dalmart-storage": "npm:^1.4.2"
-    "@zthun/helpful-fn": "npm:^5.0.3"
+    "@zthun/helpful-fn": "npm:^6.5.2"
     lodash-es: "npm:^4.17.21"
     mongodb-memory-server: "npm:^10.1.2"
     typescript: "npm:^5.6.3"
@@ -2934,8 +2934,8 @@ __metadata:
   resolution: "@zthun/dalmart-mongo@workspace:packages/dalmart-mongo"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.4.2"
-    "@zthun/helpful-fn": "npm:^5.0.3"
-    "@zthun/helpful-query": "npm:^5.0.3"
+    "@zthun/helpful-fn": "npm:^6.5.2"
+    "@zthun/helpful-query": "npm:^6.5.2"
     mongodb: "npm:^6.10.0"
     mongodb-memory-server: "npm:^10.1.2"
     typescript: "npm:^5.6.3"
@@ -2950,7 +2950,7 @@ __metadata:
   resolution: "@zthun/dalmart-redis@workspace:packages/dalmart-redis"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.4.2"
-    "@zthun/helpful-fn": "npm:^5.0.3"
+    "@zthun/helpful-fn": "npm:^6.5.2"
     redis: "npm:^4.7.0"
     redis-memory-server: "npm:^0.11.0"
     typescript: "npm:^5.6.3"
@@ -2965,7 +2965,7 @@ __metadata:
   resolution: "@zthun/dalmart-storage@workspace:packages/dalmart-storage"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.4.2"
-    "@zthun/helpful-fn": "npm:^5.0.3"
+    "@zthun/helpful-fn": "npm:^6.5.2"
     typescript: "npm:^5.6.3"
     vite: "npm:^5.4.10"
     vitest: "npm:^2.1.4"
@@ -3042,29 +3042,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/helpful-brands@npm:^5.0.3":
-  version: 5.0.3
-  resolution: "@zthun/helpful-brands@npm:5.0.3"
-  checksum: 10/4cf0825d800e112e6035e5c114a4ec118e16cdbcef728c723eea90ba6cb124ef5f9ce749bffd36ba23cddfac27767fbdf2780229e8e0ea7b47726c5f5f8413f3
+"@zthun/helpful-brands@npm:^6.5.2":
+  version: 6.5.2
+  resolution: "@zthun/helpful-brands@npm:6.5.2"
+  checksum: 10/b5873a9a6461b2799ad545e06f90f13cc1ad6165ccd301477c2d191503f01612572e1fa1ed97ae65f354abdd037c6c6a2b97e10a4011fb95c269ee7a37765e8e
   languageName: node
   linkType: hard
 
-"@zthun/helpful-fn@npm:^5.0.3":
-  version: 5.0.3
-  resolution: "@zthun/helpful-fn@npm:5.0.3"
+"@zthun/helpful-fn@npm:^6.5.2":
+  version: 6.5.2
+  resolution: "@zthun/helpful-fn@npm:6.5.2"
   dependencies:
-    uuid: "npm:^10.0.0"
-  checksum: 10/bdf3ba09989faa58bc98151b21db9376ea4f3a86ad2efe704e88e2b9e73326af9c91ed2b4f37e0099dfda5f6e8c79fe91926a4b7680595c96ba1ef445865661a
+    uuid: "npm:^11.0.2"
+  checksum: 10/f77d24430ac5f5499fef4ba494d9e62f9f56f01a0a7c7891323b8197cc7973c1da33cc68b47bde240faa0cbd461018d9ce162694e21db8e4bf041c1fa753ec9e
   languageName: node
   linkType: hard
 
-"@zthun/helpful-query@npm:^5.0.3":
-  version: 5.0.3
-  resolution: "@zthun/helpful-query@npm:5.0.3"
+"@zthun/helpful-query@npm:^6.5.2":
+  version: 6.5.2
+  resolution: "@zthun/helpful-query@npm:6.5.2"
   dependencies:
-    "@zthun/helpful-fn": "npm:^5.0.3"
+    "@zthun/helpful-fn": "npm:^6.5.2"
     lodash-es: "npm:^4.17.21"
-  checksum: 10/0d81ccde2f824380a977e39ca2f9c03f37a99b1938dd6c1b9a0d7c22cc9b6de590bcc3200e369fd37eaff02a293ba998ab6c8ec275f73c28c4bb4ab9a1e7df64
+  checksum: 10/a87177924acfad04d422a835e0a7b293417ec1ffd917111823ce308c251f065480465fc507749f5effe3d1654115a91277b1faddbb492460ba1915ba97e614e0
   languageName: node
   linkType: hard
 
@@ -11710,6 +11710,15 @@ __metadata:
   bin:
     uuid: dist/bin/uuid
   checksum: 10/35aa60614811a201ff90f8ca5e9ecb7076a75c3821e17f0f5ff72d44e36c2d35fcbc2ceee9c4ac7317f4cc41895da30e74f3885e30313bee48fda6338f250538
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^11.0.2":
+  version: 11.0.2
+  resolution: "uuid@npm:11.0.2"
+  bin:
+    uuid: dist/esm/bin/uuid
+  checksum: 10/b98082f398fa2ece8cacc2264402f739256ca70def4bb82e3a14ec70777d189c01ce1054764c3b59b8fc098b62b135a15d1b24914712904c988822e2ac9b4f44
   languageName: node
   linkType: hard
 
