@@ -3102,7 +3102,7 @@ __metadata:
     "@types/node": "npm:^22.9.0"
     "@vitest/coverage-istanbul": "npm:^2.1.4"
     "@zthun/lint-janitor": "npm:^18.0.1"
-    "@zthun/lint-janitor-config": "npm:^18.0.2"
+    "@zthun/lint-janitor-config": "npm:^18.0.3"
     husky: "npm:^9.1.6"
     jsdom: "npm:^25.0.1"
     lerna: "npm:^8.1.9"
@@ -3173,9 +3173,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/lint-janitor-config@npm:^18.0.2":
-  version: 18.0.2
-  resolution: "@zthun/lint-janitor-config@npm:18.0.2"
+"@zthun/lint-janitor-config@npm:^18.0.3":
+  version: 18.0.3
+  resolution: "@zthun/lint-janitor-config@npm:18.0.3"
   dependencies:
     "@zthun/eslint-config": "npm:^18.0.1"
     "@zthun/htmlhint-config": "npm:^18.0.1"
@@ -3196,7 +3196,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/a6737263f2a13a7d190aef0cca9037184301aba13e2f3fcace7512501b3be1b0c35186db08c79cd48e6c321f20ac9bdea245a98ea71777609c1391dbb2ed5872
+  checksum: 10/b67f85dd6c0abf4a2c92c614a8bb0cd0c7f3e339226e213b82bb68ec68c4bd462b163461e41e888be85aaf981c97f2cbd8ee17d5662db3edfc52fe1e7d9842ca
   languageName: node
   linkType: hard
 
