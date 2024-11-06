@@ -6,12 +6,18 @@ const generated = [
   "packages/**/node_modules/**",
   "package-lock.json",
   ".yarnrc.yml",
+  "lerna.json",
+  ".config/cspell.json",
 ];
 const partialGenerated = ["cspell.json", "lerna.json"];
 
-const esFiles = ["*.{js,cjs,mjs,ts,mts}", "packages/**/src/**/*.{ts,mts}"];
+const esFiles = [
+  "*.{js,cjs,mjs,ts,mts}",
+  "packages/**/src/**/*.{ts,mts}",
+  ".config/*.{js,cjs,mjs,ts,mts}",
+];
 const markdownFiles = ["*.md", "packages/**/*.md"];
-const jsonFiles = ["*.json", "packages/**/*.json"];
+const jsonFiles = ["*.json", "packages/**/*.json", ".config/*.json"];
 const yamlFiles = [".circleci/config.yml"];
 const prettyFiles = []
   .concat(esFiles)
