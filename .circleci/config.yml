@@ -23,6 +23,12 @@ commands:
       - run: rm -fr .secrets
 
 jobs:
+  check:
+    executor: system
+    steps:
+      - run_docker_target:
+          target: check
+
   analyze:
     executor: system
     steps:
@@ -61,6 +67,7 @@ jobs:
 workflows:
   make:
     jobs:
+      - check
       - analyze
       - test
       - build:
@@ -72,6 +79,7 @@ workflows:
           context:
             - credentials
           requires:
+            - check
             - analyze
             - test
           filters:
