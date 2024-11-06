@@ -1,1 +1,2 @@
-module.exports = require('@zthun/lint-janitor-config/prettier');
+import config from "@zthun/lint-janitor-config/prettier";
+export default config;
