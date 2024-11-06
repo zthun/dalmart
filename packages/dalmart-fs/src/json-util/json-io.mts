@@ -7,7 +7,7 @@ export function tryReadJson<T = unknown>(url: string): T {
     // synchronized.
     const buffer = readFileSync(url);
     return JSON.parse(buffer.toString());
-  } catch (_) {
+  } catch {
     return {} as T;
   }
 }

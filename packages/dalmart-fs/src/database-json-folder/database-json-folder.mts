@@ -19,7 +19,7 @@ import { sync } from "glob";
 import { groupBy, toPairs } from "lodash-es";
 import { accessSync, rmSync } from "node:fs";
 import { resolve } from "node:path";
-import { ZDocumentWithDecoration } from "src/json-util/document-with-decoration.mjs";
+import { ZDocumentWithDecoration } from "../json-util/document-with-decoration.mjs";
 import { tryReadJson, writeJson } from "../json-util/json-io.mjs";
 
 export class ZDatabaseJsonFolder implements IZDatabaseDocument {
@@ -51,7 +51,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
         try {
           accessSync(this._file(source, t));
           return true;
-        } catch (_) {
+        } catch {
           return false;
         }
       })
