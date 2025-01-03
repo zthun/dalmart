@@ -25,11 +25,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/helpful-fn": "^6.7.0",
-    "@zthun/helpful-query": "^6.7.0"
+    "@zthun/helpful-fn": "^7.0.5",
+    "@zthun/helpful-query": "^7.0.5"
   },
   "devDependencies": {
-    "typescript": "~5.6.3",
+    "typescript": "~5.7.2",
     "vite": "^5.4.11",
     "vitest": "^2.1.8",
     "vitest-mock-extended": "^2.0.2"
