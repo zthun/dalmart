@@ -27,7 +27,7 @@
   "dependencies": {
     "@zthun/dalmart-db": "^1.4.6",
     "@zthun/helpful-fn": "^7.2.1",
-    "redis": "^4.7.1"
+    "redis": "^5.1.0"
   },
   "devDependencies": {
     "redis-memory-server": "^0.12.1",
