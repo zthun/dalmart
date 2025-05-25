@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0](https://github.com/zthun/dalmart/compare/v1.4.6...v1.5.0) (2025-05-25)
+
+### Features
+
+- update redis to 5.x
+  ([1d63c52](https://github.com/zthun/dalmart/commit/1d63c5217e312f5715cf96b07704d52f268fc188))
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## [1.4.6](https://github.com/zthun/dalmart/compare/v1.4.5...v1.4.6) (2025-01-03)
 
 **Note:** Version bump only for package @zthun/dalmart-redis
