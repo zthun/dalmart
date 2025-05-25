@@ -23,8 +23,8 @@
     "@zthun/dalmart-mongo": "^1.4.6",
     "@zthun/dalmart-redis": "^1.4.6",
     "@zthun/dalmart-storage": "^1.4.6",
-    "typedoc": "^0.27.6",
-    "typescript": "~5.7.2"
+    "typedoc": "^0.28.4",
+    "typescript": "~5.8.3"
   },
   "files": [
     "dist"
