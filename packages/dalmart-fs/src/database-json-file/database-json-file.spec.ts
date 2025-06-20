@@ -1,5 +1,5 @@
 import { IZDatabaseOptions, ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
-import { IZBrand, ZBrandBuilder } from "@zthun/helpful-brands";
+import { IZBrand, ZBrandKnown } from "@zthun/helpful-brands";
 import { createGuid } from "@zthun/helpful-fn";
 import { rm } from "node:fs/promises";
 import { resolve } from "node:path";
@@ -27,7 +27,7 @@ describe("ZDatabaseJsonContent", () => {
     it("should read a json content as a single object with the key as a key into the document", async () => {
       // Arrange.
       const target = createTestTarget();
-      const expected = new ZBrandBuilder().facebook().build();
+      const expected = ZBrandKnown.facebook();
       // Act.
       const actual = await target.read("name");
       // Assert.
@@ -72,7 +72,7 @@ describe("ZDatabaseJsonContent", () => {
     let linkedin: IZBrand;
 
     beforeEach(() => {
-      linkedin = new ZBrandBuilder().linkedin().build();
+      linkedin = ZBrandKnown.linkedin();
       const path = resolve(tempDir, createGuid(), "linkedin.json");
       options = new ZDatabaseOptionsBuilder().url(path).build();
     });
@@ -83,10 +83,10 @@ describe("ZDatabaseJsonContent", () => {
       // Act.
       const keys = Object.keys(linkedin);
       await Promise.all(keys.map((k) => target.upsert(k, linkedin[k])));
-      const actual = new ZBrandBuilder().linkedin().build();
+      const actual = ZBrandKnown.linkedin();
       actual.id = await target.read("id", "");
       actual.name = await target.read("name", "");
-      actual.founded = await target.read("founded", NaN);
+      actual.founded = await target.read("founded", "Invalid Date");
       // Assert.
       expect(actual).toEqual(linkedin);
     });

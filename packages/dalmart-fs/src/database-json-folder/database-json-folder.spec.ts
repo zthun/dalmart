@@ -3,7 +3,7 @@ import {
   ZDatabaseDocumentCollectionBuilder,
   ZDatabaseOptionsBuilder,
 } from "@zthun/dalmart-db";
-import { IZBrand, ZBrandBuilder } from "@zthun/helpful-brands";
+import { IZBrand, ZBrandKnown } from "@zthun/helpful-brands";
 import { createGuid } from "@zthun/helpful-fn";
 import {
   ZDataRequestBuilder,
@@ -51,10 +51,10 @@ describe("ZDatabaseJsonFolder", () => {
     it("should query all documents in the source folder", async () => {
       // Arrange.
       const target = createTestTarget();
-      const facebook = new ZBrandBuilder().facebook().build().id;
-      const instagram = new ZBrandBuilder().instagram().build().id;
-      const tiktok = new ZBrandBuilder().tiktok().build().id;
-      const x = new ZBrandBuilder().x().build().id;
+      const facebook = ZBrandKnown.facebook().id;
+      const instagram = ZBrandKnown.instagram().id;
+      const tiktok = ZBrandKnown.tiktok().id;
+      const x = ZBrandKnown.x().id;
       // Act.
       const brands = await target.read<IZDocumentWithId>(databaseBrands);
       const actual = brands.map((b) => b._id);
@@ -157,9 +157,9 @@ describe("ZDatabaseJsonFolder", () => {
 
     beforeEach(() => {
       tempDatabase = resolve(temp, createGuid());
-      airbnb = new ZBrandBuilder().airbnb().build();
+      airbnb = ZBrandKnown.airbnb();
       airbnb = { ...airbnb, _id: airbnb.id };
-      youtube = new ZBrandBuilder().youtube().build();
+      youtube = ZBrandKnown.youtube();
       youtube = { ...youtube, _id: youtube.id };
       options = new ZDatabaseOptionsBuilder().url(tempDatabase).build();
     });
@@ -198,7 +198,7 @@ describe("ZDatabaseJsonFolder", () => {
       it("should return a rejected promise if there are documents that already exist with the given id", async () => {
         // Arrange.
         const target = createTestTarget();
-        let facebook = new ZBrandBuilder().facebook().build();
+        let facebook = ZBrandKnown.facebook();
         [facebook] = await target.create(databaseCompanies, [facebook]);
         // Act.
         const actual = target.create(databaseCompanies, [facebook]);
@@ -221,9 +221,8 @@ describe("ZDatabaseJsonFolder", () => {
 
       it("should always add an _id field", async () => {
         const target = createTestTarget();
-        const facebook: ZDocumentWithDecoration<IZBrand> = new ZBrandBuilder()
-          .facebook()
-          .build();
+        const facebook: ZDocumentWithDecoration<IZBrand> =
+          ZBrandKnown.facebook();
         facebook.id = "";
         // Act.
         const [actual] = await target.create<ZDocumentWithDecoration<IZBrand>>(
