@@ -1,9 +1,10 @@
+import type { IZDatabaseOptions } from "@zthun/dalmart-db";
 import {
-  IZDatabaseOptions,
   ZDatabaseDocumentCollectionBuilder,
   ZDatabaseOptionsBuilder,
 } from "@zthun/dalmart-db";
-import { IZBrand, ZBrandKnown } from "@zthun/helpful-brands";
+import type { IZBrand } from "@zthun/helpful-brands";
+import { ZBrandKnown } from "@zthun/helpful-brands";
 import { createGuid } from "@zthun/helpful-fn";
 import {
   ZDataRequestBuilder,
@@ -22,7 +23,7 @@ import {
   it,
   vi,
 } from "vitest";
-import {
+import type {
   IZDocumentWithId,
   ZDocumentWithDecoration,
 } from "../json-util/document-with-decoration.mjs";

@@ -1,13 +1,15 @@
-import {
+import type {
   IZDatabaseDocument,
   IZDatabaseDocumentCollection,
   IZDatabaseOptions,
 } from "@zthun/dalmart-db";
 import { createGuid } from "@zthun/helpful-fn";
-import {
+import type {
   IZDataRequest,
   IZDataSource,
   IZFilter,
+} from "@zthun/helpful-query";
+import {
   ZDataFilterFields,
   ZDataMatchAlways,
   ZDataMatchOptional,
@@ -19,7 +21,7 @@ import { sync } from "glob";
 import { groupBy, toPairs } from "lodash-es";
 import { accessSync, rmSync } from "node:fs";
 import { resolve } from "node:path";
-import { ZDocumentWithDecoration } from "../json-util/document-with-decoration.mjs";
+import type { ZDocumentWithDecoration } from "../json-util/document-with-decoration.mjs";
 import { tryReadJson, writeJson } from "../json-util/json-io.mjs";
 
 export class ZDatabaseJsonFolder implements IZDatabaseDocument {

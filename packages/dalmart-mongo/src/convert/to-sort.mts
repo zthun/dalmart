@@ -1,4 +1,5 @@
-import { IZSort, ZSortDirection } from "@zthun/helpful-query";
+import type { IZSort } from "@zthun/helpful-query";
+import { ZSortDirection } from "@zthun/helpful-query";
 
 export function toDir(dir: ZSortDirection) {
   return dir === ZSortDirection.Ascending ? 1 : -1;

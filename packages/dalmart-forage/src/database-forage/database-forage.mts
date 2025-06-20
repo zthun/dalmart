@@ -1,4 +1,4 @@
-import { IZDatabaseMemory, IZDatabaseOptions } from "@zthun/dalmart-db";
+import type { IZDatabaseMemory, IZDatabaseOptions } from "@zthun/dalmart-db";
 import localforage from "localforage";
 
 /**

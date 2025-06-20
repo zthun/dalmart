@@ -1,5 +1,7 @@
-import { IZDatabaseOptions, ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
-import { IZBrand, ZBrandKnown } from "@zthun/helpful-brands";
+import type { IZDatabaseOptions } from "@zthun/dalmart-db";
+import { ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
+import type { IZBrand } from "@zthun/helpful-brands";
+import { ZBrandKnown } from "@zthun/helpful-brands";
 import { createGuid } from "@zthun/helpful-fn";
 import { rm } from "node:fs/promises";
 import { resolve } from "node:path";

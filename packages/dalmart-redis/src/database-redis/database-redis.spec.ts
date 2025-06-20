@@ -1,4 +1,5 @@
-import { IZDatabaseOptions, ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
+import type { IZDatabaseOptions } from "@zthun/dalmart-db";
+import { ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
 import { createGuid } from "@zthun/helpful-fn";
 import { RedisMemoryServer } from "redis-memory-server";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";

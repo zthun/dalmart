@@ -1,5 +1,5 @@
+import type { IZFilter } from "@zthun/helpful-query";
 import {
-  IZFilter,
   ZOperatorBinary,
   ZOperatorCollection,
   ZOperatorLogic,
@@ -9,7 +9,7 @@ import {
   isLogicFilter,
   isUnaryFilter,
 } from "@zthun/helpful-query";
-import { Filter } from "mongodb";
+import type { Filter } from "mongodb";
 
 const LogicMap: Record<ZOperatorLogic, string> = {
   [ZOperatorLogic.And]: "$and",

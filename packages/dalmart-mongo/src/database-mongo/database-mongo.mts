@@ -1,13 +1,16 @@
-import {
+import type {
   IZDatabaseDocument,
   IZDatabaseDocumentCollection,
   IZDatabaseOptions,
+} from "@zthun/dalmart-db";
+import {
   ZDatabaseDocumentCollectionBuilder,
   ZDatabaseOptionsBuilder,
 } from "@zthun/dalmart-db";
 import { createGuid } from "@zthun/helpful-fn";
-import { IZDataRequest, IZFilter } from "@zthun/helpful-query";
-import { Collection, Document, MongoClient, MongoClientOptions } from "mongodb";
+import type { IZDataRequest, IZFilter } from "@zthun/helpful-query";
+import type { Collection, Document, MongoClientOptions } from "mongodb";
+import { MongoClient } from "mongodb";
 import { toFilter } from "../convert/to-filter.mjs";
 import { toSort } from "../convert/to-sort.mjs";
 

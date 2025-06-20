@@ -1,5 +1,6 @@
-import { IZDatabaseMemory, IZDatabaseOptions } from "@zthun/dalmart-db";
-import { RedisClientType, createClient } from "redis";
+import type { IZDatabaseMemory, IZDatabaseOptions } from "@zthun/dalmart-db";
+import type { RedisClientType } from "redis";
+import { createClient } from "redis";
 
 /**
  * Represents a connection to a redis database.

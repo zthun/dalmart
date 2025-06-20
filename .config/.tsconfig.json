@@ -6,6 +6,7 @@
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "isolatedModules": true,
     "resolveJsonModule": true,
     "declaration": true,
     "strictNullChecks": true,

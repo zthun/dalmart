@@ -1,11 +1,11 @@
+import type { IZDatabaseOptions } from "@zthun/dalmart-db";
 import {
-  IZDatabaseOptions,
   ZDatabaseDocumentCollectionBuilder,
   ZDatabaseOptionsBuilder,
 } from "@zthun/dalmart-db";
 import { createGuid } from "@zthun/helpful-fn";
+import type { IZFilter } from "@zthun/helpful-query";
 import {
-  IZFilter,
   ZDataRequestBuilder,
   ZFilterBinaryBuilder,
   ZFilterCollectionBuilder,

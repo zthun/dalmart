@@ -1,5 +1,5 @@
-import { IZDataRequest, IZFilter } from "@zthun/helpful-query";
-import { IZDatabaseDocumentCollection } from "./database-document-collection.mjs";
+import type { IZDataRequest, IZFilter } from "@zthun/helpful-query";
+import type { IZDatabaseDocumentCollection } from "./database-document-collection.mjs";
 
 /**
  * Represents a set of database operations for a document database.
