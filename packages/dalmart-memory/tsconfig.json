@@ -2,7 +2,6 @@
   "extends": "../../.config/.tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "declarationDir": "dist/types",
     "paths": {
       "@zthun/dalmart-db": ["../dalmart-db/src/index.mts"],
       "@zthun/dalmart-mongo": ["../dalmart-mongo/src/index.mts"],
