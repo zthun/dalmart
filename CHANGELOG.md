@@ -1,5 +1,23 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [1.5.1](https://github.com/zthun/dalmart/compare/v1.5.0...v1.5.1) (2025-06-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* module resolution is now node next
+
+### Code Refactoring
+
+* module resolution is now node next ([2d1bd27](https://github.com/zthun/dalmart/commit/2d1bd274d930ca9fb28085ee4d46a6787e74e579))
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
