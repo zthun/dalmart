@@ -30,6 +30,7 @@
     "localforage": "^1.10.0"
   },
   "devDependencies": {
+    "@zthun/janitor-build-config": "^19.2.2",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
     "vitest": "^3.2.4",

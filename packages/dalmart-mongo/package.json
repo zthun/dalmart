@@ -31,6 +31,7 @@
     "mongodb": "^6.17.0"
   },
   "devDependencies": {
+    "@zthun/janitor-build-config": "^19.2.2",
     "mongodb-memory-server": "^10.1.4",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
