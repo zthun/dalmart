@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "declarationDir": "dist/types",
     "paths": {
-      "@zthun/dalmart-db": ["../dalmart-db/src/index"]
+      "@zthun/dalmart-db": ["../dalmart-db/src/index.mts"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.mts"]

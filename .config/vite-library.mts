@@ -11,7 +11,7 @@ export function defineLibrary(dir: string) {
   return defineConfig({
     build: {
       lib: {
-        entry: `${dir}/src/index.ts`,
+        entry: `${dir}/src/index.mts`,
         formats: ["es", "cjs"],
         fileName: "index",
       },

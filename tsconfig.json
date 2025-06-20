@@ -3,13 +3,13 @@
   "compilerOptions": {
     "baseUrl": "packages",
     "paths": {
-      "@zthun/dalmart-db": ["dalmart-db/src/index"],
-      "@zthun/dalmart-forage": ["dalmart-forage/src/index"],
-      "@zthun/dalmart-fs": ["dalmart-fs/src/index"],
-      "@zthun/dalmart-memory": ["dalmart-memory/src/index"],
-      "@zthun/dalmart-mongo": ["dalmart-mongo/src/index"],
-      "@zthun/dalmart-redis": ["dalmart-redis/src/index"],
-      "@zthun/dalmart-storage": ["dalmart-storage/src/index"]
+      "@zthun/dalmart-db": ["dalmart-db/src/index.mts"],
+      "@zthun/dalmart-forage": ["dalmart-forage/src/index.mts"],
+      "@zthun/dalmart-fs": ["dalmart-fs/src/index.mts"],
+      "@zthun/dalmart-memory": ["dalmart-memory/src/index.mts"],
+      "@zthun/dalmart-mongo": ["dalmart-mongo/src/index.mts"],
+      "@zthun/dalmart-redis": ["dalmart-redis/src/index.mts"],
+      "@zthun/dalmart-storage": ["dalmart-storage/src/index.mts"]
     }
   },
   "include": ["**/*.ts", "**/*.mts"]
