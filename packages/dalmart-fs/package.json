@@ -26,14 +26,14 @@
   },
   "dependencies": {
     "@zthun/dalmart-db": "^1.5.1",
-    "@zthun/helpful-fn": "^9.3.0",
-    "@zthun/helpful-query": "^9.3.0",
+    "@zthun/helpful-fn": "^9.4.0",
+    "@zthun/helpful-query": "^9.4.0",
     "glob": "^11.0.3",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
-    "@zthun/helpful-brands": "^9.3.0",
-    "@zthun/janitor-build-config": "^19.2.2",
+    "@zthun/helpful-brands": "^9.4.0",
+    "@zthun/janitor-build-config": "^19.2.4",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
     "vitest": "^3.2.4",

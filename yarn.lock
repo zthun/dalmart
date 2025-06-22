@@ -5,7 +5,7 @@ __metadata:
   version: 8
   cacheKey: 10
 
-"@ampproject/remapping@npm:^2.2.0":
+"@ampproject/remapping@npm:^2.2.0, @ampproject/remapping@npm:^2.3.0":
   version: 2.3.0
   resolution: "@ampproject/remapping@npm:2.3.0"
   dependencies:
@@ -46,7 +46,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.23.9, @babel/core@npm:^7.27.4":
+"@babel/core@npm:^7.27.4":
   version: 7.27.4
   resolution: "@babel/core@npm:7.27.4"
   dependencies:
@@ -156,7 +156,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.20.7, @babel/parser@npm:^7.23.9, @babel/parser@npm:^7.25.3, @babel/parser@npm:^7.25.4, @babel/parser@npm:^7.27.2, @babel/parser@npm:^7.27.4, @babel/parser@npm:^7.27.5":
+"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.20.7, @babel/parser@npm:^7.25.3, @babel/parser@npm:^7.25.4, @babel/parser@npm:^7.27.2, @babel/parser@npm:^7.27.4, @babel/parser@npm:^7.27.5":
   version: 7.27.5
   resolution: "@babel/parser@npm:7.27.5"
   dependencies:
@@ -222,6 +222,13 @@ __metadata:
     "@babel/helper-string-parser": "npm:^7.27.1"
     "@babel/helper-validator-identifier": "npm:^7.27.1"
   checksum: 10/174741c667775680628a09117828bbeffb35ea543f59bf80649d0d60672f7815a0740ddece3cca87516199033a039166a6936434131fce2b6a820227e64f91ae
+  languageName: node
+  linkType: hard
+
+"@bcoe/v8-coverage@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@bcoe/v8-coverage@npm:1.0.2"
+  checksum: 10/46600b2dde460269b07a8e4f12b72e418eae1337b85c979f43af3336c9a1c65b04e42508ab6b245f1e0e3c64328e1c38d8cd733e4a7cebc4fbf9cf65c6e59937
   languageName: node
   linkType: hard
 
@@ -1441,7 +1448,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@istanbuljs/schema@npm:^0.1.2, @istanbuljs/schema@npm:^0.1.3":
+"@istanbuljs/schema@npm:^0.1.2":
   version: 0.1.3
   resolution: "@istanbuljs/schema@npm:0.1.3"
   checksum: 10/a9b1e49acdf5efc2f5b2359f2df7f90c5c725f2656f16099e8b2cd3a000619ecca9fc48cf693ba789cf0fd989f6e0df6a22bc05574be4223ecdbb7997d04384b
@@ -2501,90 +2508,90 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.12.4":
-  version: 1.12.4
-  resolution: "@swc/core-darwin-arm64@npm:1.12.4"
+"@swc/core-darwin-arm64@npm:1.12.5":
+  version: 1.12.5
+  resolution: "@swc/core-darwin-arm64@npm:1.12.5"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.12.4":
-  version: 1.12.4
-  resolution: "@swc/core-darwin-x64@npm:1.12.4"
+"@swc/core-darwin-x64@npm:1.12.5":
+  version: 1.12.5
+  resolution: "@swc/core-darwin-x64@npm:1.12.5"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.12.4":
-  version: 1.12.4
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.12.4"
+"@swc/core-linux-arm-gnueabihf@npm:1.12.5":
+  version: 1.12.5
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.12.5"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.12.4":
-  version: 1.12.4
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.12.4"
+"@swc/core-linux-arm64-gnu@npm:1.12.5":
+  version: 1.12.5
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.12.5"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.12.4":
-  version: 1.12.4
-  resolution: "@swc/core-linux-arm64-musl@npm:1.12.4"
+"@swc/core-linux-arm64-musl@npm:1.12.5":
+  version: 1.12.5
+  resolution: "@swc/core-linux-arm64-musl@npm:1.12.5"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.12.4":
-  version: 1.12.4
-  resolution: "@swc/core-linux-x64-gnu@npm:1.12.4"
+"@swc/core-linux-x64-gnu@npm:1.12.5":
+  version: 1.12.5
+  resolution: "@swc/core-linux-x64-gnu@npm:1.12.5"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.12.4":
-  version: 1.12.4
-  resolution: "@swc/core-linux-x64-musl@npm:1.12.4"
+"@swc/core-linux-x64-musl@npm:1.12.5":
+  version: 1.12.5
+  resolution: "@swc/core-linux-x64-musl@npm:1.12.5"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.12.4":
-  version: 1.12.4
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.12.4"
+"@swc/core-win32-arm64-msvc@npm:1.12.5":
+  version: 1.12.5
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.12.5"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.12.4":
-  version: 1.12.4
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.12.4"
+"@swc/core-win32-ia32-msvc@npm:1.12.5":
+  version: 1.12.5
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.12.5"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.12.4":
-  version: 1.12.4
-  resolution: "@swc/core-win32-x64-msvc@npm:1.12.4"
+"@swc/core-win32-x64-msvc@npm:1.12.5":
+  version: 1.12.5
+  resolution: "@swc/core-win32-x64-msvc@npm:1.12.5"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core@npm:^1.12.4":
-  version: 1.12.4
-  resolution: "@swc/core@npm:1.12.4"
+"@swc/core@npm:^1.12.5":
+  version: 1.12.5
+  resolution: "@swc/core@npm:1.12.5"
   dependencies:
-    "@swc/core-darwin-arm64": "npm:1.12.4"
-    "@swc/core-darwin-x64": "npm:1.12.4"
-    "@swc/core-linux-arm-gnueabihf": "npm:1.12.4"
-    "@swc/core-linux-arm64-gnu": "npm:1.12.4"
-    "@swc/core-linux-arm64-musl": "npm:1.12.4"
-    "@swc/core-linux-x64-gnu": "npm:1.12.4"
-    "@swc/core-linux-x64-musl": "npm:1.12.4"
-    "@swc/core-win32-arm64-msvc": "npm:1.12.4"
-    "@swc/core-win32-ia32-msvc": "npm:1.12.4"
-    "@swc/core-win32-x64-msvc": "npm:1.12.4"
+    "@swc/core-darwin-arm64": "npm:1.12.5"
+    "@swc/core-darwin-x64": "npm:1.12.5"
+    "@swc/core-linux-arm-gnueabihf": "npm:1.12.5"
+    "@swc/core-linux-arm64-gnu": "npm:1.12.5"
+    "@swc/core-linux-arm64-musl": "npm:1.12.5"
+    "@swc/core-linux-x64-gnu": "npm:1.12.5"
+    "@swc/core-linux-x64-musl": "npm:1.12.5"
+    "@swc/core-win32-arm64-msvc": "npm:1.12.5"
+    "@swc/core-win32-ia32-msvc": "npm:1.12.5"
+    "@swc/core-win32-x64-msvc": "npm:1.12.5"
     "@swc/counter": "npm:^0.1.3"
     "@swc/types": "npm:^0.1.23"
   peerDependencies:
@@ -2613,7 +2620,7 @@ __metadata:
   peerDependenciesMeta:
     "@swc/helpers":
       optional: true
-  checksum: 10/663a646b593771b27f9c8e0e4a064cce1a58562f41e52890b50af29da928c2a137b685567d0b2e2da3ef2649d42cd8ecf92f909ebb52f7a6c808278ff81806b5
+  checksum: 10/5de04272c7a0218ad79f1029832e97989f507f9c96bd5afa3d1f568314481e2a301ccb17491605998c40496bc2478ea238bced07ee152e4958e1943630978cf0
   languageName: node
   linkType: hard
 
@@ -3094,23 +3101,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/coverage-istanbul@npm:^3.2.4":
+"@vitest/coverage-v8@npm:^3.2.4":
   version: 3.2.4
-  resolution: "@vitest/coverage-istanbul@npm:3.2.4"
+  resolution: "@vitest/coverage-v8@npm:3.2.4"
   dependencies:
-    "@istanbuljs/schema": "npm:^0.1.3"
+    "@ampproject/remapping": "npm:^2.3.0"
+    "@bcoe/v8-coverage": "npm:^1.0.2"
+    ast-v8-to-istanbul: "npm:^0.3.3"
     debug: "npm:^4.4.1"
     istanbul-lib-coverage: "npm:^3.2.2"
-    istanbul-lib-instrument: "npm:^6.0.3"
     istanbul-lib-report: "npm:^3.0.1"
     istanbul-lib-source-maps: "npm:^5.0.6"
     istanbul-reports: "npm:^3.1.7"
+    magic-string: "npm:^0.30.17"
     magicast: "npm:^0.3.5"
+    std-env: "npm:^3.9.0"
     test-exclude: "npm:^7.0.1"
     tinyrainbow: "npm:^2.0.0"
   peerDependencies:
+    "@vitest/browser": 3.2.4
     vitest: 3.2.4
-  checksum: 10/c260db2c3d913bc13fc7c768b424f72d93043b5e187f93bc5efd513d8987658a8cea07294a71b6864e84cf9478c639d5c4b07e9f5767933c09e2bdfc6f9fd3aa
+  peerDependenciesMeta:
+    "@vitest/browser":
+      optional: true
+  checksum: 10/5a5940c78eabbb36efafb9ecc50408785614768b3f74f5f88e6dd32db59a21d39e15e7cf52fae961cc2cd75e0390c8568cdb9aef35aa8593ccd057edce539ee4
   languageName: node
   linkType: hard
 
@@ -3333,9 +3347,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-db@workspace:packages/dalmart-db"
   dependencies:
-    "@zthun/helpful-fn": "npm:^9.3.0"
-    "@zthun/helpful-query": "npm:^9.3.0"
-    "@zthun/janitor-build-config": "npm:^19.2.2"
+    "@zthun/helpful-fn": "npm:^9.4.0"
+    "@zthun/helpful-query": "npm:^9.4.0"
+    "@zthun/janitor-build-config": "npm:^19.2.4"
     typescript: "npm:~5.8.3"
     vite: "npm:^6.3.5"
     vitest: "npm:^3.2.4"
@@ -3348,8 +3362,8 @@ __metadata:
   resolution: "@zthun/dalmart-forage@workspace:packages/dalmart-forage"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.5.1"
-    "@zthun/helpful-fn": "npm:^9.3.0"
-    "@zthun/janitor-build-config": "npm:^19.2.2"
+    "@zthun/helpful-fn": "npm:^9.4.0"
+    "@zthun/janitor-build-config": "npm:^19.2.4"
     localforage: "npm:^1.10.0"
     typescript: "npm:~5.8.3"
     vite: "npm:^6.3.5"
@@ -3363,10 +3377,10 @@ __metadata:
   resolution: "@zthun/dalmart-fs@workspace:packages/dalmart-fs"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.5.1"
-    "@zthun/helpful-brands": "npm:^9.3.0"
-    "@zthun/helpful-fn": "npm:^9.3.0"
-    "@zthun/helpful-query": "npm:^9.3.0"
-    "@zthun/janitor-build-config": "npm:^19.2.2"
+    "@zthun/helpful-brands": "npm:^9.4.0"
+    "@zthun/helpful-fn": "npm:^9.4.0"
+    "@zthun/helpful-query": "npm:^9.4.0"
+    "@zthun/janitor-build-config": "npm:^19.2.4"
     glob: "npm:^11.0.3"
     lodash-es: "npm:^4.17.21"
     typescript: "npm:~5.8.3"
@@ -3383,8 +3397,8 @@ __metadata:
     "@zthun/dalmart-db": "npm:^1.5.1"
     "@zthun/dalmart-mongo": "npm:^1.5.1"
     "@zthun/dalmart-storage": "npm:^1.5.1"
-    "@zthun/helpful-fn": "npm:^9.3.0"
-    "@zthun/janitor-build-config": "npm:^19.2.2"
+    "@zthun/helpful-fn": "npm:^9.4.0"
+    "@zthun/janitor-build-config": "npm:^19.2.4"
     lodash-es: "npm:^4.17.21"
     mongodb-memory-server: "npm:^10.1.4"
     typescript: "npm:~5.8.3"
@@ -3399,9 +3413,9 @@ __metadata:
   resolution: "@zthun/dalmart-mongo@workspace:packages/dalmart-mongo"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.5.1"
-    "@zthun/helpful-fn": "npm:^9.3.0"
-    "@zthun/helpful-query": "npm:^9.3.0"
-    "@zthun/janitor-build-config": "npm:^19.2.2"
+    "@zthun/helpful-fn": "npm:^9.4.0"
+    "@zthun/helpful-query": "npm:^9.4.0"
+    "@zthun/janitor-build-config": "npm:^19.2.4"
     mongodb: "npm:^6.17.0"
     mongodb-memory-server: "npm:^10.1.4"
     typescript: "npm:~5.8.3"
@@ -3416,8 +3430,8 @@ __metadata:
   resolution: "@zthun/dalmart-redis@workspace:packages/dalmart-redis"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.5.1"
-    "@zthun/helpful-fn": "npm:^9.3.0"
-    "@zthun/janitor-build-config": "npm:^19.2.2"
+    "@zthun/helpful-fn": "npm:^9.4.0"
+    "@zthun/janitor-build-config": "npm:^19.2.4"
     redis: "npm:^5.5.6"
     redis-memory-server: "npm:^0.12.1"
     typescript: "npm:~5.8.3"
@@ -3432,8 +3446,8 @@ __metadata:
   resolution: "@zthun/dalmart-storage@workspace:packages/dalmart-storage"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.5.1"
-    "@zthun/helpful-fn": "npm:^9.3.0"
-    "@zthun/janitor-build-config": "npm:^19.2.2"
+    "@zthun/helpful-fn": "npm:^9.4.0"
+    "@zthun/janitor-build-config": "npm:^19.2.4"
     typescript: "npm:~5.8.3"
     vite: "npm:^6.3.5"
     vitest: "npm:^3.2.4"
@@ -3465,11 +3479,11 @@ __metadata:
     "@types/jsdom": "npm:^21.1.7"
     "@types/lodash-es": "npm:^4.17.12"
     "@types/node": "npm:^24.0.3"
-    "@vitest/coverage-istanbul": "npm:^3.2.4"
-    "@zthun/janitor-build-config": "npm:^19.2.2"
-    "@zthun/janitor-lint": "npm:^19.2.3"
-    "@zthun/janitor-lint-config": "npm:^19.2.3"
-    "@zthun/janitor-options": "npm:^19.2.3"
+    "@vitest/coverage-v8": "npm:^3.2.4"
+    "@zthun/janitor-build-config": "npm:^19.2.4"
+    "@zthun/janitor-lint": "npm:^19.2.4"
+    "@zthun/janitor-lint-config": "npm:^19.2.5"
+    "@zthun/janitor-options": "npm:^19.2.4"
     husky: "npm:^9.1.7"
     jsdom: "npm:^26.1.0"
     lerna: "npm:^8.2.2"
@@ -3485,50 +3499,50 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/helpful-brands@npm:^9.3.0":
-  version: 9.3.0
-  resolution: "@zthun/helpful-brands@npm:9.3.0"
+"@zthun/helpful-brands@npm:^9.4.0":
+  version: 9.4.0
+  resolution: "@zthun/helpful-brands@npm:9.4.0"
   dependencies:
-    "@zthun/helpful-query": "npm:^9.3.0"
-    "@zthun/helpful-reflection": "npm:^9.3.0"
-  checksum: 10/d281e29db88928edf475c75d6f7817ec7423e0a5e49fa390b2fb292132cc43cf289be50ec96f33893b944d68860d7f8b3ec69663678a1f85f4689b1f1e06a771
+    "@zthun/helpful-query": "npm:^9.4.0"
+    "@zthun/helpful-reflection": "npm:^9.4.0"
+  checksum: 10/cca911ebd43e347d14ad3b0ed779db0af217b167a87c7d9b15d7331f1f2e6e5ef659acc3e6732c705041dbeaa831dc309675bcaea58f81f8e702ce69de23d031
   languageName: node
   linkType: hard
 
-"@zthun/helpful-fn@npm:^9.3.0":
-  version: 9.3.0
-  resolution: "@zthun/helpful-fn@npm:9.3.0"
+"@zthun/helpful-fn@npm:^9.4.0":
+  version: 9.4.0
+  resolution: "@zthun/helpful-fn@npm:9.4.0"
   dependencies:
     uuid: "npm:^11.1.0"
-  checksum: 10/07c3dbc2b0186dc187163253fb7b75082557e45a17022b613ddfe5fb9de85cddcd2af1af6ce384dc306762379715516c1bc1ea67de02e4cd6692c08a035ec604
+  checksum: 10/af04f241cf274202f40318f5f7849671833337691a4a5c0b4b1daed08f3ef4cab2f45f54e0a05b7bd76b41272cbe6f7352c019d5b0eaf5924630ef8b1c27c6ad
   languageName: node
   linkType: hard
 
-"@zthun/helpful-query@npm:^9.3.0":
-  version: 9.3.0
-  resolution: "@zthun/helpful-query@npm:9.3.0"
+"@zthun/helpful-query@npm:^9.4.0":
+  version: 9.4.0
+  resolution: "@zthun/helpful-query@npm:9.4.0"
   dependencies:
-    "@zthun/helpful-fn": "npm:^9.3.0"
+    "@zthun/helpful-fn": "npm:^9.4.0"
     lodash-es: "npm:^4.17.21"
-  checksum: 10/3b218db2c45d60534a884e9a29a8fec74fe4306b71bb3db574f8d3a881e13204f114b9e3a5b7e98510991f3db591673766ce67b89c76815346330d90110487b7
+  checksum: 10/85efc0956080d7de2b13e787c6c74d9ef7e86c487f65b54dd890c422a31a18a364c28ac5ccbd9d5efcee617d9926e364a10358bcf0e7b218ffd91875700e52c4
   languageName: node
   linkType: hard
 
-"@zthun/helpful-reflection@npm:^9.3.0":
-  version: 9.3.0
-  resolution: "@zthun/helpful-reflection@npm:9.3.0"
+"@zthun/helpful-reflection@npm:^9.4.0":
+  version: 9.4.0
+  resolution: "@zthun/helpful-reflection@npm:9.4.0"
   dependencies:
-    "@zthun/helpful-fn": "npm:^9.3.0"
+    "@zthun/helpful-fn": "npm:^9.4.0"
     reflect-metadata: "npm:^0.2.2"
-  checksum: 10/cca1da372813be9af1031763ff1b1dc5b77804adb2f415b3143c62836d0f6dbc3970aa7665070e7c2e92993d71e38df73e244e20c66c0bb63c8870a92e129432
+  checksum: 10/5949ec9d308ccd2ac4721a7c97ce7c606b820815229eb8f131286e8e9d365e4d797565d66bb510b5ea59486feda7ba13839d19b4d41f9f5dce4c0afd6611e0b3
   languageName: node
   linkType: hard
 
-"@zthun/janitor-build-config@npm:^19.2.2":
-  version: 19.2.2
-  resolution: "@zthun/janitor-build-config@npm:19.2.2"
+"@zthun/janitor-build-config@npm:^19.2.4":
+  version: 19.2.4
+  resolution: "@zthun/janitor-build-config@npm:19.2.4"
   dependencies:
-    "@swc/core": "npm:^1.12.4"
+    "@swc/core": "npm:^1.12.5"
     "@vitejs/plugin-react": "npm:^4.5.2"
     lodash-es: "npm:^4.17.21"
     typedoc: "npm:^0.28.5"
@@ -3550,17 +3564,17 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10/85f588f8f36ab28308fc2c7c02665d387501287b2bc5dabf653bbe4fc926c2836be786a7b471cb98c96556f5721c4db88213cc757b9bb1bc2a769189035d34d3
+  checksum: 10/411ea84593ef7a068abaadb444add3846c1a76f624af17b3d02ae9630ce857d4ba864fbe9b0eccc5bf523dce05ea03043699d560f2b65c9784e0aac8cfb61548
   languageName: node
   linkType: hard
 
-"@zthun/janitor-eslint-config@npm:^19.2.2":
-  version: 19.2.2
-  resolution: "@zthun/janitor-eslint-config@npm:19.2.2"
+"@zthun/janitor-eslint-config@npm:^19.2.4":
+  version: 19.2.4
+  resolution: "@zthun/janitor-eslint-config@npm:19.2.4"
   dependencies:
     "@eslint/js": "npm:^9.29.0"
     eslint-config-prettier: "npm:^10.1.5"
-    eslint-plugin-import: "npm:^2.31.0"
+    eslint-plugin-import: "npm:^2.32.0"
     eslint-plugin-prettier: "npm:^5.5.0"
     eslint-plugin-react: "npm:^7.37.5"
     globals: "npm:^16.2.0"
@@ -3573,30 +3587,30 @@ __metadata:
   peerDependenciesMeta:
     react:
       optional: true
-  checksum: 10/9b35fc9bc4333f764d46b065ddbddab9ba0b1f9adfb84cb3da3efe089120a8bdbac59d056db179c61a3c712974d615a1e33581daf722bb7bcd047633d5199d0b
+  checksum: 10/3fdfe93995790e6ee1a4e26da43ec7e7286f55368376ef0ebcb2f807a3a551944580fde67382b98ffd887efe5a70da4fc00de8924fd4eabd1b56060f6b308fe0
   languageName: node
   linkType: hard
 
-"@zthun/janitor-htmlhint-config@npm:^19.2.2":
-  version: 19.2.2
-  resolution: "@zthun/janitor-htmlhint-config@npm:19.2.2"
+"@zthun/janitor-htmlhint-config@npm:^19.2.4":
+  version: 19.2.4
+  resolution: "@zthun/janitor-htmlhint-config@npm:19.2.4"
   peerDependencies:
     htmlhint: ^1.0.0
-  checksum: 10/98f3d5240feb72840e3baeeafdbc3b97c53fe3d8619a4577f135d5164bbe976e06142acf01310675893a7b941d74dbcb7084d5ae7ce16380a7551fae6a017ef2
+  checksum: 10/e8fccc7f615ccce5435dc6178e0661d35f7640825f44c9b1a4b991eb4850ee36f7bba171e6183be5d913b28b048177fc99f09844f5e1893d437924098fd87caa
   languageName: node
   linkType: hard
 
-"@zthun/janitor-lint-config@npm:^19.2.3":
-  version: 19.2.3
-  resolution: "@zthun/janitor-lint-config@npm:19.2.3"
+"@zthun/janitor-lint-config@npm:^19.2.5":
+  version: 19.2.5
+  resolution: "@zthun/janitor-lint-config@npm:19.2.5"
   dependencies:
-    "@zthun/janitor-eslint-config": "npm:^19.2.2"
-    "@zthun/janitor-htmlhint-config": "npm:^19.2.2"
-    "@zthun/janitor-markdownlint-config": "npm:^19.2.2"
-    "@zthun/janitor-prettier-config": "npm:^19.2.2"
-    "@zthun/janitor-stylelint-config": "npm:^19.2.2"
-    "@zthun/janitor-stylelint-config-less": "npm:^19.2.2"
-    "@zthun/janitor-stylelint-config-sass": "npm:^19.2.2"
+    "@zthun/janitor-eslint-config": "npm:^19.2.4"
+    "@zthun/janitor-htmlhint-config": "npm:^19.2.4"
+    "@zthun/janitor-markdownlint-config": "npm:^19.2.4"
+    "@zthun/janitor-prettier-config": "npm:^19.2.4"
+    "@zthun/janitor-stylelint-config": "npm:^19.2.5"
+    "@zthun/janitor-stylelint-config-less": "npm:^19.2.5"
+    "@zthun/janitor-stylelint-config-sass": "npm:^19.2.5"
     eslint: "npm:^9.29.0"
     htmlhint: "npm:^1.6.3"
     markdownlint: "npm:~0.38.0"
@@ -3609,15 +3623,15 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/176ddbfd6eb20dd601fd1a0e7619aa0bbb91ab7c8b2d2cc986b0416925c12c3d5d1a7a3b4f63c5163be980e8d350b257056f0746220db7bf36d21fadda79253e
+  checksum: 10/92cbcc1981e561eae3aeb0a0a347daf1922f149418c2bdeeb293e67ae70f8a1d973b8cddc70b96e0758443b2a7c37f749db3a47200b3422e49b19ced58332305
   languageName: node
   linkType: hard
 
-"@zthun/janitor-lint@npm:^19.2.3":
-  version: 19.2.3
-  resolution: "@zthun/janitor-lint@npm:19.2.3"
+"@zthun/janitor-lint@npm:^19.2.4":
+  version: 19.2.4
+  resolution: "@zthun/janitor-lint@npm:19.2.4"
   dependencies:
-    "@zthun/janitor-options": "npm:^19.2.3"
+    "@zthun/janitor-options": "npm:^19.2.4"
     chalk: "npm:^5.4.1"
     cosmiconfig: "npm:^9.0.0"
     cspell: "npm:^9.1.1"
@@ -3632,70 +3646,70 @@ __metadata:
     yargs: "npm:^18.0.0"
   bin:
     janitor-lint: dist/cli.js
-  checksum: 10/d00f26cabe585cdca005de1d2d4b7e8e2cd36dff6ec6d960b4877023ec1ae19771eb044b6fc630f9c22391ea891be5bd615a6c972955d0997ee5cb8066d7d6a6
+  checksum: 10/df9985ffd4edcdf3852282e01e52f3a26cbd7b8c21788551e01946d4e05cdfe650a68e3883b7d4e40718224c4a08b6738a30b959715a08569204daf179d48382
   languageName: node
   linkType: hard
 
-"@zthun/janitor-markdownlint-config@npm:^19.2.2":
-  version: 19.2.2
-  resolution: "@zthun/janitor-markdownlint-config@npm:19.2.2"
+"@zthun/janitor-markdownlint-config@npm:^19.2.4":
+  version: 19.2.4
+  resolution: "@zthun/janitor-markdownlint-config@npm:19.2.4"
   peerDependencies:
     markdownlint: ">0.32.0 <1.0.0"
-  checksum: 10/02cd4be29f353db677f124db4ad1dbcc471c594caa54a39c6db6b19355c72940839048e5d596ef00bb0ab0da4d41600070f80ebe954347afba60155529a9a3b5
+  checksum: 10/b08a7d49edfe7a38325304757350f03e362cc6eab97e3e31f7a8ffe4d4d9e140fdba960b94070ee4aef2965c3061d9d6396851d46f6dcff825a9762ce0da0263
   languageName: node
   linkType: hard
 
-"@zthun/janitor-options@npm:^19.2.3":
-  version: 19.2.3
-  resolution: "@zthun/janitor-options@npm:19.2.3"
-  checksum: 10/00ed75c99275feda48f9c24e8a9c377209f9b20458e91be05799b0c1acaef8efeb6188a700a9f5a21ee36e2209bbe2b47200d8a888d474726292d0e1ea2863dc
+"@zthun/janitor-options@npm:^19.2.4":
+  version: 19.2.4
+  resolution: "@zthun/janitor-options@npm:19.2.4"
+  checksum: 10/59105254995f9d9cd6adb1a3ea8c4eb14deae4b0e84ce0d54e2711ac66a0e29fbb197ed679c01db8d387aa8adacca2fb546ea22cd02b4f8bf03487e4a95da437
   languageName: node
   linkType: hard
 
-"@zthun/janitor-prettier-config@npm:^19.2.2":
-  version: 19.2.2
-  resolution: "@zthun/janitor-prettier-config@npm:19.2.2"
+"@zthun/janitor-prettier-config@npm:^19.2.4":
+  version: 19.2.4
+  resolution: "@zthun/janitor-prettier-config@npm:19.2.4"
   peerDependencies:
     prettier: ^3.0.0
-  checksum: 10/d25591aba85a746cac016e9be8f1ba6fad0f6a39a2b74f4e654f29bb6da55bd835d73b06e29e50fdc5847927875b03ab8f556fcf6bea0294f3ba0c725c010ac1
+  checksum: 10/f2f917deff8f8bc812934a4a0345b94e8a8f2ade365ea70ccd6f2ad62a24fe0670d3470bfd0cf1bb1b65dd213f8f9c1c32036ac63e439f3dd0e4d3bc4b48d9e7
   languageName: node
   linkType: hard
 
-"@zthun/janitor-stylelint-config-less@npm:^19.2.2":
-  version: 19.2.2
-  resolution: "@zthun/janitor-stylelint-config-less@npm:19.2.2"
+"@zthun/janitor-stylelint-config-less@npm:^19.2.5":
+  version: 19.2.5
+  resolution: "@zthun/janitor-stylelint-config-less@npm:19.2.5"
   dependencies:
-    "@zthun/janitor-stylelint-config": "npm:^19.2.2"
+    "@zthun/janitor-stylelint-config": "npm:^19.2.5"
     stylelint-config-standard-less: "npm:^3.0.1"
   peerDependencies:
     postcss: ^8.0.0
     stylelint: ^16.0.0
-  checksum: 10/c02fb6e510f8ef42b9417b414c02c303d994ef0e4fc4a494020cd994f6e196dc7b20f52642bfb496790e58c73d9aeb9f75b67943ddd86d3b51a58e6fbf302799
+  checksum: 10/530cd0e493f4c8299564a02e5ba10567501d2483b92e471b731ce923270173c8a04af6bd6b451c345d84a148a4312b23488f4df5c3b6920ea21c4b9cf9672ff6
   languageName: node
   linkType: hard
 
-"@zthun/janitor-stylelint-config-sass@npm:^19.2.2":
-  version: 19.2.2
-  resolution: "@zthun/janitor-stylelint-config-sass@npm:19.2.2"
+"@zthun/janitor-stylelint-config-sass@npm:^19.2.5":
+  version: 19.2.5
+  resolution: "@zthun/janitor-stylelint-config-sass@npm:19.2.5"
   dependencies:
-    "@zthun/janitor-stylelint-config": "npm:^19.2.2"
+    "@zthun/janitor-stylelint-config": "npm:^19.2.5"
     stylelint-config-standard-scss: "npm:^15.0.1"
   peerDependencies:
     postcss: ^8.0.0
     stylelint: ^16.0.0
-  checksum: 10/ce5db3fe013836d7c497b6c3793d8b5542c33fa9dd59bdd367ba627048388513cec772efd088f2b8f545347599c35448e8c5832766f510d717e58ab9745c0bf7
+  checksum: 10/29585030f66d89827bd1186612e7e28173c969568f66bc08306b9dd304a1b0dd5efb20e921fbbe2f1c26d070c7982c0bd6074d8acc3e9bde86a1f9d9ebf852cc
   languageName: node
   linkType: hard
 
-"@zthun/janitor-stylelint-config@npm:^19.2.2":
-  version: 19.2.2
-  resolution: "@zthun/janitor-stylelint-config@npm:19.2.2"
+"@zthun/janitor-stylelint-config@npm:^19.2.5":
+  version: 19.2.5
+  resolution: "@zthun/janitor-stylelint-config@npm:19.2.5"
   dependencies:
     stylelint-config-standard: "npm:^38.0.0"
   peerDependencies:
     postcss: ^8.0.0
     stylelint: ^16.0.0
-  checksum: 10/132686e00539bb34cc34abd029b5705539d4c3879382cc715ce239af9c00ea1474f13bf1bfb20c01d9bf724cbbca01152fd60c61b63ff841b5f0fd53d8657a3c
+  checksum: 10/997072f36cf2f6581d6e9ddc06feab6bd6019fb56fce74adc5b444e1dabe4dc702ea294ecf0a1c6135d77609e845afeab73f368815f520ab78ea3911f5c65734
   languageName: node
   linkType: hard
 
@@ -3955,7 +3969,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"array-includes@npm:^3.1.6, array-includes@npm:^3.1.8":
+"array-includes@npm:^3.1.6, array-includes@npm:^3.1.8, array-includes@npm:^3.1.9":
   version: 3.1.9
   resolution: "array-includes@npm:3.1.9"
   dependencies:
@@ -3999,7 +4013,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"array.prototype.findlastindex@npm:^1.2.5":
+"array.prototype.findlastindex@npm:^1.2.6":
   version: 1.2.6
   resolution: "array.prototype.findlastindex@npm:1.2.6"
   dependencies:
@@ -4014,7 +4028,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"array.prototype.flat@npm:^1.3.1, array.prototype.flat@npm:^1.3.2":
+"array.prototype.flat@npm:^1.3.1, array.prototype.flat@npm:^1.3.3":
   version: 1.3.3
   resolution: "array.prototype.flat@npm:1.3.3"
   dependencies:
@@ -4026,7 +4040,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"array.prototype.flatmap@npm:^1.3.2, array.prototype.flatmap@npm:^1.3.3":
+"array.prototype.flatmap@npm:^1.3.3":
   version: 1.3.3
   resolution: "array.prototype.flatmap@npm:1.3.3"
   dependencies:
@@ -4084,6 +4098,17 @@ __metadata:
   version: 2.0.1
   resolution: "assertion-error@npm:2.0.1"
   checksum: 10/a0789dd882211b87116e81e2648ccb7f60340b34f19877dd020b39ebb4714e475eb943e14ba3e22201c221ef6645b7bfe10297e76b6ac95b48a9898c1211ce66
+  languageName: node
+  linkType: hard
+
+"ast-v8-to-istanbul@npm:^0.3.3":
+  version: 0.3.3
+  resolution: "ast-v8-to-istanbul@npm:0.3.3"
+  dependencies:
+    "@jridgewell/trace-mapping": "npm:^0.3.25"
+    estree-walker: "npm:^3.0.3"
+    js-tokens: "npm:^9.0.1"
+  checksum: 10/edcb926214833227e1eee0b7324c6160536879f922e055461d76a364c72d0199895c1b985f72d73359cef00586b6d800b81174a6b5efa7e571c6a82c2fe6f572
   languageName: node
   linkType: hard
 
@@ -5880,7 +5905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-module-utils@npm:^2.12.0":
+"eslint-module-utils@npm:^2.12.1":
   version: 2.12.1
   resolution: "eslint-module-utils@npm:2.12.1"
   dependencies:
@@ -5892,32 +5917,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.31.0":
-  version: 2.31.0
-  resolution: "eslint-plugin-import@npm:2.31.0"
+"eslint-plugin-import@npm:^2.32.0":
+  version: 2.32.0
+  resolution: "eslint-plugin-import@npm:2.32.0"
   dependencies:
     "@rtsao/scc": "npm:^1.1.0"
-    array-includes: "npm:^3.1.8"
-    array.prototype.findlastindex: "npm:^1.2.5"
-    array.prototype.flat: "npm:^1.3.2"
-    array.prototype.flatmap: "npm:^1.3.2"
+    array-includes: "npm:^3.1.9"
+    array.prototype.findlastindex: "npm:^1.2.6"
+    array.prototype.flat: "npm:^1.3.3"
+    array.prototype.flatmap: "npm:^1.3.3"
     debug: "npm:^3.2.7"
     doctrine: "npm:^2.1.0"
     eslint-import-resolver-node: "npm:^0.3.9"
-    eslint-module-utils: "npm:^2.12.0"
+    eslint-module-utils: "npm:^2.12.1"
     hasown: "npm:^2.0.2"
-    is-core-module: "npm:^2.15.1"
+    is-core-module: "npm:^2.16.1"
     is-glob: "npm:^4.0.3"
     minimatch: "npm:^3.1.2"
     object.fromentries: "npm:^2.0.8"
     object.groupby: "npm:^1.0.3"
-    object.values: "npm:^1.2.0"
+    object.values: "npm:^1.2.1"
     semver: "npm:^6.3.1"
-    string.prototype.trimend: "npm:^1.0.8"
+    string.prototype.trimend: "npm:^1.0.9"
     tsconfig-paths: "npm:^3.15.0"
   peerDependencies:
     eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8 || ^9
-  checksum: 10/6b76bd009ac2db0615d9019699d18e2a51a86cb8c1d0855a35fb1b418be23b40239e6debdc6e8c92c59f1468ed0ea8d7b85c817117a113d5cc225be8a02ad31c
+  checksum: 10/1bacf4967e9ebf99e12176a795f0d6d3a87d1c9a030c2207f27b267e10d96a1220be2647504c7fc13ab543cdf13ffef4b8f5620e0447032dba4ff0d3922f7c9e
   languageName: node
   linkType: hard
 
@@ -7474,7 +7499,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.13.0, is-core-module@npm:^2.15.1, is-core-module@npm:^2.16.0, is-core-module@npm:^2.5.0":
+"is-core-module@npm:^2.13.0, is-core-module@npm:^2.16.0, is-core-module@npm:^2.16.1, is-core-module@npm:^2.5.0":
   version: 2.16.1
   resolution: "is-core-module@npm:2.16.1"
   dependencies:
@@ -7836,23 +7861,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"istanbul-lib-coverage@npm:^3.0.0, istanbul-lib-coverage@npm:^3.2.0, istanbul-lib-coverage@npm:^3.2.2":
+"istanbul-lib-coverage@npm:^3.0.0, istanbul-lib-coverage@npm:^3.2.2":
   version: 3.2.2
   resolution: "istanbul-lib-coverage@npm:3.2.2"
   checksum: 10/40bbdd1e937dfd8c830fa286d0f665e81b7a78bdabcd4565f6d5667c99828bda3db7fb7ac6b96a3e2e8a2461ddbc5452d9f8bc7d00cb00075fa6a3e99f5b6a81
-  languageName: node
-  linkType: hard
-
-"istanbul-lib-instrument@npm:^6.0.3":
-  version: 6.0.3
-  resolution: "istanbul-lib-instrument@npm:6.0.3"
-  dependencies:
-    "@babel/core": "npm:^7.23.9"
-    "@babel/parser": "npm:^7.23.9"
-    "@istanbuljs/schema": "npm:^0.1.3"
-    istanbul-lib-coverage: "npm:^3.2.0"
-    semver: "npm:^7.5.4"
-  checksum: 10/aa5271c0008dfa71b6ecc9ba1e801bf77b49dc05524e8c30d58aaf5b9505e0cd12f25f93165464d4266a518c5c75284ecb598fbd89fec081ae77d2c9d3327695
   languageName: node
   linkType: hard
 
@@ -9936,7 +9948,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object.values@npm:^1.1.6, object.values@npm:^1.2.0, object.values@npm:^1.2.1":
+"object.values@npm:^1.1.6, object.values@npm:^1.2.1":
   version: 1.2.1
   resolution: "object.values@npm:1.2.1"
   dependencies:
@@ -11352,7 +11364,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0, semver@npm:^7.6.3, semver@npm:^7.7.2":
+"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.3, semver@npm:^7.6.0, semver@npm:^7.6.3, semver@npm:^7.7.2":
   version: 7.7.2
   resolution: "semver@npm:7.7.2"
   bin:
@@ -11797,7 +11809,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"string.prototype.trimend@npm:^1.0.8, string.prototype.trimend@npm:^1.0.9":
+"string.prototype.trimend@npm:^1.0.9":
   version: 1.0.9
   resolution: "string.prototype.trimend@npm:1.0.9"
   dependencies:
