@@ -28,14 +28,14 @@
     "@zthun/dalmart-db": "^1.5.3",
     "@zthun/dalmart-mongo": "^1.5.3",
     "@zthun/dalmart-storage": "^1.5.3",
-    "@zthun/helpful-fn": "^9.4.2",
-    "mongodb-memory-server": "^10.1.4"
+    "@zthun/helpful-fn": "^9.4.3",
+    "mongodb-memory-server": "^10.2.0"
   },
   "devDependencies": {
-    "@zthun/janitor-build-config": "^19.3.1",
+    "@zthun/janitor-build-config": "^19.3.3",
     "lodash-es": "^4.17.21",
-    "typescript": "~5.8.3",
-    "vite": "^7.0.5",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.4",
     "vitest": "^3.2.4",
     "vitest-mock-extended": "^3.1.0"
   },
