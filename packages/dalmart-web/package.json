@@ -1,6 +1,6 @@
 {
   "name": "@zthun/dalmart-web",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "A documentation website for showing dalmart.",
   "author": "Anthony Bonta",
   "license": "MIT",
@@ -17,12 +17,12 @@
     "access": "public"
   },
   "devDependencies": {
-    "@zthun/dalmart-db": "^1.5.4",
-    "@zthun/dalmart-forage": "^1.5.4",
-    "@zthun/dalmart-memory": "^1.5.4",
-    "@zthun/dalmart-mongo": "^1.5.4",
-    "@zthun/dalmart-redis": "^1.5.4",
-    "@zthun/dalmart-storage": "^1.5.4",
+    "@zthun/dalmart-db": "^1.5.5",
+    "@zthun/dalmart-forage": "^1.5.5",
+    "@zthun/dalmart-memory": "^1.5.5",
+    "@zthun/dalmart-mongo": "^1.5.5",
+    "@zthun/dalmart-redis": "^1.5.5",
+    "@zthun/dalmart-storage": "^1.5.5",
     "typedoc": "^0.28.12",
     "typescript": "~5.9.2"
   },

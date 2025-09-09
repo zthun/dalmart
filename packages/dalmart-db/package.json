@@ -1,6 +1,6 @@
 {
   "name": "@zthun/dalmart-db",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "A set of interfaces and option builders for database manipulation.",
   "author": "Anthony Bonta",
   "license": "MIT",

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.5](https://github.com/zthun/dalmart/compare/v1.5.4...v1.5.5) (2025-09-09)
+
+**Note:** Version bump only for package @zthun/dalmart-forage
+
+
+
+
+
 ## [1.5.4](https://github.com/zthun/dalmart/compare/v1.5.3...v1.5.4) (2025-09-06)
 
 **Note:** Version bump only for package @zthun/dalmart-forage
