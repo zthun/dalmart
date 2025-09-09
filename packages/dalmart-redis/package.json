@@ -26,14 +26,14 @@
   },
   "dependencies": {
     "@zthun/dalmart-db": "^1.5.4",
-    "@zthun/helpful-fn": "^9.4.3",
+    "@zthun/helpful-fn": "^9.4.4",
     "redis": "^5.8.2"
   },
   "devDependencies": {
-    "@zthun/janitor-build-config": "^19.3.3",
+    "@zthun/janitor-build-config": "^19.3.4",
     "redis-memory-server": "^0.13.0",
     "typescript": "~5.9.2",
-    "vite": "^7.1.4",
+    "vite": "^7.1.5",
     "vitest": "^3.2.4",
     "vitest-mock-extended": "^3.1.0"
   },
