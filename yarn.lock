@@ -3348,7 +3348,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zthun/dalmart-db@npm:^1.5.4, @zthun/dalmart-db@workspace:packages/dalmart-db":
+"@zthun/dalmart-db@npm:^1.5.5, @zthun/dalmart-db@workspace:packages/dalmart-db":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-db@workspace:packages/dalmart-db"
   dependencies:
@@ -3362,11 +3362,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-forage@npm:^1.5.4, @zthun/dalmart-forage@workspace:packages/dalmart-forage":
+"@zthun/dalmart-forage@npm:^1.5.5, @zthun/dalmart-forage@workspace:packages/dalmart-forage":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-forage@workspace:packages/dalmart-forage"
   dependencies:
-    "@zthun/dalmart-db": "npm:^1.5.4"
+    "@zthun/dalmart-db": "npm:^1.5.5"
     "@zthun/helpful-fn": "npm:^9.4.4"
     "@zthun/janitor-build-config": "npm:^19.3.4"
     localforage: "npm:^1.10.0"
@@ -3381,7 +3381,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-fs@workspace:packages/dalmart-fs"
   dependencies:
-    "@zthun/dalmart-db": "npm:^1.5.4"
+    "@zthun/dalmart-db": "npm:^1.5.5"
     "@zthun/helpful-brands": "npm:^9.4.4"
     "@zthun/helpful-fn": "npm:^9.4.4"
     "@zthun/helpful-query": "npm:^9.4.4"
@@ -3395,13 +3395,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-memory@npm:^1.5.4, @zthun/dalmart-memory@workspace:packages/dalmart-memory":
+"@zthun/dalmart-memory@npm:^1.5.5, @zthun/dalmart-memory@workspace:packages/dalmart-memory":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-memory@workspace:packages/dalmart-memory"
   dependencies:
-    "@zthun/dalmart-db": "npm:^1.5.4"
-    "@zthun/dalmart-mongo": "npm:^1.5.4"
-    "@zthun/dalmart-storage": "npm:^1.5.4"
+    "@zthun/dalmart-db": "npm:^1.5.5"
+    "@zthun/dalmart-mongo": "npm:^1.5.5"
+    "@zthun/dalmart-storage": "npm:^1.5.5"
     "@zthun/helpful-fn": "npm:^9.4.4"
     "@zthun/janitor-build-config": "npm:^19.3.4"
     lodash-es: "npm:^4.17.21"
@@ -3413,11 +3413,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-mongo@npm:^1.5.4, @zthun/dalmart-mongo@workspace:packages/dalmart-mongo":
+"@zthun/dalmart-mongo@npm:^1.5.5, @zthun/dalmart-mongo@workspace:packages/dalmart-mongo":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-mongo@workspace:packages/dalmart-mongo"
   dependencies:
-    "@zthun/dalmart-db": "npm:^1.5.4"
+    "@zthun/dalmart-db": "npm:^1.5.5"
     "@zthun/helpful-fn": "npm:^9.4.4"
     "@zthun/helpful-query": "npm:^9.4.4"
     "@zthun/janitor-build-config": "npm:^19.3.4"
@@ -3430,11 +3430,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-redis@npm:^1.5.4, @zthun/dalmart-redis@workspace:packages/dalmart-redis":
+"@zthun/dalmart-redis@npm:^1.5.5, @zthun/dalmart-redis@workspace:packages/dalmart-redis":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-redis@workspace:packages/dalmart-redis"
   dependencies:
-    "@zthun/dalmart-db": "npm:^1.5.4"
+    "@zthun/dalmart-db": "npm:^1.5.5"
     "@zthun/helpful-fn": "npm:^9.4.4"
     "@zthun/janitor-build-config": "npm:^19.3.4"
     redis: "npm:^5.8.2"
@@ -3446,11 +3446,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-storage@npm:^1.5.4, @zthun/dalmart-storage@workspace:packages/dalmart-storage":
+"@zthun/dalmart-storage@npm:^1.5.5, @zthun/dalmart-storage@workspace:packages/dalmart-storage":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-storage@workspace:packages/dalmart-storage"
   dependencies:
-    "@zthun/dalmart-db": "npm:^1.5.4"
+    "@zthun/dalmart-db": "npm:^1.5.5"
     "@zthun/helpful-fn": "npm:^9.4.4"
     "@zthun/janitor-build-config": "npm:^19.3.4"
     typescript: "npm:~5.9.2"
@@ -3464,12 +3464,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-web@workspace:packages/dalmart-web"
   dependencies:
-    "@zthun/dalmart-db": "npm:^1.5.4"
-    "@zthun/dalmart-forage": "npm:^1.5.4"
-    "@zthun/dalmart-memory": "npm:^1.5.4"
-    "@zthun/dalmart-mongo": "npm:^1.5.4"
-    "@zthun/dalmart-redis": "npm:^1.5.4"
-    "@zthun/dalmart-storage": "npm:^1.5.4"
+    "@zthun/dalmart-db": "npm:^1.5.5"
+    "@zthun/dalmart-forage": "npm:^1.5.5"
+    "@zthun/dalmart-memory": "npm:^1.5.5"
+    "@zthun/dalmart-mongo": "npm:^1.5.5"
+    "@zthun/dalmart-redis": "npm:^1.5.5"
+    "@zthun/dalmart-storage": "npm:^1.5.5"
     typedoc: "npm:^0.28.12"
     typescript: "npm:~5.9.2"
   languageName: unknown
