@@ -26,15 +26,15 @@
   },
   "dependencies": {
     "@zthun/dalmart-db": "^1.5.5",
-    "@zthun/helpful-fn": "^9.4.4",
-    "@zthun/helpful-query": "^9.4.4",
-    "mongodb": "^6.19.0"
+    "@zthun/helpful-fn": "^9.4.5",
+    "@zthun/helpful-query": "^9.4.5",
+    "mongodb": "^6.20.0"
   },
   "devDependencies": {
-    "@zthun/janitor-build-config": "^19.3.4",
-    "mongodb-memory-server": "^10.2.0",
-    "typescript": "~5.9.2",
-    "vite": "^7.1.5",
+    "@zthun/janitor-build-config": "^19.3.6",
+    "mongodb-memory-server": "^10.2.2",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.9",
     "vitest": "^3.2.4",
     "vitest-mock-extended": "^3.1.0"
   },
