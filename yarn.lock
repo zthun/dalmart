@@ -28,16 +28,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@asamuzakjp/dom-selector@npm:^6.5.4":
-  version: 6.5.7
-  resolution: "@asamuzakjp/dom-selector@npm:6.5.7"
+"@asamuzakjp/dom-selector@npm:^6.7.2":
+  version: 6.7.2
+  resolution: "@asamuzakjp/dom-selector@npm:6.7.2"
   dependencies:
     "@asamuzakjp/nwsapi": "npm:^2.3.9"
     bidi-js: "npm:^1.0.3"
     css-tree: "npm:^3.1.0"
     is-potential-custom-element-name: "npm:^1.0.1"
     lru-cache: "npm:^11.2.2"
-  checksum: 10/55f2847596ac2ac11a2e7492ddb9d61c2cd5e277ac1548134a9924e7d33267046527d95c0ada7ebaf7c75692c27d87f01bfa0ded62760eb06b6cf33d7a586a42
+  checksum: 10/a78422cbb124f87addaafb4e8991fac89cb21a99e16033da69def3b14174bb35893254c9ad6218c1f499d07dfb33b0dedfc4129335de572e87db63d9d07aa2de
   languageName: node
   linkType: hard
 
@@ -3344,12 +3344,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^24.6.2":
+"@types/node@npm:*":
   version: 24.6.2
   resolution: "@types/node@npm:24.6.2"
   dependencies:
     undici-types: "npm:~7.13.0"
   checksum: 10/8d1e64b37abdafd3da295394235ad5357509ac0b47e6991d36b1eecacd7ad830ada60ca71b7b3598b6c8b519361fb70aab691888c378ff25e69dba5690afcc22
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^24.8.1":
+  version: 24.8.1
+  resolution: "@types/node@npm:24.8.1"
+  dependencies:
+    undici-types: "npm:~7.14.0"
+  checksum: 10/4f944466766ca8cc0d635386e2b9b42b1948723ca0ec7d24624e80513e5816d6e96197db7c05f8f67b544a228a06a1c0598d66a5526aa4c1f5919db0d3c5bf8c
   languageName: node
   linkType: hard
 
@@ -3812,11 +3821,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-db@workspace:packages/dalmart-db"
   dependencies:
-    "@zthun/helpful-fn": "npm:^9.4.5"
-    "@zthun/helpful-query": "npm:^9.4.5"
+    "@zthun/helpful-fn": "npm:^9.6.0"
+    "@zthun/helpful-query": "npm:^9.7.1"
     "@zthun/janitor-build-config": "npm:^19.3.6"
     typescript: "npm:~5.9.3"
-    vite: "npm:^7.1.9"
+    vite: "npm:^7.1.10"
     vitest: "npm:^3.2.4"
     vitest-mock-extended: "npm:^3.1.0"
   languageName: unknown
@@ -3827,11 +3836,11 @@ __metadata:
   resolution: "@zthun/dalmart-forage@workspace:packages/dalmart-forage"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.5.6"
-    "@zthun/helpful-fn": "npm:^9.4.5"
+    "@zthun/helpful-fn": "npm:^9.6.0"
     "@zthun/janitor-build-config": "npm:^19.3.6"
     localforage: "npm:^1.10.0"
     typescript: "npm:~5.9.3"
-    vite: "npm:^7.1.9"
+    vite: "npm:^7.1.10"
     vitest: "npm:^3.2.4"
     vitest-mock-extended: "npm:^3.1.0"
   languageName: unknown
@@ -3842,14 +3851,14 @@ __metadata:
   resolution: "@zthun/dalmart-fs@workspace:packages/dalmart-fs"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.5.6"
-    "@zthun/helpful-brands": "npm:^9.4.5"
-    "@zthun/helpful-fn": "npm:^9.4.5"
-    "@zthun/helpful-query": "npm:^9.4.5"
+    "@zthun/helpful-brands": "npm:^9.7.1"
+    "@zthun/helpful-fn": "npm:^9.6.0"
+    "@zthun/helpful-query": "npm:^9.7.1"
     "@zthun/janitor-build-config": "npm:^19.3.6"
     glob: "npm:^11.0.3"
     lodash-es: "npm:^4.17.21"
     typescript: "npm:~5.9.3"
-    vite: "npm:^7.1.9"
+    vite: "npm:^7.1.10"
     vitest: "npm:^3.2.4"
     vitest-mock-extended: "npm:^3.1.0"
   languageName: unknown
@@ -3862,12 +3871,12 @@ __metadata:
     "@zthun/dalmart-db": "npm:^1.5.6"
     "@zthun/dalmart-mongo": "npm:^1.5.6"
     "@zthun/dalmart-storage": "npm:^1.5.6"
-    "@zthun/helpful-fn": "npm:^9.4.5"
+    "@zthun/helpful-fn": "npm:^9.6.0"
     "@zthun/janitor-build-config": "npm:^19.3.6"
     lodash-es: "npm:^4.17.21"
-    mongodb-memory-server: "npm:^10.2.2"
+    mongodb-memory-server: "npm:^10.2.3"
     typescript: "npm:~5.9.3"
-    vite: "npm:^7.1.9"
+    vite: "npm:^7.1.10"
     vitest: "npm:^3.2.4"
     vitest-mock-extended: "npm:^3.1.0"
   languageName: unknown
@@ -3878,13 +3887,13 @@ __metadata:
   resolution: "@zthun/dalmart-mongo@workspace:packages/dalmart-mongo"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.5.6"
-    "@zthun/helpful-fn": "npm:^9.4.5"
-    "@zthun/helpful-query": "npm:^9.4.5"
+    "@zthun/helpful-fn": "npm:^9.6.0"
+    "@zthun/helpful-query": "npm:^9.7.1"
     "@zthun/janitor-build-config": "npm:^19.3.6"
     mongodb: "npm:^6.20.0"
-    mongodb-memory-server: "npm:^10.2.2"
+    mongodb-memory-server: "npm:^10.2.3"
     typescript: "npm:~5.9.3"
-    vite: "npm:^7.1.9"
+    vite: "npm:^7.1.10"
     vitest: "npm:^3.2.4"
     vitest-mock-extended: "npm:^3.1.0"
   languageName: unknown
@@ -3895,12 +3904,12 @@ __metadata:
   resolution: "@zthun/dalmart-redis@workspace:packages/dalmart-redis"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.5.6"
-    "@zthun/helpful-fn": "npm:^9.4.5"
+    "@zthun/helpful-fn": "npm:^9.6.0"
     "@zthun/janitor-build-config": "npm:^19.3.6"
     redis: "npm:^5.8.3"
     redis-memory-server: "npm:^0.13.0"
     typescript: "npm:~5.9.3"
-    vite: "npm:^7.1.9"
+    vite: "npm:^7.1.10"
     vitest: "npm:^3.2.4"
     vitest-mock-extended: "npm:^3.1.0"
   languageName: unknown
@@ -3911,10 +3920,10 @@ __metadata:
   resolution: "@zthun/dalmart-storage@workspace:packages/dalmart-storage"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.5.6"
-    "@zthun/helpful-fn": "npm:^9.4.5"
+    "@zthun/helpful-fn": "npm:^9.6.0"
     "@zthun/janitor-build-config": "npm:^19.3.6"
     typescript: "npm:~5.9.3"
-    vite: "npm:^7.1.9"
+    vite: "npm:^7.1.10"
     vitest: "npm:^3.2.4"
     vitest-mock-extended: "npm:^3.1.0"
   languageName: unknown
@@ -3930,7 +3939,7 @@ __metadata:
     "@zthun/dalmart-mongo": "npm:^1.5.6"
     "@zthun/dalmart-redis": "npm:^1.5.6"
     "@zthun/dalmart-storage": "npm:^1.5.6"
-    typedoc: "npm:^0.28.13"
+    typedoc: "npm:^0.28.14"
     typescript: "npm:~5.9.3"
   languageName: unknown
   linkType: soft
@@ -3943,20 +3952,20 @@ __metadata:
     "@commitlint/config-conventional": "npm:^20.0.0"
     "@types/jsdom": "npm:^27.0.0"
     "@types/lodash-es": "npm:^4.17.12"
-    "@types/node": "npm:^24.6.2"
+    "@types/node": "npm:^24.8.1"
     "@vitest/coverage-v8": "npm:^3.2.4"
     "@zthun/janitor-build-config": "npm:^19.3.6"
     "@zthun/janitor-lint": "npm:^19.3.6"
     "@zthun/janitor-lint-config": "npm:^19.3.6"
     "@zthun/janitor-options": "npm:^19.3.6"
     husky: "npm:^9.1.7"
-    jsdom: "npm:^27.0.0"
+    jsdom: "npm:^27.0.1"
     lerna: "npm:^9.0.0"
     rimraf: "npm:^6.0.1"
     ts-node: "npm:^10.9.2"
     tsconfig-paths: "npm:^4.2.0"
     typescript: "npm:~5.9.3"
-    vite: "npm:^7.1.9"
+    vite: "npm:^7.1.10"
     vite-plugin-dts: "npm:^4.5.4"
     vite-plugin-external: "npm:^6.2.2"
     vite-tsconfig-paths: "npm:^5.1.4"
@@ -3964,42 +3973,42 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/helpful-brands@npm:^9.4.5":
-  version: 9.4.5
-  resolution: "@zthun/helpful-brands@npm:9.4.5"
+"@zthun/helpful-brands@npm:^9.7.1":
+  version: 9.7.1
+  resolution: "@zthun/helpful-brands@npm:9.7.1"
   dependencies:
-    "@zthun/helpful-query": "npm:^9.4.5"
-    "@zthun/helpful-reflection": "npm:^9.4.5"
-  checksum: 10/70ff9aa89c4bc7a58f9d6b36cc8a21524f30529cce03ea34f667a7cbb8a77f0e6169f549e1abbb794c7b99c99d6e89fdc639ad7e2649531782bcfed683069bfa
+    "@zthun/helpful-query": "npm:^9.7.1"
+    "@zthun/helpful-reflection": "npm:^9.6.0"
+  checksum: 10/19b3d224ecb0ddf48479355c3cb122cf4adbe957e31d24da88b00b86fafd038255e227a192fe9b6c3592cf9c888d4d5ba2e07c9e2b32b5babac83c586f67ca0b
   languageName: node
   linkType: hard
 
-"@zthun/helpful-fn@npm:^9.4.5":
-  version: 9.4.5
-  resolution: "@zthun/helpful-fn@npm:9.4.5"
+"@zthun/helpful-fn@npm:^9.6.0":
+  version: 9.6.0
+  resolution: "@zthun/helpful-fn@npm:9.6.0"
   dependencies:
     uuid: "npm:^13.0.0"
-  checksum: 10/b89b0dd39a1bc819c3704b3f78430cd96146886c35b81e245f57a5c5c8c08f03c2444d47cb75785f8fca93beddba0d16bad9752c8b90f1fc70c9ae64c435b15e
+  checksum: 10/b05d69ab0859ed421f18358070ead830619625145db46a25408a80aa1f9c9ed3e0ecfc96879c8d8c5b1db62f8fdc908973f38b646f73801e2a1c392f517062fb
   languageName: node
   linkType: hard
 
-"@zthun/helpful-query@npm:^9.4.5":
-  version: 9.4.5
-  resolution: "@zthun/helpful-query@npm:9.4.5"
+"@zthun/helpful-query@npm:^9.7.1":
+  version: 9.7.1
+  resolution: "@zthun/helpful-query@npm:9.7.1"
   dependencies:
-    "@zthun/helpful-fn": "npm:^9.4.5"
+    "@zthun/helpful-fn": "npm:^9.6.0"
     lodash-es: "npm:^4.17.21"
-  checksum: 10/5e45d830aaa1dd6462505720c743063ded523e5301381f19c021ffd706f50c5a070831b7bab3bbf73b78349b66d9cfa6a422ff4e46989e0726bfd2024c5d24b3
+  checksum: 10/255598082abe16aee06cd3fd3ea227d9f4cd432ab32a4303c7b013677fcf9cccc2d47d6587d018125ddcf23352cbf695eab92bdbf80107f197c3a9070a253916
   languageName: node
   linkType: hard
 
-"@zthun/helpful-reflection@npm:^9.4.5":
-  version: 9.4.5
-  resolution: "@zthun/helpful-reflection@npm:9.4.5"
+"@zthun/helpful-reflection@npm:^9.6.0":
+  version: 9.6.0
+  resolution: "@zthun/helpful-reflection@npm:9.6.0"
   dependencies:
-    "@zthun/helpful-fn": "npm:^9.4.5"
+    "@zthun/helpful-fn": "npm:^9.6.0"
     reflect-metadata: "npm:^0.2.2"
-  checksum: 10/0c8732c59e350bb2c42a11ebb45941f5aa780399b0be50fe9064f9585734a4ab1d2e8df3b690e59c7905cedcec8eec4cf6cc1b8d64046f2bb28bd8438cbd4593
+  checksum: 10/212ce0355cbc69b4a63409a3bd779dc9d9c5a82f269d28f55f0c221e7fd95e79aa1fa947b118c6e1ac57b3fccc8b19f426406dd09c6fb53f7a1e45914a2b79ab
   languageName: node
   linkType: hard
 
@@ -5689,7 +5698,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssstyle@npm:^5.3.0":
+"cssstyle@npm:^5.3.1":
   version: 5.3.1
   resolution: "cssstyle@npm:5.3.1"
   dependencies:
@@ -5816,10 +5825,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decimal.js@npm:^10.5.0":
-  version: 10.5.0
-  resolution: "decimal.js@npm:10.5.0"
-  checksum: 10/714d49cf2f2207b268221795ede330e51452b7c451a0c02a770837d2d4faed47d603a729c2aa1d952eb6c4102d999e91c9b952c1aa016db3c5cba9fc8bf4cda2
+"decimal.js@npm:^10.6.0":
+  version: 10.6.0
+  resolution: "decimal.js@npm:10.6.0"
+  checksum: 10/c0d45842d47c311d11b38ce7ccc911121953d4df3ebb1465d92b31970eb4f6738a065426a06094af59bee4b0d64e42e7c8984abd57b6767c64ea90cf90bb4a69
   languageName: node
   linkType: hard
 
@@ -8456,19 +8465,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:^27.0.0":
-  version: 27.0.0
-  resolution: "jsdom@npm:27.0.0"
+"jsdom@npm:^27.0.1":
+  version: 27.0.1
+  resolution: "jsdom@npm:27.0.1"
   dependencies:
-    "@asamuzakjp/dom-selector": "npm:^6.5.4"
-    cssstyle: "npm:^5.3.0"
+    "@asamuzakjp/dom-selector": "npm:^6.7.2"
+    cssstyle: "npm:^5.3.1"
     data-urls: "npm:^6.0.0"
-    decimal.js: "npm:^10.5.0"
+    decimal.js: "npm:^10.6.0"
     html-encoding-sniffer: "npm:^4.0.0"
     http-proxy-agent: "npm:^7.0.2"
     https-proxy-agent: "npm:^7.0.6"
     is-potential-custom-element-name: "npm:^1.0.1"
-    parse5: "npm:^7.3.0"
+    parse5: "npm:^8.0.0"
     rrweb-cssom: "npm:^0.8.0"
     saxes: "npm:^6.0.0"
     symbol-tree: "npm:^3.2.4"
@@ -8477,15 +8486,15 @@ __metadata:
     webidl-conversions: "npm:^8.0.0"
     whatwg-encoding: "npm:^3.1.1"
     whatwg-mimetype: "npm:^4.0.0"
-    whatwg-url: "npm:^15.0.0"
-    ws: "npm:^8.18.2"
+    whatwg-url: "npm:^15.1.0"
+    ws: "npm:^8.18.3"
     xml-name-validator: "npm:^5.0.0"
   peerDependencies:
     canvas: ^3.0.0
   peerDependenciesMeta:
     canvas:
       optional: true
-  checksum: 10/bd20b5560a2d2528d2494500f1bb2f58c4c674f4a6deb164a9693c6a43f0a0ae0eec44ff56e6bf065022c76fb07f7a2e197e81c964fd60b4d0ce160beb4d5007
+  checksum: 10/94ad4c909cf977fc6c9a649e59c8118502de24ed4998272d9b3e14a4b8dbd63ae93625253cb3bcef3c64120f61b7b000ba508b60fa1c40559ee714007e3b2c25
   languageName: node
   linkType: hard
 
@@ -9934,9 +9943,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongodb-memory-server-core@npm:10.2.2":
-  version: 10.2.2
-  resolution: "mongodb-memory-server-core@npm:10.2.2"
+"mongodb-memory-server-core@npm:10.2.3":
+  version: 10.2.3
+  resolution: "mongodb-memory-server-core@npm:10.2.3"
   dependencies:
     async-mutex: "npm:^0.5.0"
     camelcase: "npm:^6.3.0"
@@ -9950,17 +9959,17 @@ __metadata:
     tar-stream: "npm:^3.1.7"
     tslib: "npm:^2.8.1"
     yauzl: "npm:^3.2.0"
-  checksum: 10/0afc397dc15260df5252ed7abc1ebf05c210069fd06f66ac5d67fb5bc596bf75fbc72ae936aa16508869e01a78a7638d2edad91a54c259fea178e603e74613a9
+  checksum: 10/eaf497167ed17fdbc464df5c26d8a9fa42e7acd3ca40c0646b6e0f27d92e31a37248191caadbefdc88c2b91ff7906465f11fd4c120e9e2c56805130723c00c24
   languageName: node
   linkType: hard
 
-"mongodb-memory-server@npm:^10.2.2":
-  version: 10.2.2
-  resolution: "mongodb-memory-server@npm:10.2.2"
+"mongodb-memory-server@npm:^10.2.3":
+  version: 10.2.3
+  resolution: "mongodb-memory-server@npm:10.2.3"
   dependencies:
-    mongodb-memory-server-core: "npm:10.2.2"
+    mongodb-memory-server-core: "npm:10.2.3"
     tslib: "npm:^2.8.1"
-  checksum: 10/3b8dba0090e4ba2bfc9ab452d8cf3e70d69287315d836079da072f05046754aa47c757cb32a238bd2e1036c6e5347ed6f33cb747f20e06d59859cfe95c959d4a
+  checksum: 10/72167e4ca7b9c188aeededa2f4920f7a92d9a18ff6dcc4f5549cefe6ec2eebccf045a72fc0ce3b0e529d055f2f6dc38cf59dca792c3d3a3c62c2ea1d81faf936
   languageName: node
   linkType: hard
 
@@ -10878,12 +10887,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse5@npm:^7.0.0, parse5@npm:^7.3.0":
+"parse5@npm:^7.0.0":
   version: 7.3.0
   resolution: "parse5@npm:7.3.0"
   dependencies:
     entities: "npm:^6.0.0"
   checksum: 10/b0e48be20b820c655b138b86fa6fb3a790de6c891aa2aba536524f8027b4dca4fe538f11a0e5cf2f6f847d120dbb9e4822dcaeb933ff1e10850a2ef0154d1d88
+  languageName: node
+  linkType: hard
+
+"parse5@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "parse5@npm:8.0.0"
+  dependencies:
+    entities: "npm:^6.0.0"
+  checksum: 10/1973850932bb1cbd52ab64502761489fbe1bb43a52dee7ce41aac0b6c33a51a92aaee04661590b0912b739ae9ee316bce4c78c8ea34af42a7e522c983c3c6cf5
   languageName: node
   linkType: hard
 
@@ -13238,6 +13256,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typedoc@npm:^0.28.14":
+  version: 0.28.14
+  resolution: "typedoc@npm:0.28.14"
+  dependencies:
+    "@gerrit0/mini-shiki": "npm:^3.12.0"
+    lunr: "npm:^2.3.9"
+    markdown-it: "npm:^14.1.0"
+    minimatch: "npm:^9.0.5"
+    yaml: "npm:^2.8.1"
+  peerDependencies:
+    typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x
+  bin:
+    typedoc: bin/typedoc
+  checksum: 10/6b2bb87c85de96475f60ba2a92e0cb7169fef138cce4d91c949267ca9268c4fc97c2db9702f306ad5e594aa5244cc9aa563791ec31dd1b1d5288cf1ab08aa7a0
+  languageName: node
+  linkType: hard
+
 "typescript-eslint@npm:^8.45.0":
   version: 8.45.0
   resolution: "typescript-eslint@npm:8.45.0"
@@ -13332,6 +13367,13 @@ __metadata:
   version: 7.13.0
   resolution: "undici-types@npm:7.13.0"
   checksum: 10/1088ad68dd57981aa6eced5b3f5d74129ac619fbe558b30cb584d6096d32b084ae30d7cdc480d622226e6ffc8d31e01ac30215816439a0d784e0fe64db873b0f
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~7.14.0":
+  version: 7.14.0
+  resolution: "undici-types@npm:7.14.0"
+  checksum: 10/0f8709b21437697af35801e33bddbe9992e0cf1771959c41850b1946f63822b825e03ce99f44bf19e4f5c3ccc5166e0be59f541565c36ce86163dc2c5870bc62
   languageName: node
   linkType: hard
 
@@ -13682,6 +13724,61 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vite@npm:^7.1.10":
+  version: 7.1.10
+  resolution: "vite@npm:7.1.10"
+  dependencies:
+    esbuild: "npm:^0.25.0"
+    fdir: "npm:^6.5.0"
+    fsevents: "npm:~2.3.3"
+    picomatch: "npm:^4.0.3"
+    postcss: "npm:^8.5.6"
+    rollup: "npm:^4.43.0"
+    tinyglobby: "npm:^0.2.15"
+  peerDependencies:
+    "@types/node": ^20.19.0 || >=22.12.0
+    jiti: ">=1.21.0"
+    less: ^4.0.0
+    lightningcss: ^1.21.0
+    sass: ^1.70.0
+    sass-embedded: ^1.70.0
+    stylus: ">=0.54.8"
+    sugarss: ^5.0.0
+    terser: ^5.16.0
+    tsx: ^4.8.1
+    yaml: ^2.4.2
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+    jiti:
+      optional: true
+    less:
+      optional: true
+    lightningcss:
+      optional: true
+    sass:
+      optional: true
+    sass-embedded:
+      optional: true
+    stylus:
+      optional: true
+    sugarss:
+      optional: true
+    terser:
+      optional: true
+    tsx:
+      optional: true
+    yaml:
+      optional: true
+  bin:
+    vite: bin/vite.js
+  checksum: 10/34482c3698a6e10986036caa91c0114fc59f5a4bdda571d19b863a44a8b231dda09b0e3c63eb459e3b27ce453e695bce476f504b160451706563ce97e841ac5a
+  languageName: node
+  linkType: hard
+
 "vitest-mock-extended@npm:^3.1.0":
   version: 3.1.0
   resolution: "vitest-mock-extended@npm:3.1.0"
@@ -13850,7 +13947,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"whatwg-url@npm:^15.0.0":
+"whatwg-url@npm:^15.0.0, whatwg-url@npm:^15.1.0":
   version: 15.1.0
   resolution: "whatwg-url@npm:15.1.0"
   dependencies:
@@ -14107,7 +14204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.18.2":
+"ws@npm:^8.18.3":
   version: 8.18.3
   resolution: "ws@npm:8.18.3"
   peerDependencies:
