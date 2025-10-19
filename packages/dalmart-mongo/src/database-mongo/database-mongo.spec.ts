@@ -535,6 +535,28 @@ describe("ZDatabaseMongo", () => {
               await shouldReturnExpectedData([barney], filter);
             });
           });
+
+          describe("StartsWith", () => {
+            it("returns expected data", async () => {
+              const filter = new ZFilterBinaryBuilder()
+                .subject("name")
+                .startsWith()
+                .value("b.")
+                .build();
+              await shouldReturnExpectedData([barney, betty], filter);
+            });
+          });
+
+          describe("EndsWith", () => {
+            it("returns expected data", async () => {
+              const filter = new ZFilterBinaryBuilder()
+                .subject("name")
+                .endsWith()
+                .value("y")
+                .build();
+              await shouldReturnExpectedData([barney, betty], filter);
+            });
+          });
         });
 
         describe("Collection", () => {

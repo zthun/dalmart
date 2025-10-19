@@ -24,6 +24,14 @@ const BinaryMap: Record<ZOperatorBinary, (v: any) => object> = {
   [ZOperatorBinary.LessThan]: (v: any) => ({ $lt: v }),
   [ZOperatorBinary.LessThanEqualTo]: (v: any) => ({ $lte: v }),
   [ZOperatorBinary.Like]: (v: any) => ({ $regex: v, $options: "i" }),
+  [ZOperatorBinary.StartsWith]: (v: any) => ({
+    $regex: `^${v}`,
+    $options: "i",
+  }),
+  [ZOperatorBinary.EndsWith]: (v: any) => ({
+    $regex: `${v}$`,
+    $options: "i",
+  }),
 };
 
 const CollectionMap: Record<ZOperatorCollection, (v: any[]) => object> = {
