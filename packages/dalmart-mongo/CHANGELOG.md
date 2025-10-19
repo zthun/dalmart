@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.0](https://github.com/zthun/dalmart/compare/v1.5.6...v1.6.0) (2025-10-19)
+
+
+### Features
+
+* mongo db now supports starts with and ends with filters ([132aed5](https://github.com/zthun/dalmart/commit/132aed5cb08a95cd745b1bbe980d2cb6ea10036f))
+
+
+
 ## [1.5.6](https://github.com/zthun/dalmart/compare/v1.5.5...v1.5.6) (2025-10-04)
 
 **Note:** Version bump only for package @zthun/dalmart-mongo
