@@ -28,7 +28,7 @@
     "@zthun/dalmart-db": "^1.6.2",
     "@zthun/helpful-fn": "^9.11.1",
     "@zthun/helpful-query": "^9.11.1",
-    "mongodb": "^6.21.0"
+    "mongodb": "^7.0.0"
   },
   "devDependencies": {
     "@zthun/janitor-build-config": "^19.5.3",
