@@ -25,14 +25,14 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/helpful-fn": "^9.10.1",
-    "@zthun/helpful-query": "^9.10.1"
+    "@zthun/helpful-fn": "^9.11.1",
+    "@zthun/helpful-query": "^9.11.1"
   },
   "devDependencies": {
-    "@zthun/janitor-build-config": "^19.4.2",
+    "@zthun/janitor-build-config": "^19.5.3",
     "typescript": "~5.9.3",
-    "vite": "^7.1.12",
-    "vitest": "^4.0.5",
+    "vite": "^7.2.7",
+    "vitest": "^4.0.15",
     "vitest-mock-extended": "^3.1.0"
   },
   "files": [
