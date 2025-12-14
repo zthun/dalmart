@@ -9,9 +9,7 @@ import type { IZDatabaseServer } from "./database-server.mjs";
  *
  * This uses mongo under the hood.
  */
-export class ZDatabaseServerDocument
-  implements IZDatabaseServer<IZDatabaseDocument>
-{
+export class ZDatabaseServerDocument implements IZDatabaseServer<IZDatabaseDocument> {
   private _server: MongoMemoryServer | null;
   private _client: IZDatabaseDocument | null;
 
