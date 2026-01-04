@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.5](https://github.com/zthun/dalmart/compare/v1.6.4...v1.6.5) (2026-01-04)
+
+
+### Reverts
+
+* mongodb memory server version back to 10.x ([ef2941f](https://github.com/zthun/dalmart/commit/ef2941f7635c7050634a40fc74a1e6f6c7c1fd39))
+
+
+
 ## [1.6.4](https://github.com/zthun/dalmart/compare/v1.6.3...v1.6.4) (2026-01-03)
 
 **Note:** Version bump only for package @zthun/dalmart
