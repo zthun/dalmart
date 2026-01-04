@@ -27,7 +27,7 @@
   "dependencies": {
     "@zthun/dalmart-db": "^1.6.4",
     "@zthun/helpful-fn": "^9.11.2",
-    "@zthun/helpful-query": "^9.11.2",
+    "@zthun/helpful-query": "^9.11.3",
     "mongodb": "^7.0.0"
   },
   "devDependencies": {
