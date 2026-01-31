@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.6.6 (2026-01-31)</small>
+
+* build: update outdated packages ([bca8eae](https://github.com/zthun/dalmart/commit/bca8eae))
+* chore: update yarn lockfile [skip ci] ([a025e54](https://github.com/zthun/dalmart/commit/a025e54))
+
+
+
+
+
 ## [1.6.5](https://github.com/zthun/dalmart/compare/v1.6.4...v1.6.5) (2026-01-04)
 
 
