@@ -3,109 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.7](https://github.com/zthun/dalmart/compare/v1.6.6...v1.6.7) (2026-04-01)
+
+**Note:** Version bump only for package @zthun/dalmart-storage
+
 ## <small>1.6.6 (2026-01-31)</small>
 
-* build: update outdated packages ([bca8eae](https://github.com/zthun/dalmart/commit/bca8eae))
-
-
-
-
+- build: update outdated packages ([bca8eae](https://github.com/zthun/dalmart/commit/bca8eae))
 
 ## [1.6.5](https://github.com/zthun/dalmart/compare/v1.6.4...v1.6.5) (2026-01-04)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
 
-
-
-
-
 ## [1.6.4](https://github.com/zthun/dalmart/compare/v1.6.3...v1.6.4) (2026-01-03)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
-
-
-
-
 
 ## [1.6.3](https://github.com/zthun/dalmart/compare/v1.6.2...v1.6.3) (2025-12-14)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
 
-
-
-
-
 ## [1.6.2](https://github.com/zthun/dalmart/compare/v1.6.1...v1.6.2) (2025-10-29)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
-
-
-
-
 
 ## [1.6.1](https://github.com/zthun/dalmart/compare/v1.6.0...v1.6.1) (2025-10-23)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
 
-
-
-
-
 ## [1.6.0](https://github.com/zthun/dalmart/compare/v1.5.6...v1.6.0) (2025-10-19)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
-
-
-
-
 
 ## [1.5.6](https://github.com/zthun/dalmart/compare/v1.5.5...v1.5.6) (2025-10-04)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
 
-
-
-
-
 ## [1.5.5](https://github.com/zthun/dalmart/compare/v1.5.4...v1.5.5) (2025-09-09)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
-
-
-
-
 
 ## [1.5.4](https://github.com/zthun/dalmart/compare/v1.5.3...v1.5.4) (2025-09-06)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
 
-
-
-
-
 ## [1.5.3](https://github.com/zthun/dalmart/compare/v1.5.2...v1.5.3) (2025-07-18)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
-
-
-
-
 
 ## [1.5.2](https://github.com/zthun/dalmart/compare/v1.5.1...v1.5.2) (2025-06-22)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
 
-
-
-
-
 ## [1.5.1](https://github.com/zthun/dalmart/compare/v1.5.0...v1.5.1) (2025-06-20)
 
 **Note:** Version bump only for package @zthun/dalmart-storage
-
-
-
-
 
 # Change Log
 
