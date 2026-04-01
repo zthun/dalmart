@@ -28,7 +28,7 @@
     "@zthun/dalmart-db": "^1.6.6",
     "@zthun/dalmart-mongo": "^1.6.6",
     "@zthun/dalmart-storage": "^1.6.6",
-    "@zthun/helpful-fn": "^9.11.4",
+    "@zthun/helpful-fn": "^9.11.11",
     "mongodb-memory-server": "^10.4.3"
   },
   "devDependencies": {
@@ -37,7 +37,7 @@
     "lodash-es": "^4.17.23",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
-    "vitest": "^4.0.18",
+    "vitest": "^4.1.2",
     "vitest-mock-extended": "^3.1.0"
   },
   "files": [
