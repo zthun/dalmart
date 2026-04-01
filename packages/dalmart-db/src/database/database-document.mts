@@ -1,4 +1,5 @@
 import type { IZDataRequest, IZFilter } from "@zthun/helpful-query";
+
 import type { IZDatabaseDocumentCollection } from "./database-document-collection.mjs";
 
 /**

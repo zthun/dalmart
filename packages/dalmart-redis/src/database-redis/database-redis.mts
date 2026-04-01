@@ -46,7 +46,7 @@ export class ZDatabaseRedis implements IZDatabaseMemory {
     });
   }
 
-  public delete(key?: string | undefined): Promise<void> {
+  public delete(key?: string): Promise<void> {
     return this._do(async () => {
       if (key == null) {
         const keys = await this._client.keys("*");

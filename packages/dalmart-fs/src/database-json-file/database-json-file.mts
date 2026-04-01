@@ -1,4 +1,5 @@
 import type { IZDatabaseMemory, IZDatabaseOptions } from "@zthun/dalmart-db";
+
 import { tryReadJson, writeJson } from "../json-util/json-io.mjs";
 
 /**
@@ -35,7 +36,7 @@ export class ZDatabaseJsonFile implements IZDatabaseMemory {
     return value;
   }
 
-  public async delete(key?: string | undefined): Promise<void> {
+  public async delete(key?: string): Promise<void> {
     let content = await this._read();
 
     if (key) {

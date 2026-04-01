@@ -1,3 +1,6 @@
+import { accessSync, rmSync } from "node:fs";
+import { resolve } from "node:path";
+
 import type {
   IZDatabaseDocument,
   IZDatabaseDocumentCollection,
@@ -19,8 +22,7 @@ import {
 } from "@zthun/helpful-query";
 import { sync } from "glob";
 import { groupBy, toPairs } from "lodash-es";
-import { accessSync, rmSync } from "node:fs";
-import { resolve } from "node:path";
+
 import type { ZDocumentWithDecoration } from "../json-util/document-with-decoration.mjs";
 import { tryReadJson, writeJson } from "../json-util/json-io.mjs";
 
@@ -35,7 +37,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
 
   public async count(
     source: string | IZDatabaseDocumentCollection,
-    scope?: IZFilter | undefined,
+    scope?: IZFilter,
   ): Promise<number> {
     const dataSource = this._read(source);
     const request = new ZDataRequestBuilder().filter(scope).build();
@@ -93,7 +95,7 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
   public async update<T>(
     source: string,
     template: Partial<T>,
-    scope?: IZFilter | undefined,
+    scope?: IZFilter,
   ): Promise<number> {
     const dataSource = this._read(source);
     const request = new ZDataRequestBuilder().filter(scope).build();
@@ -119,17 +121,14 @@ export class ZDatabaseJsonFolder implements IZDatabaseDocument {
 
   public async read<T>(
     source: string | IZDatabaseDocumentCollection,
-    request?: IZDataRequest | undefined,
+    request?: IZDataRequest,
   ): Promise<T[]> {
     const dataSource = this._read<T>(source);
     const _request = request || new ZDataRequestBuilder().build();
     return dataSource.retrieve(_request);
   }
 
-  public async delete(
-    source: string,
-    scope?: IZFilter | undefined,
-  ): Promise<number> {
+  public async delete(source: string, scope?: IZFilter): Promise<number> {
     const request = new ZDataRequestBuilder().filter(scope).build();
     const dataSource = this._read(source);
     const targets = await dataSource.retrieve(request);

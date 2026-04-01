@@ -1,13 +1,13 @@
 import type { IZFilter } from "@zthun/helpful-query";
 import {
-  ZOperatorBinary,
-  ZOperatorCollection,
-  ZOperatorLogic,
-  ZOperatorUnary,
   isBinaryFilter,
   isCollectionFilter,
   isLogicFilter,
   isUnaryFilter,
+  ZOperatorBinary,
+  ZOperatorCollection,
+  ZOperatorLogic,
+  ZOperatorUnary,
 } from "@zthun/helpful-query";
 import type { Filter } from "mongodb";
 
