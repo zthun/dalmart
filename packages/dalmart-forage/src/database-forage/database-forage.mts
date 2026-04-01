@@ -34,17 +34,15 @@ export class ZDatabaseForage implements IZDatabaseMemory {
   }
 
   public async upsert<T>(key: string, value: T) {
-    localforage.setItem(key, value);
-    return Promise.resolve(value);
+    await localforage.setItem(key, value);
+    return value;
   }
 
   public async delete(key?: string) {
     if (key == null) {
-      localforage.clear();
+      await localforage.clear();
     } else {
-      localforage.removeItem(key);
+      await localforage.removeItem(key);
     }
-
-    return Promise.resolve();
   }
 }

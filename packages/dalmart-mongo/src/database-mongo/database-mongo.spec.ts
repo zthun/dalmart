@@ -137,7 +137,7 @@ describe("ZDatabaseMongo", () => {
       return target;
     }
 
-    beforeEach(async () => {
+    beforeEach(() => {
       fred = {
         _id: createGuid(),
         name: "Fred",
@@ -182,7 +182,7 @@ describe("ZDatabaseMongo", () => {
     });
 
     describe("Aggregate", () => {
-      describe("Count", async () => {
+      describe("Count", () => {
         it("returns 0 if the collection does not exist", async () => {
           // Arrange.
           const target = createTestTarget();
