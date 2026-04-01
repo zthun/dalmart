@@ -1,4 +1,4 @@
-// @vitest-environment jsdom
+// @vitest-environment happy-dom
 
 import { ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
 import { createGuid } from "@zthun/helpful-fn";
