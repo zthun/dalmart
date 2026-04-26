@@ -3465,12 +3465,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-memory@npm:^1.6.8, @zthun/dalmart-memory@workspace:packages/dalmart-memory":
+"@zthun/dalmart-memory@npm:^1.6.9, @zthun/dalmart-memory@workspace:packages/dalmart-memory":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-memory@workspace:packages/dalmart-memory"
   dependencies:
     "@zthun/dalmart-db": "npm:^1.6.8"
-    "@zthun/dalmart-mongo": "npm:^1.6.8"
+    "@zthun/dalmart-mongo": "npm:^1.6.9"
     "@zthun/dalmart-storage": "npm:^1.6.8"
     "@zthun/helpful-fn": "npm:^9.11.12"
     "@zthun/janitor-build-config": "npm:^20.0.5"
@@ -3484,7 +3484,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zthun/dalmart-mongo@npm:^1.6.8, @zthun/dalmart-mongo@workspace:packages/dalmart-mongo":
+"@zthun/dalmart-mongo@npm:^1.6.9, @zthun/dalmart-mongo@workspace:packages/dalmart-mongo":
   version: 0.0.0-use.local
   resolution: "@zthun/dalmart-mongo@workspace:packages/dalmart-mongo"
   dependencies:
@@ -3540,8 +3540,8 @@ __metadata:
   dependencies:
     "@zthun/dalmart-db": "npm:^1.6.8"
     "@zthun/dalmart-forage": "npm:^1.6.8"
-    "@zthun/dalmart-memory": "npm:^1.6.8"
-    "@zthun/dalmart-mongo": "npm:^1.6.8"
+    "@zthun/dalmart-memory": "npm:^1.6.9"
+    "@zthun/dalmart-mongo": "npm:^1.6.9"
     "@zthun/dalmart-redis": "npm:^1.6.8"
     "@zthun/dalmart-storage": "npm:^1.6.8"
     typedoc: "npm:^0.28.19"
