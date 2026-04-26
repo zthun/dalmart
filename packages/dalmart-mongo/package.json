@@ -1,6 +1,6 @@
 {
   "name": "@zthun/dalmart-mongo",
-  "version": "1.6.8",
+  "version": "1.6.9",
   "description": "A database interface to mongo-db",
   "author": "Anthony Bonta",
   "license": "MIT",
