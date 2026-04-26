@@ -1,6 +1,6 @@
 {
   "name": "@zthun/dalmart-mongo",
-  "version": "1.6.7",
+  "version": "1.6.8",
   "description": "A database interface to mongo-db",
   "author": "Anthony Bonta",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/dalmart-db": "^1.6.7",
+    "@zthun/dalmart-db": "^1.6.8",
     "@zthun/helpful-fn": "^9.11.12",
     "@zthun/helpful-query": "^9.11.12",
     "mongodb": "^7.2.0"
