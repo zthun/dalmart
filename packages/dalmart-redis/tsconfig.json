@@ -1,10 +1,9 @@
 {
   "extends": ["@zthun/janitor-ts-config/base", "@zthun/janitor-ts-config/node"],
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@zthun/dalmart-db": ["../dalmart-db/src/index.mts"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.mts"]
+  "include": ["**/*.ts", "**/*.mts"]
 }

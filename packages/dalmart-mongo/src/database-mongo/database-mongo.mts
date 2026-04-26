@@ -96,7 +96,7 @@ export class ZDatabaseMongo implements IZDatabaseDocument {
   ): Promise<number> {
     return this._do(source, async (docs: Collection<any>) => {
       const result = await docs.updateMany(toFilter(scope), {
-        $set: template as any,
+        $set: template,
       });
       return result.modifiedCount;
     });

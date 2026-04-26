@@ -1,15 +1,14 @@
 {
   "extends": ["@zthun/janitor-ts-config/base", "@zthun/janitor-ts-config/node"],
   "compilerOptions": {
-    "baseUrl": "packages",
     "paths": {
-      "@zthun/dalmart-db": ["dalmart-db/src/index.mts"],
-      "@zthun/dalmart-forage": ["dalmart-forage/src/index.mts"],
-      "@zthun/dalmart-fs": ["dalmart-fs/src/index.mts"],
-      "@zthun/dalmart-memory": ["dalmart-memory/src/index.mts"],
-      "@zthun/dalmart-mongo": ["dalmart-mongo/src/index.mts"],
-      "@zthun/dalmart-redis": ["dalmart-redis/src/index.mts"],
-      "@zthun/dalmart-storage": ["dalmart-storage/src/index.mts"]
+      "@zthun/dalmart-db": ["./packages/dalmart-db/src/index.mts"],
+      "@zthun/dalmart-forage": ["./packages/dalmart-forage/src/index.mts"],
+      "@zthun/dalmart-fs": ["./packages/dalmart-fs/src/index.mts"],
+      "@zthun/dalmart-memory": ["./packages/dalmart-memory/src/index.mts"],
+      "@zthun/dalmart-mongo": ["./packages/dalmart-mongo/src/index.mts"],
+      "@zthun/dalmart-redis": ["./packages/dalmart-redis/src/index.mts"],
+      "@zthun/dalmart-storage": ["./packages/dalmart-storage/src/index.mts"]
     }
   },
   "include": ["**/*.ts", "**/*.mts"]
