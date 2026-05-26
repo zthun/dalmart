@@ -1,6 +1,6 @@
 {
   "name": "@zthun/dalmart-fs",
-  "version": "1.6.8",
+  "version": "1.6.10",
   "description": "A database interface that just uses the file system",
   "author": "Anthony Bonta",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@zthun/dalmart-db": "^1.6.8",
+    "@zthun/dalmart-db": "^1.6.10",
     "@zthun/helpful-fn": "^9.11.13",
     "@zthun/helpful-query": "^9.11.13",
     "glob": "^13.0.6",
