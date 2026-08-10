@@ -23,8 +23,9 @@
     "@zthun/dalmart-mongo": "^1.6.10",
     "@zthun/dalmart-redis": "^1.6.10",
     "@zthun/dalmart-storage": "^1.6.10",
-    "typedoc": "^0.28.19",
-    "typescript": "~6.0.3"
+    "@zthun/janitor-build-config": "^21.0.0",
+    "typedoc": "^0.28.20",
+    "typescript": "^6.0.3"
   },
   "files": [
     "dist"
