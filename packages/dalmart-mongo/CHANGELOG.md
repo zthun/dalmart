@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.11](https://github.com/zthun/dalmart/compare/v1.6.10...v1.6.11) (2026-08-10)
+
+**Note:** Version bump only for package @zthun/dalmart-mongo
+
 ## [1.6.10](https://github.com/zthun/dalmart/compare/v1.6.9...v1.6.10) (2026-05-26)
 
 **Note:** Version bump only for package @zthun/dalmart-mongo
