@@ -204,13 +204,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^21.0.1":
+"@commitlint/config-angular-type-enum@npm:^21.0.1":
   version: 21.0.1
-  resolution: "@commitlint/config-conventional@npm:21.0.1"
+  resolution: "@commitlint/config-angular-type-enum@npm:21.0.1"
+  checksum: 10/74a62d62751474abd6d08bcb374c230de4488defb2e1095646f17b144a88b091ff8a07a98406524de6390ab20912f131018778a9d0ca97a7489877a860fc3e2d
+  languageName: node
+  linkType: hard
+
+"@commitlint/config-angular@npm:^21.0.1":
+  version: 21.2.0
+  resolution: "@commitlint/config-angular@npm:21.2.0"
   dependencies:
-    "@commitlint/types": "npm:^21.0.1"
-    conventional-changelog-conventionalcommits: "npm:^9.2.0"
-  checksum: 10/aaf9c1cb1b625efd9ea37036121681fd6f70dd2b7d9e48b90236d6364dc23d21f3d14749ef6d5622d795369e5f571bfa05df4c10b8ab3b5221da1a89a315c871
+    "@commitlint/config-angular-type-enum": "npm:^21.0.1"
+  checksum: 10/bf3395cb5912211caabf5cc6d3976ae2f4525f83a6658d31bb8317c210b3432b8c6ef96f393bc70114c9a0e22b392b79ff926ce277857719dd793c9facf383ec
   languageName: node
   linkType: hard
 
@@ -3551,7 +3557,7 @@ __metadata:
   resolution: "@zthun/dalmart@workspace:."
   dependencies:
     "@commitlint/cli": "npm:^21.0.1"
-    "@commitlint/config-conventional": "npm:^21.0.1"
+    "@commitlint/config-angular": "npm:^21.0.1"
     "@types/lodash-es": "npm:^4.17.12"
     "@types/node": "npm:^25.9.1"
     "@vitest/coverage-v8": "npm:^4.1.7"
@@ -4758,15 +4764,6 @@ __metadata:
   dependencies:
     compare-func: "npm:^2.0.0"
   checksum: 10/c9f32ddcc2095fa8b60f1f623fe5c49e0d16a2d83060a1c35990400da40b1cd3e765878f0333f4e0cff4f89c3a0bf63edc47e38aba5470a6334cfea2f7e5731c
-  languageName: node
-  linkType: hard
-
-"conventional-changelog-conventionalcommits@npm:^9.2.0":
-  version: 9.3.1
-  resolution: "conventional-changelog-conventionalcommits@npm:9.3.1"
-  dependencies:
-    compare-func: "npm:^2.0.0"
-  checksum: 10/6b924adcf31d36cbe1442f5c2d29dad345666bea9e805d8af6bfa28ab694e93abbdcb2462716b2a993f6eabf1d4bdc45209076249bd4825f5513ff061a99a4a2
   languageName: node
   linkType: hard
 
