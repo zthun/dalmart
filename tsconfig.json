@@ -10,7 +10,8 @@
       "@zthun/dalmart-mongo": ["./packages/dalmart-mongo/src/index.mts"],
       "@zthun/dalmart-redis": ["./packages/dalmart-redis/src/index.mts"],
       "@zthun/dalmart-storage": ["./packages/dalmart-storage/src/index.mts"]
-    }
+    },
+    "types": ["node"]
   },
   "include": ["**/*.ts", "**/*.mts"]
 }
