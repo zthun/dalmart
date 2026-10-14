@@ -17,9 +17,15 @@
     "Remy",
     "tiktok",
     "upsert",
+    "upserting",
     "Upserts",
     "zthun",
     "zthunworks"
   ],
-  "dictionaries": ["typescript", "node", "npm", "en_US"]
+  "dictionaries": [
+    "typescript",
+    "node",
+    "npm",
+    "en_US"
+  ]
 }
