@@ -52,7 +52,7 @@ jobs:
     steps:
       - run_docker_target:
           target: release
-          
+
 workflows:
   make:
     jobs:
