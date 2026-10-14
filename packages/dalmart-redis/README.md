@@ -1,9 +1,12 @@
 # Dalmart Redis
 
-This package supplies the implementation for a dalmart layer that connects to a
-[redis](https://redis.io/) database.
+This package implements the Dalmart key-value database interface for Redis.
+Values are serialized as JSON. The implementation uses the `url` option;
+`database` and `timeout` are not currently used.
 
 ## Installation
+
+Install with npm or Yarn:
 
 ```sh
 npm install @zthun/dalmart-redis
@@ -13,12 +16,12 @@ yarn add @zthun/dalmart-redis
 ## Usage
 
 ```ts
-import { IZDatabaseDocument, ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
+import type { IZDatabaseMemory } from "@zthun/dalmart-db";
+import { ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
 import { ZDatabaseRedis } from "@zthun/dalmart-redis";
 
 const options = new ZDatabaseOptionsBuilder()
-  .url("redis://my-redis.url:1123")
-  .timeout(45000)
+  .url("redis://localhost:6379")
   .build();
 const database: IZDatabaseMemory = new ZDatabaseRedis(options);
 
