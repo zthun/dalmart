@@ -1,13 +1,17 @@
 # Dalmart Memory
 
-This package contains in memory database server objects that are meant for mock
-implementations for unit testing.
+This package provides database server implementations for testing. Each server
+acts as a factory for a database client implementing a Dalmart interface.
 
-The difference between this and other dalmart packages is that this package only
-includes server implementations instead of database implementations. The server
-implementations act as a factory for the actual database implementation.
+`ZDatabaseServerDocument` starts a MongoDB instance through
+`mongodb-memory-server` and returns a `ZDatabaseMongo` client.
+`ZDatabaseServerMemory` implements the browser `Storage` interface in memory and
+returns a `ZDatabaseStorage` client. Its `stop()` method does not clear stored
+values; use `database.delete()` or `server.clear()` to reset them.
 
 ## Installation
+
+Install with npm or Yarn:
 
 ```sh
 npm install @zthun/dalmart-memory
@@ -17,14 +21,15 @@ yarn add @zthun/dalmart-memory
 ## Usage
 
 ```ts
-import { IZDatabaseMemory, IZDatabaseDocument } from "@zthun/dalmart-db";
+import type { IZDatabaseMemory, IZDatabaseDocument } from "@zthun/dalmart-db";
+import { afterAll, beforeAll, describe } from "vitest";
+import type { IZDatabaseServer } from "@zthun/dalmart-memory";
 import {
-  IZDatabaseServer,
   ZDatabaseServerDocument,
   ZDatabaseServerMemory,
 } from "@zthun/dalmart-memory";
 
-describe("In Memory Database", () => {
+describe("In-Memory Database", () => {
   describe("Document", () => {
     let server: IZDatabaseServer<IZDatabaseDocument>;
     let database: IZDatabaseDocument;
@@ -40,8 +45,8 @@ describe("In Memory Database", () => {
   });
 
   describe("Memory", () => {
-    let server: IZDatabaseServer<IZDatabaseDocument>;
-    let database: IZDatabaseDocument;
+    let server: IZDatabaseServer<IZDatabaseMemory>;
+    let database: IZDatabaseMemory;
 
     beforeAll(async () => {
       server = new ZDatabaseServerMemory();

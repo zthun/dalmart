@@ -1,9 +1,12 @@
 # Dalmart Storage
 
-This package supplies the implementation for a dalmart layer that connects to
-local and session storage in the browser.
+This package implements the Dalmart key-value database interface for browser
+local and session storage. It accepts a `Storage` object and serializes values
+as JSON.
 
 ## Installation
+
+Install with npm or Yarn:
 
 ```sh
 npm install @zthun/dalmart-storage
@@ -13,7 +16,7 @@ yarn add @zthun/dalmart-storage
 ## Usage
 
 ```ts
-import { IZDatabaseMemory } from "@zthun/dalmart-db";
+import type { IZDatabaseMemory } from "@zthun/dalmart-db";
 import { ZDatabaseStorage } from "@zthun/dalmart-storage";
 
 const local: IZDatabaseMemory = new ZDatabaseStorage(localStorage);

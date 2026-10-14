@@ -1,9 +1,12 @@
 # Dalmart Forage
 
-Dalmart Forage adds a dalmart memory database for usage of a browser's IndexedDb
-feature.
+Dalmart Forage implements the Dalmart key-value interface using localForage for
+browser storage, including IndexedDB. The database option configures the
+localForage storage name.
 
 ## Installation
+
+Install with npm or Yarn:
 
 ```sh
 npm install @zthun/dalmart-forage
@@ -13,11 +16,12 @@ yarn add @zthun/dalmart-forage
 ## Usage
 
 ```ts
-import { IZDatabaseMemory, ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
+import type { IZDatabaseMemory } from "@zthun/dalmart-db";
+import { ZDatabaseOptionsBuilder } from "@zthun/dalmart-db";
 import { ZDatabaseForage } from "@zthun/dalmart-forage";
 
-const options = new ZDatabaseOptionsBuilder().database("local-data");
+const options = new ZDatabaseOptionsBuilder().database("local-data").build();
 const database: IZDatabaseMemory = new ZDatabaseForage(options);
 
-// Do stuff with database
+// Use database.read(), database.upsert(), and database.delete().
 ```

@@ -1,10 +1,12 @@
 # Dalmart Database
 
-This is the root package of the dalmart system. This package contains all of the
-generic options and interface declarations that are needed to grab a connection
-to a database server.
+This is the core package of the Dalmart system. It contains the common database
+interfaces, collection declarations, and options builders used by the backend
+implementations. It does not connect to a database on its own.
 
 ## Installation
+
+Install with npm or Yarn:
 
 ```sh
 npm install @zthun/dalmart-db
@@ -13,55 +15,63 @@ yarn add @zthun/dalmart-db
 
 ## Document Database
 
-Document databases store "documents," usually in a json like format with key
-value pairs for quick lookups and queries. The most popular document database
-that most people know is [mongo](https://www.mongodb.com/).
+Document databases store documents, usually as JSON-like objects with key-value
+pairs. MongoDB is one example of a document database.
 
-Dalmart's document database layer comes with the needed method implementations
-for create, read, update, and delete; however, unlike systems such as mongoose,
-which only operate on a single document at a time, dalmart is build with bulk in
-mind. Rather than updating documents one by one, every CRUD operation assumes
-that you want to do bulk operations out of the box. This means, that if you want
-to do one document, you pass a collection with 1 item in it instead of calling a
-different method, or worse, looping through a list and inserting, updating, or
-removing one at a time.
+Dalmart's document database interface defines create, read, update, delete, and
+count operations with bulk operations in mind. To insert one document, pass an
+array containing one item; to insert many documents, pass a larger array.
+Updates and deletes apply to all documents matching an optional filter and
+return the number of documents affected. Omitting the filter updates or deletes
+all documents in the collection.
 
-Dalmart also makes use of
-[@zthun/helpful-query](https://helpful.zthunworks.com/modules/_zthun_helpful_query.html)
-to do the sorting and filtering, abstracting away the need to have vendor locked
-apis around those operations. This makes it so a dalmart implementation supplies
-the L in SOLID. You can simply substitute any implementation of a document
-database with a different vendor and it's a drop in place operation.
+Dalmart uses request, filter, and sort types from `@zthun/helpful-query` to
+provide a common API across implementations. Reads accept a data request for
+filtering, sorting, and pagination; counts accept a filter. Backend capabilities
+can differ: MongoDB supports collection joins, while the JSON folder
+implementation does not.
 
 ### Document Database Example
 
 ```ts
-import { IZDatabaseDocument } from "@zthun/dalmart-db";
+import type { IZDatabaseDocument } from "@zthun/dalmart-db";
+import type { IZDataRequest, IZFilter, IZPage } from "@zthun/helpful-query";
 import {
+  ZDataRequestBuilder,
   ZFilterBinaryBuilder,
-  IZPage,
   ZPageBuilder,
 } from "@zthun/helpful-query";
+
+interface IZPokemon {
+  _id?: string;
+  name: string;
+}
 
 export class PokemonService {
   public static readonly Collection = "Pokemon";
 
-  public constructor(private _dal_: IZDatabaseDocument) {}
+  public constructor(private _dal: IZDatabaseDocument) {}
 
   public async list(req: IZDataRequest): Promise<IZPage<IZPokemon>> {
-    const count = await this._dal.count(PokemonService.Collection, req);
-    const data = await this._dal.read(PokemonService.Collection, req);
+    const count = await this._dal.count(PokemonService.Collection, req.filter);
+    const data = await this._dal.read<IZPokemon>(
+      PokemonService.Collection,
+      req,
+    );
     return new ZPageBuilder().count(count).data(data).build();
   }
 
   public async get(id: string): Promise<IZPokemon | undefined> {
-    const byId = new ZDataFilterBinaryBuilder()
+    const byId = new ZFilterBinaryBuilder()
       .subject("_id")
-      .equals()
+      .equal()
       .value(id)
       .build();
     const req = new ZDataRequestBuilder().page(1).size(1).filter(byId).build();
-    const [result] = await this._dal.read(PokemonService.Collection, req);
+    const [result] = await this._dal.read<IZPokemon>(
+      PokemonService.Collection,
+      req,
+    );
     return result;
   }
 
@@ -78,68 +88,75 @@ export class PokemonService {
   }
 
   public update(template: Partial<IZPokemon>, filter: IZFilter) {
-    // Everything matching the filter will be updated with the given template partial.
+    // Everything matching the filter will be updated with the fields in the partial template.
     return this._dal.update(PokemonService.Collection, template, filter);
   }
 
-  public delete(id: string) {
-    const byId = new ZDataFilterBinaryBuilder()
+  public async delete(id: string): Promise<number> {
+    const byId = new ZFilterBinaryBuilder()
       .subject("_id")
-      .equals()
+      .equal()
       .value(id)
       .build();
-    await this._dal.delete(PokemonService.Collection, byId);
+    return this._dal.delete(PokemonService.Collection, byId);
   }
 
-  public purge() {
-    // Dumps the entire collection.
-    await this._dal.delete(PokemonService.Collection);
+  public async purge(): Promise<number> {
+    // Deletes all documents in the collection.
+    return this._dal.delete(PokemonService.Collection);
   }
 }
 ```
 
 ## Memory Database
 
-Memory databases are different than document and relational databases. Memory
-databases use key value pair lookups to store and retrieve data. If you have
-ever used
-[localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage),
-[sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage),
-or [redis](https://redis.io/), you will be familiar with this concept.
+The `IZDatabaseMemory` interface represents key-value storage, including Redis,
+browser local and session storage, localForage, and JSON files. Despite the
+name, these implementations are not all limited to in-memory storage.
 
-Unlike document databases, these kinds of database do not have query support and
-are mostly useful when you need quick lookups of data. The two main concepts of
-them are **read** and **upsert**.
+This interface provides `read`, `upsert`, and `delete` operations rather than
+queries. A read returns `null` when the key does not exist. You can supply a
+fallback value; whether that fallback is persisted depends on the
+implementation. Deleting without a key clears all keys in the underlying store.
 
 ### Memory Database Example
 
 ```ts
+import type { IZDatabaseMemory } from "@zthun/dalmart-db";
+
+interface IZPokemon {
+  _id?: string;
+  name: string;
+}
+
 export class PokemonCache {
   public constructor(private _dal: IZDatabaseMemory) {}
 
-  public async read(id: string, retrieve: () => Promise<IZPokemon>) {
-    const result = await this._dal.read(id);
+  public async read(
+    id: string,
+    retrieve: () => Promise<IZPokemon>,
+  ): Promise<IZPokemon> {
+    const result = await this._dal.read<IZPokemon>(id);
 
     if (result != null) {
       return result;
     }
 
     const value = await retrieve();
-    return this.put(id, value);
+    return this.update(id, value);
   }
 
   public update(key: string, value: IZPokemon): Promise<IZPokemon> {
     return this._dal.upsert(key, value);
   }
 
-  public bust(id: string): Promise<void> {
-    await this._dal.delete(key);
+  public async bust(id: string): Promise<void> {
+    await this._dal.delete(id);
   }
 }
 ```
 
-## Relational Database
+## Relational Databases
 
-Currently, Dalmart does not support relational databases as these are MUCH more
-complex than the others. This may come in the future if the need comes up, but
-for now, only document and memory databases are supported.
+Dalmart currently supports document and key-value databases. It does not provide
+a relational database interface or implementation.
